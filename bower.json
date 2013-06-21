@@ -1,0 +1,11 @@
+{
+  "name": "Cupcake",
+  "version": "0.0.0",
+  "main": "base.scss",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "vendor"
+  ]
+}
