@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Buttons
+
+   Custom button styles based on the Pure buttons.
+   http://purecss.io/buttons/
+   ========================================================================== */
+
+
+/* Sizes
+   ========================================================================== */
+$font-size-button-xsmall:   70%!default;
+$font-size-button-small:    85%!default;
+$font-size-button-large:    110%!default;
+$font-size-button-xlarge:   125%!default;
+
+
+/* Styles
+   ========================================================================== */
+$background-secondary-button:   rgb(0, 174, 239)!default;
+$background-safe-button:        rgb(153, 204, 0)!default;
+$background-danger-button:      rgb(217, 0, 0)!default;
+$background-warning-button:     rgb(242, 128, 37)!default;
