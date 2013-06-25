@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Buttons
+
+   Custom button styles based on the Pure buttons.
+   http://purecss.io/buttons/
+   ========================================================================== */
+
+
+/* Sizes
+   ========================================================================== */
+.pure-button--xsmall {
+    font-size: $font-size-button-xsmall;
+}
+
+.pure-button--small {
+    font-size: $font-size-button-small;
+}
+
+.pure-button--large {
+    font-size: $font-size-button-large;
+}
+
+.pure-button--xlarge {
+    font-size: $font-size-button-xlarge;
+}
+
+
+/* Styles
+   ========================================================================== */
+.pure-button--secondary,
+.pure-button--safe,
+.pure-button--danger,
+.pure-button--warning {
+    color: $white;
+}
+
+.pure-button--secondary {
+    background: $background-secondary-button;
+}
+
+.pure-button--safe {
+    background: $background-safe-button;
+}
+
+.pure-button--danger {
+    background: $background-danger-button;
+}
+
+.pure-button--warning {
+    background: $background-warning-button;
+}
+
+
+/* Positioning
+   ========================================================================== */
+.pure-button--block {
+    display: block;
+}
