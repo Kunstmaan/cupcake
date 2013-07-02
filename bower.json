@@ -1,6 +1,6 @@
 {
   "name": "Cupcake",
-  "version": "0.4.1",
+  "version": "0.5",
   "main": "base.scss",
   "ignore": [
     "**/.*",
