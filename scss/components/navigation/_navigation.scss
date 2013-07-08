@@ -1,4 +1,3 @@
-$cupcake-menu-background: #444444;
 /* ==========================================================================
    Responsive navigation
    ========================================================================== */
@@ -9,28 +8,17 @@ $cupcake-menu-background: #444444;
     position: relative;
     float: left;
     width: 100%;
-    background: $cupcake-menu-background;
+    background: #444;
     padding: 0;
     margin: 0;
     list-style: none;
 }
-
 .cupcake-menu__item{
     display: block;
     float: left;
     width: auto;
     text-align: center;
-    /*
-    &:hover{
-        background: #777;
-        color: white;
-        > .cupcake-menu__sublevel{         ////// ISSUE (IPHONE)
-            display: block;
-        }
-    }
-    */
 }
-
 .cupcake-menu__link{
     display: block;
     height: 44px;
@@ -39,11 +27,9 @@ $cupcake-menu-background: #444444;
     color: white;
     text-decoration: none;
 }
-
 .cupcake-menu__item--active{
     background: #333;
 }
-
 .cupcake-menu__sublevel{
     position: absolute;
     width: 100%;
@@ -55,7 +41,6 @@ $cupcake-menu-background: #444444;
         color: #333;
     }
 }
-
 .cupcake-menu__toggle, .cupcake-submenu__toggle{
     display: none;
 }
@@ -64,16 +49,13 @@ $cupcake-menu-background: #444444;
 
 /* Responsive
    ========================================================================== */
-@media screen and (max-width: 40em) {
+@media only screen and (max-width: 40em) {
     .cupcake-menu__toggle{
         display: block;
-        text-align: right;
-        color: #fff;
-        padding: 0 20px;
         height: 44px;
         line-height: 44px;
-        background: $cupcake-menu-background;
-        .icon-remove{
+        color: #fff;
+        .icon-remove, .icon-chevron-up{
             display: none;
         }
         .icon-remove, .icon-reorder{
@@ -81,52 +63,73 @@ $cupcake-menu-background: #444444;
         }
     }
     .cupcake-menu__toggle--active{
-        .icon-remove{
+        .icon-remove, .icon-chevron-up{
             display: inline;
         }
-        .icon-reorder{
+        .icon-reorder, .icon-chevron-down{
             display: none;
         }
     }
-
+    .cupcake-menu__toggle--top{
+        padding: 0 20px;
+        background: #444;
+        text-align: right;
+    }
+    .cupcake-menu__toggle--submenu{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 44px;
+        text-align: center;
+        border-left: 1px solid #fff;
+    }
     .cupcake-menu{
         display: none;
         &.cupcake-menu--open{
             display: block;
         }
     }
-
     .cupcake-menu__item{
         float: none;
         text-align: left;
         overflow: hidden;
         position: relative;
     }
-
     .cupcake-menu__link{
         border-top: 1px solid #fff;
     }
-
     .cupcake-menu__sublevel{
         position: static;
     }
+}
 
-    .cupcake-submenu__toggle{
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: block;
-        width: 44px;
-        height: 44px;
-        line-height: 44px;
-        text-align: center;
-        border-left: 1px solid #fff;
+@media only screen and (min-width: 40em){
+    .cupcake-menu__item{
+        &:hover{
+            background: #ccc;
+            color: white;
+            > .cupcake-menu__sublevel{
+                display: block;
+            }
+        }
     }
 }
 
 
 
-
+/* Legacy
+   ========================================================================== */
+.lt-ie9{
+    .cupcake-menu__item{
+        &:hover{
+            background: #ccc;
+            color: white;
+            > .cupcake-menu__sublevel{
+                display: block;
+            }
+        }
+    }
+}
 
 
 

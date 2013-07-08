@@ -17,7 +17,7 @@
 </head>
 <body>
     <nav>
-        <div class="js-cupcake-menu__toggle cupcake-menu__toggle">
+        <div class="js-cupcake-menu__toggle cupcake-menu__toggle cupcake-menu__toggle--top">
             MENU
             <i class="icon-reorder"></i>
              <i class="icon-remove"></i>
@@ -27,9 +27,9 @@
                 <a href="#" class="cupcake-menu__link">
                     Navitem L1
                 </a>
-                <div class="js-cupcake-menu__toggle cupcake-submenu__toggle">
-                    Open
-                    <i class="icon-arrow-down"></i>
+                <div class="js-cupcake-menu__toggle cupcake-menu__toggle cupcake-menu__toggle--submenu">
+                    <i class="icon-chevron-down"></i>
+                    <i class="icon-chevron-up"></i>
                 </div>
                 <ul class="cupcake-menu cupcake-menu__sublevel">
                     <li class="cupcake-menu__item">
@@ -43,9 +43,9 @@
                 <a href="#" class="cupcake-menu__link">
                     Navitem L1
                 </a>
-                <div class="js-cupcake-menu__toggle cupcake-submenu__toggle">
-                    Open
-                    <i class="icon-arrow-down"></i>
+                <div class="js-cupcake-menu__toggle cupcake-menu__toggle cupcake-menu__toggle--submenu">
+                    <i class="icon-chevron-down"></i>
+                    <i class="icon-chevron-up"></i>
                 </div>
                 <ul class="cupcake-menu cupcake-menu__sublevel">
                     <li class="cupcake-menu__item">
@@ -83,7 +83,7 @@
         $('.js-cupcake-menu__toggle').on('touchstart mousedown', function(e){
             e.preventDefault();
             e.stopPropagation();
-        }).on('touchend mouseup', function(e){
+        }).on('touchend mouseup', function(){
             var $this = $(this);
 
             $this.toggleClass('cupcake-menu__toggle--active');
