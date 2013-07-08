@@ -1,0 +1,147 @@
+$cupcake-menu-background: #444444;
+/* ==========================================================================
+   Responsive navigation
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+.cupcake-menu{
+    position: relative;
+    float: left;
+    width: 100%;
+    background: $cupcake-menu-background;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.cupcake-menu__item{
+    display: block;
+    float: left;
+    width: auto;
+    text-align: center;
+    /*
+    &:hover{
+        background: #777;
+        color: white;
+        > .cupcake-menu__sublevel{         ////// ISSUE (IPHONE)
+            display: block;
+        }
+    }
+    */
+}
+
+.cupcake-menu__link{
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.cupcake-menu__item--active{
+    background: #333;
+}
+
+.cupcake-menu__sublevel{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: none;
+    z-index: 10;
+    background: #ccc;
+    .cupcake-menu__link{
+        color: #333;
+    }
+}
+
+.cupcake-menu__toggle, .cupcake-submenu__toggle{
+    display: none;
+}
+
+
+
+/* Responsive
+   ========================================================================== */
+@media screen and (max-width: 40em) {
+    .cupcake-menu__toggle{
+        display: block;
+        text-align: right;
+        color: #fff;
+        padding: 0 20px;
+        height: 44px;
+        line-height: 44px;
+        background: $cupcake-menu-background;
+        .icon-remove{
+            display: none;
+        }
+        .icon-remove, .icon-reorder{
+            margin-left: .5em;
+        }
+    }
+    .cupcake-menu__toggle--active{
+        .icon-remove{
+            display: inline;
+        }
+        .icon-reorder{
+            display: none;
+        }
+    }
+
+    .cupcake-menu{
+        display: none;
+        &.cupcake-menu--open{
+            display: block;
+        }
+    }
+
+    .cupcake-menu__item{
+        float: none;
+        text-align: left;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .cupcake-menu__link{
+        border-top: 1px solid #fff;
+    }
+
+    .cupcake-menu__sublevel{
+        position: static;
+    }
+
+    .cupcake-submenu__toggle{
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        border-left: 1px solid #fff;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
