@@ -78,18 +78,8 @@
         </ul>
     </nav>
 
-    <script src="jquery-1.10.2.min.js"></script>
-    <script>
-        $('.js-cupcake-menu__toggle').on('touchstart mousedown', function(e){
-            e.preventDefault();
-            e.stopPropagation();
-        }).on('touchend mouseup', function(){
-            var $this = $(this);
-
-            $this.toggleClass('cupcake-menu__toggle--active');
-            $this.next('.cupcake-menu').toggleClass('cupcake-menu--open');
-        });
-    </script>
+    <script src="../../../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../../../js/navigation/navigation.js"></script>
 </body>
 </html>
 
