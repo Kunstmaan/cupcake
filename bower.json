@@ -1,6 +1,6 @@
 {
   "name": "Cupcake",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "main": "base.scss",
   "ignore": [
     "**/.*",
@@ -8,5 +8,6 @@
     "vendor"
   ],
   "dependencies": {
+    "jquery": "<2.0.0"
   }
 }

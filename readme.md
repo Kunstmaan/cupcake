@@ -1,3 +1,9 @@
-# Cupcake v0.6.2
+# Cupcake v0.7.0
 
 ## Frontend Framework
+
+# Includes
+- Responsive navigation
+
+# Dependencies
+- jQuery 1.x
