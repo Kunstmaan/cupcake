@@ -1,0 +1,16 @@
+{
+  "name": "cupcake",
+  "version": "0.7.1",
+  "description": "Kunstmaan Frontend Framework",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Kunstmaan/cupcake.git"
+  },
+  "author": "Kunstmaan",
+  "readmeFilename": "readme.md",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.4.4"
+  }
+}
