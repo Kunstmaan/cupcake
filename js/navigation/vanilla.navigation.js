@@ -1,13 +1,13 @@
 /* ==========================================================================
    Vanilla responsive navigation - v0.1
 
-   UNTESTED - DONT USE
-
-   ToDo:
-   - Testing
-
    Initialize:
    cupcake_navigation.init();
+
+   Support:
+   Android >=3.0
+   iOS >=5.0
+   WP >=7.8
    ========================================================================== */
 
 var cupcake_navigation = (function(window, undefined) {
@@ -45,9 +45,7 @@ var cupcake_navigation = (function(window, undefined) {
 
     // Open next menu
     openNextMenu = function(el){
-        // (el.nextElementSibling || nextElementSibling(el)) --> http://stackoverflow.com/questions/7788529/setting-innerhtml-of-nextsibling (for adding fallback)
         var nextMenu = el.nextElementSibling;
-
         nextMenu.classList.toggle('cupcake-menu--open');
     };
 
