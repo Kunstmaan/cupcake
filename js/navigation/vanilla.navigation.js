@@ -1,31 +1,11 @@
 /* ==========================================================================
-   Responsive navigation
-   ========================================================================== */
-
-/* jQuery version
-   ========================================================================== */
-
-$(function() {
-    $('.js-cupcake-menu__toggle').on('touchstart mousedown', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-    }).on('touchend mouseup', function(){
-        var $this = $(this);
-        $this.toggleClass('cupcake-menu__toggle--active');
-        $this.next('.cupcake-menu').toggleClass('cupcake-menu--open');
-    });
-});
-
-
-
-/* Vanilla JS version
+   Vanilla responsive navigation - UNDER DEVELOPMENT - DONT USE
 
    ToDo:
-   - fix openNextMenu
+   - Fix openNextMenu function
    - Testing
    ========================================================================== */
 
-/*
 function delayfix(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -61,4 +41,3 @@ function openNextMenu(el){
         openNextMenu(this);
     }, false);
 });
-*/

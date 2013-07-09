@@ -20,52 +20,57 @@
         <div class="js-cupcake-menu__toggle cupcake-menu__toggle cupcake-menu__toggle--top">
             MENU
             <i class="icon-reorder"></i>
-             <i class="icon-remove"></i>
+            <i class="icon-remove"></i>
         </div>
         <ul class="cupcake-menu">
+            <li class="cupcake-menu__item">
+                <a href="#" class="cupcake-menu__link">
+                    Navitem L1
+                </a>
+            </li>
+            <li class="cupcake-menu__item">
+                <a href="#" class="cupcake-menu__link">
+                    Navitem L1
+                </a>
+                <div class="js-cupcake-menu__toggle cupcake-menu__toggle cupcake-menu__toggle--submenu">
+                    <i class="icon-chevron-down"></i>
+                    <i class="icon-chevron-up"></i>
+                </div>
+                <ul class="cupcake-menu cupcake-menu__sublevel">
+                    <li class="cupcake-menu__item">
+                        <a href="#" class="cupcake-menu__link">
+                            Navitem L2
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="cupcake-menu__item">
+                <a href="#" class="cupcake-menu__link">
+                    Navitem L1
+                </a>
+                <div class="js-cupcake-menu__toggle cupcake-menu__toggle cupcake-menu__toggle--submenu">
+                    <i class="icon-chevron-down"></i>
+                    <i class="icon-chevron-up"></i>
+                </div>
+                <ul class="cupcake-menu cupcake-menu__sublevel">
+                    <li class="cupcake-menu__item">
+                        <a href="#" class="cupcake-menu__link">
+                            Navitem L2
+                        </a>
+                    </li>
+                    <li class="cupcake-menu__item">
+                        <a href="#" class="cupcake-menu__link">
+                            Navitem L2
+                        </a>
+                    </li>
+                    <li class="cupcake-menu__item">
+                        <a href="#" class="cupcake-menu__link">
+                            Navitem L2
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="cupcake-menu__item cupcake-menu__item--active">
-                <a href="#" class="cupcake-menu__link">
-                    Navitem L1
-                </a>
-                <div class="js-cupcake-menu__toggle cupcake-menu__toggle cupcake-menu__toggle--submenu">
-                    <i class="icon-chevron-down"></i>
-                    <i class="icon-chevron-up"></i>
-                </div>
-                <ul class="cupcake-menu cupcake-menu__sublevel">
-                    <li class="cupcake-menu__item">
-                        <a href="#" class="cupcake-menu__link">
-                            Navitem L2
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="cupcake-menu__item">
-                <a href="#" class="cupcake-menu__link">
-                    Navitem L1
-                </a>
-                <div class="js-cupcake-menu__toggle cupcake-menu__toggle cupcake-menu__toggle--submenu">
-                    <i class="icon-chevron-down"></i>
-                    <i class="icon-chevron-up"></i>
-                </div>
-                <ul class="cupcake-menu cupcake-menu__sublevel">
-                    <li class="cupcake-menu__item">
-                        <a href="#" class="cupcake-menu__link">
-                            Navitem L2
-                        </a>
-                    </li>
-                    <li class="cupcake-menu__item">
-                        <a href="#" class="cupcake-menu__link">
-                            Navitem L2
-                        </a>
-                    </li>
-                    <li class="cupcake-menu__item">
-                        <a href="#" class="cupcake-menu__link">
-                            Navitem L2
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="cupcake-menu__item">
                 <a href="#" class="cupcake-menu__link">
                     Navitem L1
                 </a>
@@ -78,8 +83,8 @@
         </ul>
     </nav>
 
-    <script src="../../../../js/jquery-1.10.2.min.js"></script>
-    <script src="../../../../js/navigation/navigation.js"></script>
+    <script src="../../../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../js/navigation/jquery.navigation.js"></script>
 </body>
 </html>
 
