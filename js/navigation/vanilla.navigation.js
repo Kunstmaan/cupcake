@@ -11,7 +11,7 @@
    ========================================================================== */
 
 var cupcake_navigation = (function(window, undefined) {
-    var init, delayfix, addActiveClass, openNextMenu, nextElementSibling;
+    var init, delayfix, addActiveClass, openNextMenu;
 
     init = function(){
         [].forEach.call( document.querySelectorAll('.js-cupcake-menu__toggle'), function(el) {
@@ -45,18 +45,10 @@ var cupcake_navigation = (function(window, undefined) {
 
     // Open next menu
     openNextMenu = function(el){
-        // (el.nextElementSibling || nextElementSibling(el)) --> http://stackoverflow.com/questions/7788529/setting-innerhtml-of-nextsibling
+        // (el.nextElementSibling || nextElementSibling(el)) --> http://stackoverflow.com/questions/7788529/setting-innerhtml-of-nextsibling (for adding fallback)
         var nextMenu = el.nextElementSibling;
 
         nextMenu.classList.toggle('cupcake-menu--open');
-    };
-
-    // Fallback for nextElementSibling
-    nextElementSibling = function(el){
-        if(el) {
-            while((el = el.nextSibling) && el.nextSibling.nodeType !== 1);
-            return el;
-        }
     };
 
     return{
