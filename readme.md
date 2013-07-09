@@ -1,4 +1,4 @@
-# Cupcake v0.7.0
+# Cupcake v0.7.1
 
 ## Frontend Framework
 
@@ -7,3 +7,4 @@
 
 # Dependencies
 - jQuery 1.x
+- FontAwesome
