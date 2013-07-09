@@ -22,7 +22,6 @@ module.exports = function(grunt) {
                 indent: 4,
                 trailing: true,
                 undef: true,
-                unused: true,
                 browser: true,
                 devel: true,
                 node: true,
@@ -31,9 +30,8 @@ module.exports = function(grunt) {
                     $: true
                 }
             },
-            all: ['Gruntfile.js', 'public/js']
+            all: ['Gruntfile.js', 'js/**/*.js']
         }
-
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
