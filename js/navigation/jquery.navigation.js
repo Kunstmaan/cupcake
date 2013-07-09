@@ -2,10 +2,10 @@
    jQuery responsive navigation - v0.1
 
    Initialize:
-   cupcake_navigation.init();
+   cupcakeNavigation.init();
    ========================================================================== */
 
-var cupcake_navigation = (function($, window, undefined) {
+var cupcakeNavigation = (function($, window, undefined) {
 
     var init;
 
