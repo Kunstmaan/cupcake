@@ -1,43 +1,55 @@
 /* ==========================================================================
-   Vanilla responsive navigation - UNDER DEVELOPMENT - DONT USE
+   Vanilla responsive navigation - v0.1
 
-   ToDo:
-   - Fix openNextMenu function
-   - Testing
+   Initialize:
+   cupcakeNavigation.init();
+
+   Support:
+   Android >=3.0
+   iOS >=5.0
+   WP >=7.8
    ========================================================================== */
 
-function delayfix(e) {
-    e.preventDefault();
-    e.stopPropagation();
-}
+var cupcakeNavigation = (function(window, undefined) {
+    var init, delayfix, addActiveClass, openNextMenu;
 
-function addActiveClass(el){
-    el.classList.toggle('cupcake-menu__toggle--active');
-}
+    init = function(){
+        [].forEach.call( document.querySelectorAll('.js-cupcake-menu__toggle'), function(el) {
+            el.addEventListener('mousedown', function(e) {
+                delayfix(e);
+            }, false);
+            el.addEventListener('touchstart', function(e) {
+                delayfix(e);
+            }, false);
+            el.addEventListener('mouseup', function() {
+                addActiveClass(this);
+                openNextMenu(this);
+            }, false);
+            el.addEventListener('touchend', function() {
+                addActiveClass(this);
+                openNextMenu(this);
+            }, false);
+        });
+    };
 
-function openNextMenu(el){
-    // TO DO -- NOT WORKING
+    // Fix 300ms delay by removing events
+    delayfix = function(e){
+        e.preventDefault();
+        e.stopPropagation();
+    };
 
-    var nextMenu = el.nextSibling;
+    // Toggle active class
+    addActiveClass = function(el){
+        el.classList.toggle('cupcake-menu__toggle--active');
+    };
 
-    console.log(nextMenu);
-    nextMenu.classList.toggle('cupcake-menu--open');
-}
+    // Open next menu
+    openNextMenu = function(el){
+        var nextMenu = el.nextElementSibling;
+        nextMenu.classList.toggle('cupcake-menu--open');
+    };
 
-[].forEach.call( document.querySelectorAll('.js-cupcake-menu__toggle'), function(el) {
-    el.addEventListener('mousedown', function(e) {
-        delayfix(e);
-    }, false);
-    el.addEventListener('touchstart', function(e) {
-        delayfix(e);
-    }, false);
-
-    el.addEventListener('mouseup', function() {
-        addActiveClass(this);
-        openNextMenu(this);
-    }, false);
-    el.addEventListener('touchend', function() {
-        addActiveClass(this);
-        openNextMenu(this);
-    }, false);
-});
+    return{
+        init: init
+    };
+})(window);
