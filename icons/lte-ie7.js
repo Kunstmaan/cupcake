@@ -3,14 +3,14 @@
 window.onload = function() {
 	function addIcon(el, entity) {
 		var html = el.innerHTML;
-		el.innerHTML = '<span style="font-family: \'fontawesome\'">' + entity + '</span>' + html;
+		el.innerHTML = '<span style="font-family: \'iconfont\'">' + entity + '</span>' + html;
 	}
 	var icons = {
-			'icon-reorder' : '&#xf0c9;',
-			'icon-remove' : '&#xf00d;',
-			'icon-chevron-right' : '&#xf054;',
-			'icon-chevron-down' : '&#xf078;',
-			'icon-chevron-up' : '&#xf077;'
+			'icon-reorder' : '&#x2630;',
+			'icon-remove' : '&#x78;',
+			'icon-chevron-right' : '&#x25ba;',
+			'icon-chevron-down' : '&#x25bc;',
+			'icon-chevron-up' : '&#x25b2;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
