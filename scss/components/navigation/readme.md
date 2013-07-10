@@ -1,9 +1,24 @@
-# Navigation
+# Cupcake responsive navigation v0.1
 
-## html
 
-Depends on icons from font-awsome.
+### Support
 
+#### Jquery version
+- Android 2.2 and up
+- iOS 5.0 and up
+- WP 7.5 and up
+
+#### Vanilla version
+- Android 3.0 and up
+- iOS 5.0 and up
+- WP 7.8 and up
+
+
+### Dependencies
+- Font-awsome
+
+
+### html structure
 <pre><code>
 <nav>
     <!-- Mobile menu toggle -->

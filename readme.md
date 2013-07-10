@@ -1,4 +1,4 @@
-# Cupcake v0.7.3
+# Cupcake v0.8
 
 ## Frontend Framework
 
