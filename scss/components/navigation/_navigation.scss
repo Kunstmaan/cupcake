@@ -11,38 +11,38 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    background: $menu-background;
+    background: $cupcake-menu-background;
     list-style: none;
 }
 .cupcake-menu__item{
     display: block;
     float: left;
-    width: $menu-item-width;
-    text-align: $menu-item-text-align;
+    width: $cupcake-menu-item-width;
+    text-align: $cupcake-menu-item-text-align;
 }
 .cupcake-menu__link{
     display: block;
-    padding: 0 $menu-item-link-padding;
-    height: $menu-height;
-    line-height: $menu-height;
-    color: $menu-item-color;
+    padding: 0 $cupcake-menu-item-link-padding;
+    height: $cupcake-menu-height;
+    line-height: $cupcake-menu-height;
+    color: $cupcake-menu-item-color;
     text-decoration: none;
 }
 .cupcake-menu__item--active{
-    background: $menu-item-active-background;
+    background: $cupcake-menu-item-active-background;
 }
 .cupcake-menu__sublevel{
     position: absolute;
     left: 0;
-    z-index: $menu-sublevel-z-index;
+    z-index: $cupcake-menu-sublevel-z-index;
     display: none;
     width: 100%;
-    background: $menu-sublevel-background;
+    background: $cupcake-menu-sublevel-background;
     .cupcake-menu__link{
-        color: $menu-sublevel-item-color;
+        color: $cupcake-menu-sublevel-item-color;
     }
     .cupcake-menu__item--active{
-        background: $menu-sublevel-item-active-background;
+        background: $cupcake-menu-sublevel-item-active-background;
         .icon-chevron-right{
             display: none;
         }
@@ -55,12 +55,12 @@
 
 /* Small version
    ========================================================================== */
-@media only screen and (max-width: $menu-responsive-breakpoint) {
+@media only screen and (max-width: $cupcake-menu-responsive-breakpoint) {
     .cupcake-menu__toggle{
         display: block;
-        height: $menu-height;
-        line-height: $menu-height;
-        color: $menu-toggle-color;
+        height: $cupcake-menu-height;
+        line-height: $cupcake-menu-height;
+        color: $cupcake-menu-toggle-color;
         .icon-remove, .icon-chevron-up{
             display: none;
         }
@@ -77,17 +77,17 @@
         }
     }
     .cupcake-menu__toggle--top{
-        padding: 0 $menu-item-link-padding;
-        background: $menu-toggle-top-background;
-        text-align: $menu-toggle-top-text-align;
+        padding: 0 $cupcake-menu-item-link-padding;
+        background: $cupcake-menu-toggle-top-background;
+        text-align: $cupcake-menu-toggle-top-text-align;
     }
     .cupcake-menu__toggle--submenu{
         position: absolute;
         top: 0;
         right: 0;
-        width: $menu-height;
+        width: $cupcake-menu-height;
         text-align: center;
-        border-left: 1px solid $menu-toggle-submenu-border-color;
+        border-left: 1px solid $cupcake-menu-toggle-submenu-border-color;
     }
     .cupcake-menu{
         display: none;
@@ -99,22 +99,22 @@
         position: relative;
         float: none;
         overflow: hidden;
-        text-align: $menu-item-small-text-align;
+        text-align: $cupcake-menu-item-small-text-align;
     }
     .cupcake-menu__link{
-        border-top: 1px solid $menu-small-link-border-top-color;
-        padding: 0 0 0 $menu-item-link-padding;
+        border-top: 1px solid $cupcake-menu-small-link-border-top-color;
+        padding: 0 0 0 $cupcake-menu-item-link-padding;
     }
     .cupcake-menu__sublevel{
         position: static;
         .cupcake-menu__item--active{
-            background: $menu-sublevel-background;
+            background: $cupcake-menu-sublevel-background;
             .icon-chevron-right{
                 display: block;
                 float: right;
-                width: $menu-height;
-                height: $menu-height;
-                line-height: $menu-height;
+                width: $cupcake-menu-height;
+                height: $cupcake-menu-height;
+                line-height: $cupcake-menu-height;
                 text-align: center;
             }
         }
@@ -127,9 +127,9 @@
 @mixin dropdown(){
     .cupcake-menu__item{
         &:hover{
-            background: $menu-item-hover-background;
+            background: $cupcake-menu-item-hover-background;
             .cupcake-menu__link{
-                color: $menu-item-hover-color;
+                color: $cupcake-menu-item-hover-color;
             }
             > .cupcake-menu__sublevel{
                 display: block;
@@ -139,15 +139,15 @@
     .cupcake-menu__sublevel{
         .cupcake-menu__item{
             &:hover{
-                background: $menu-sublevel-item-hover-background;
+                background: $cupcake-menu-sublevel-item-hover-background;
                 .cupcake-menu__link{
-                    color: $menu-sublevel-item-hover-color;
+                    color: $cupcake-menu-sublevel-item-hover-color;
                 }
             }
         }
     }
 }
-@media only screen and (min-width: $menu-responsive-breakpoint){
+@media only screen and (min-width: $cupcake-menu-responsive-breakpoint){
     @include dropdown();
 }
 .lt-ie9{
