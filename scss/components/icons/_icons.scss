@@ -1,4 +1,4 @@
-@if $cupcake-icons == true{
+@if $cupcake-include-icons == true{
     /* ==========================================================================
        Icon font
 
@@ -9,11 +9,11 @@
        ========================================================================== */
     @font-face {
         font-family: 'iconfont';
-        src:url('#{$iconfont-url}/iconfont.eot');
-        src:url('#{$iconfont-url}/iconfont.eot?#iefix') format('embedded-opentype'),
-            url('#{$iconfont-url}/iconfont.woff') format('woff'),
-            url('#{$iconfont-url}/iconfont.ttf') format('truetype'),
-            url('#{$iconfont-url}/iconfont.svg#iconfont') format('svg');
+        src:url('#{$cupcake-iconfont-url}/iconfont.eot');
+        src:url('#{$cupcake-iconfont-url}/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('#{$cupcake-iconfont-url}/iconfont.woff') format('woff'),
+            url('#{$cupcake-iconfont-url}/iconfont.ttf') format('truetype'),
+            url('#{$cupcake-iconfont-url}/iconfont.svg#iconfont') format('svg');
         font-weight: normal;
         font-style: normal;
     }
