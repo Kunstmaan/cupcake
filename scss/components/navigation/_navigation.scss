@@ -41,6 +41,12 @@
     .cupcake-menu__link{
         color: $menu-sublevel-item-color;
     }
+    .cupcake-menu__item--active{
+        background: $menu-sublevel-item-active-background;
+        .icon-chevron-right{
+            display: none;
+        }
+    }
 }
 .cupcake-menu__toggle, .cupcake-submenu__toggle{
     display: none;
@@ -97,9 +103,21 @@
     }
     .cupcake-menu__link{
         border-top: 1px solid $menu-small-link-border-top-color;
+        padding: 0 0 0 $menu-item-link-padding;
     }
     .cupcake-menu__sublevel{
         position: static;
+        .cupcake-menu__item--active{
+            background: $menu-sublevel-background;
+            .icon-chevron-right{
+                display: block;
+                float: right;
+                width: $menu-height;
+                height: $menu-height;
+                line-height: $menu-height;
+                text-align: center;
+            }
+        }
     }
 }
 
