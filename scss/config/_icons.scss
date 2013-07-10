@@ -5,5 +5,8 @@
    Never add styles directly to this file
    ========================================================================== */
 
-//General
-$iconfont-url: "../icons/fonts"
+//Import cupcake icons scss?
+$cupcake-icons: true!default;
+
+//Url for fonts
+$iconfont-url: "../icons/fonts"!default;
