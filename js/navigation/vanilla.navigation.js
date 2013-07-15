@@ -14,7 +14,7 @@ var cupcakeNavigation = (function(window, undefined) {
     var init, delayfix, addActiveClass, openNextMenu;
 
     init = function(){
-        [].forEach.call( document.querySelectorAll('.js-cupcake-menu__toggle'), function(el) {
+        [].forEach.call( document.querySelectorAll('.js-navigation__toggle'), function(el) {
             el.addEventListener('mousedown', function(e) {
                 delayfix(e);
             }, false);
@@ -40,13 +40,13 @@ var cupcakeNavigation = (function(window, undefined) {
 
     // Toggle active class
     addActiveClass = function(el){
-        el.classList.toggle('cupcake-menu__toggle--active');
+        el.classList.toggle('navigation__toggle--active');
     };
 
     // Open next menu
     openNextMenu = function(el){
         var nextMenu = el.nextElementSibling;
-        nextMenu.classList.toggle('cupcake-menu--open');
+        nextMenu.classList.toggle('navigation--open');
     };
 
     return{
