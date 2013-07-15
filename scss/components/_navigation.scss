@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Responsive navigation
+   ========================================================================== */
+
+
+/* General
+   ========================================================================== */
+.cupcake-menu{
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: $cupcake-menu-background;
+    list-style: none;
+}
+.cupcake-menu__item{
+    display: block;
+    float: left;
+    width: $cupcake-menu-item-width;
+    text-align: $cupcake-menu-item-text-align;
+}
+.cupcake-menu__link{
+    display: block;
+    padding: 0 $cupcake-menu-item-link-padding;
+    height: $cupcake-menu-height;
+    line-height: $cupcake-menu-height;
+    color: $cupcake-menu-item-color;
+    text-decoration: none;
+}
+.cupcake-menu__item--active{
+    background: $cupcake-menu-item-active-background;
+}
+.cupcake-menu__sublevel{
+    position: absolute;
+    left: 0;
+    z-index: $cupcake-menu-sublevel-z-index;
+    display: none;
+    width: 100%;
+    background: $cupcake-menu-sublevel-background;
+    .cupcake-menu__link{
+        color: $cupcake-menu-sublevel-item-color;
+    }
+    .cupcake-menu__item--active{
+        background: $cupcake-menu-sublevel-item-active-background;
+        .icon-chevron-right{
+            display: none;
+        }
+    }
+}
+.cupcake-menu__toggle, .cupcake-submenu__toggle{
+    display: none;
+}
+
+
+/* Small version
+   ========================================================================== */
+@media only screen and (max-width: $cupcake-menu-responsive-breakpoint) {
+    .cupcake-menu__toggle{
+        display: block;
+        height: $cupcake-menu-height;
+        line-height: $cupcake-menu-height;
+        color: $cupcake-menu-toggle-color;
+        .icon-remove, .icon-chevron-up{
+            display: none;
+        }
+        .icon-remove, .icon-reorder{
+            margin-left: .5em;
+        }
+    }
+    .cupcake-menu__toggle--active{
+        .icon-remove, .icon-chevron-up{
+            display: inline;
+        }
+        .icon-reorder, .icon-chevron-down{
+            display: none;
+        }
+    }
+    .cupcake-menu__toggle--top{
+        padding: 0 $cupcake-menu-item-link-padding;
+        background: $cupcake-menu-toggle-top-background;
+        text-align: $cupcake-menu-toggle-top-text-align;
+    }
+    .cupcake-menu__toggle--submenu{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: $cupcake-menu-height;
+        text-align: center;
+        border-left: 1px solid $cupcake-menu-toggle-submenu-border-color;
+    }
+    .cupcake-menu{
+        display: none;
+        &.cupcake-menu--open{
+            display: block;
+        }
+    }
+    .cupcake-menu__item{
+        position: relative;
+        float: none;
+        overflow: hidden;
+        text-align: $cupcake-menu-item-small-text-align;
+    }
+    .cupcake-menu__link{
+        border-top: 1px solid $cupcake-menu-small-link-border-top-color;
+        padding: 0 0 0 $cupcake-menu-item-link-padding;
+    }
+    .cupcake-menu__sublevel{
+        position: static;
+        .cupcake-menu__item--active{
+            background: $cupcake-menu-sublevel-background;
+            .icon-chevron-right{
+                display: block;
+                float: right;
+                width: $cupcake-menu-height;
+                height: $cupcake-menu-height;
+                line-height: $cupcake-menu-height;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+/* Dropdown
+   ========================================================================== */
+@mixin dropdown(){
+    .cupcake-menu__item{
+        &:hover{
+            background: $cupcake-menu-item-hover-background;
+            .cupcake-menu__link{
+                color: $cupcake-menu-item-hover-color;
+            }
+            > .cupcake-menu__sublevel{
+                display: block;
+            }
+        }
+    }
+    .cupcake-menu__sublevel{
+        .cupcake-menu__item{
+            &:hover{
+                background: $cupcake-menu-sublevel-item-hover-background;
+                .cupcake-menu__link{
+                    color: $cupcake-menu-sublevel-item-hover-color;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: $cupcake-menu-responsive-breakpoint){
+    @include dropdown();
+}
+.lt-ie9{
+    @include dropdown();
+}
