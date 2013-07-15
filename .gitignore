@@ -2,3 +2,4 @@
 css
 vendor
 node_modules
+.sass-cache
