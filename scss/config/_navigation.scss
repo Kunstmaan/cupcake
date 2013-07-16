@@ -6,39 +6,39 @@
    ========================================================================== */
 
 //General
-$cupcake-menu-height: 3em!default;
-$cupcake-menu-responsive-breakpoint: 40em!default;
+$navigation-height: 3em!default;
+$navigation-responsive-breakpoint: 40em!default;
 
 //Menu item
-$cupcake-menu-item-width: auto!default;
-$cupcake-menu-item-text-align: center!default;
-$cupcake-menu-item-small-text-align: left!default;
-$cupcake-menu-item-link-padding: 1.5em!default;
+$navigation-item-width: auto!default;
+$navigation-item-text-align: center!default;
+$navigation-item-small-text-align: left!default;
+$navigation-item-link-padding: 1.5em!default;
 
 //Sublevel
-$cupcake-menu-sublevel-z-index: 10!default;
+$navigation-sublevel-z-index: 10!default;
 
 //Menu toggle
-$cupcake-menu-toggle-top-text-align: right!default;
+$navigation-toggle-top-text-align: right!default;
 
 //Colors
-$cupcake-menu-background: #444!default;
-$cupcake-menu-sublevel-background: #ccc!default;
+$navigation-background: #444!default;
+$navigation-sublevel-background: #ccc!default;
 
-$cupcake-menu-item-color: #fff!default;
-$cupcake-menu-item-active-background: #333!default;
+$navigation-item-color: #fff!default;
+$navigation-item-active-background: #333!default;
 
-$cupcake-menu-sublevel-item-color: #333!default;
-$cupcake-menu-sublevel-item-active-background: #aaa;
+$navigation-sublevel-item-color: #333!default;
+$navigation-sublevel-item-active-background: #aaa;
 
-$cupcake-menu-toggle-color: #fff!default;
-$cupcake-menu-toggle-top-background: #333!default;
-$cupcake-menu-toggle-submenu-border-color: #fff!default;
+$navigation-toggle-color: #fff!default;
+$navigation-toggle-top-background: #333!default;
+$navigation-toggle-submenu-border-color: #fff!default;
 
-$cupcake-menu-small-link-border-top-color: #fff!default;
+$navigation-small-link-border-top-color: #fff!default;
 
-$cupcake-menu-item-hover-background: #ccc!default;
-$cupcake-menu-item-hover-color: #333!default;
+$navigation-item-hover-background: #ccc!default;
+$navigation-item-hover-color: #333!default;
 
-$cupcake-menu-sublevel-item-hover-background: #aaa!default;
-$cupcake-menu-sublevel-item-hover-color: #333!default;
+$navigation-sublevel-item-hover-background: #aaa!default;
+$navigation-sublevel-item-hover-color: #333!default;

@@ -3,11 +3,27 @@ module.exports = function(grunt) {
     grunt.initConfig({
         watch: {
             scripts: {
-                files: ['js/**/*.js'],
+                files: ['./js/**/*.js'],
                 tasks: ['jshint'],
                 options: {
                     nospawn: true,
                     event: ['added', 'changed']
+                }
+            },
+            sass: {
+                files: ['./scss/**/*.scss'],
+                tasks: ['sass'],
+            }
+        },
+
+        sass: {
+            dist: {
+                options: {
+                    style: 'expanded'
+                },
+                files: {
+                    './css/base.css': './scss/base.scss',
+                    './css/bootstrap.css': './vendor/sass-bootstrap/lib/bootstrap.scss'
                 }
             }
         },
@@ -36,6 +52,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['sass', 'watch']);
 };

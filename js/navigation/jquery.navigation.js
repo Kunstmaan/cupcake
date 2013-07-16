@@ -10,13 +10,13 @@ var cupcakeNavigation = (function($, window, undefined) {
     var init;
 
     init = function() {
-        $('.js-cupcake-menu__toggle').on('touchstart mousedown', function(e){
+        $('.js-navigation__toggle').on('touchstart mousedown', function(e){
             e.preventDefault();
             e.stopPropagation();
         }).on('touchend mouseup', function(){
-            $(this).toggleClass('cupcake-menu__toggle--active')
-                   .next('.cupcake-menu')
-                   .toggleClass('cupcake-menu--open');
+            $(this).toggleClass('navigation__toggle--active')
+                   .next('.navigation')
+                   .toggleClass('navigation--open');
         });
     };
 
