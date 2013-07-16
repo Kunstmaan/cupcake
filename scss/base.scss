@@ -19,6 +19,10 @@
    ========================================================================== */
 @import "helpers/helpers";
 
+/* Bourbon */
+@import "../vendor/bourbon/app/assets/stylesheets/bourbon";
+
+
 /* Components
    ========================================================================== */
 @import "components/components";
