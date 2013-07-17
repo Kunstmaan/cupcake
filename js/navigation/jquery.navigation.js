@@ -5,7 +5,9 @@
    cupcakeNavigation.init();
    ========================================================================== */
 
-var cupcakeNavigation = (function($, window, undefined) {
+var cupcake = cupcake || {};
+
+cupcake.Navigation = (function($, window, undefined) {
 
     var init;
 
@@ -23,4 +25,5 @@ var cupcakeNavigation = (function($, window, undefined) {
     return {
         init: init
     };
+    
 }(jQuery, window));

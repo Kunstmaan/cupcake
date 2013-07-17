@@ -15,7 +15,7 @@
 
 
 ### Dependencies
-- Font-awsome
+- Font-awesome
 
 
 ### html structure
