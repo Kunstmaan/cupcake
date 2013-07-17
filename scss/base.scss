@@ -19,13 +19,13 @@
    ========================================================================== */
 @import "helpers/helpers";
 
-/* Bourbon */
-@import "../vendor/bourbon/app/assets/stylesheets/bourbon";
+/* Bourbon - if working in cupcake, uncomment */
+//@import "../vendor/bourbon/app/assets/stylesheets/bourbon";
 
 
-/* Components
+/* Components - if working in cupcake, uncomment
    ========================================================================== */
-@import "components/components";
+//@import "components/components";
 
 
 /* Overrides
