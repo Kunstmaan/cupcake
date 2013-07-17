@@ -1,6 +1,6 @@
 var cupcake = cupcake || {};
 
-cupcake.Modal = (function($, window, undefined) {
+cupcake.Modal = (function(jQuery, window, undefined) {
 
     var _super = $.fn.modal,
     Modal;
@@ -52,4 +52,4 @@ cupcake.Modal = (function($, window, undefined) {
 
     }, $.fn.modal);
 
-})(jQuery, window)
+})(jQuery, window);
