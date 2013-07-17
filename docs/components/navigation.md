@@ -19,7 +19,7 @@
 
 
 ### html structure
-<pre><code>
+```html
 <nav>
     <!-- Mobile menu toggle -->
     <div class="js-cupcake-menu__toggle cupcake-menu__toggle cupcake-menu__toggle--top">
@@ -61,4 +61,4 @@
         </li>
     </ul>
 </nav>
-</code></pre>
+```
