@@ -2,7 +2,7 @@
    Vanilla responsive navigation - v0.1
 
    Initialize:
-   cupcakeNavigation.init();
+   cupcake.navigation.init();
 
    Support:
    Android >=3.0
@@ -10,7 +10,7 @@
    WP >=7.8
    ========================================================================== */
 
-var cupcakeNavigation = (function(window, undefined) {
+var cupcake.navigation = (function(window, undefined) {
     var init, delayfix, addActiveClass, openNextMenu;
 
     init = function(){
