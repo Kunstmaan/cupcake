@@ -158,6 +158,3 @@
 .desktop-nav {
     @include dropdown();
 }
-.lt-ie9{
-    @include dropdown();
-}
