@@ -17,13 +17,13 @@
 </head>
 <body>
     <h3>jQuery</h3>
-    <nav>
+    <nav class="js-responsive-nav">
         <div class="js-navigation__toggle navigation__toggle navigation__toggle--top">
             MENU
             <i class="icon-reorder"></i>
             <i class="icon-remove"></i>
         </div>
-        <ul class="navigation">
+        <ul class="js-navigation navigation">
             <li class="navigation__item">
                 <a href="#" class="navigation__link">
                     Navitem L1
@@ -91,7 +91,7 @@
 
     <script>
         $(function() {
-            cupcake.Navigation.init();
+            cupcake.navigation.init();
         });
     </script>
 </body>

@@ -55,12 +55,13 @@
 
 /* Small version
    ========================================================================== */
-@media only screen and (max-width: $navigation-responsive-breakpoint) {
+.responsive-nav {
     .navigation__toggle{
         display: block;
         height: $navigation-height;
         line-height: $navigation-height;
         color: $navigation-toggle-color;
+        cursor: pointer;
         .icon-remove, .icon-chevron-up{
             display: none;
         }
@@ -69,7 +70,10 @@
         }
     }
     .navigation__toggle--active{
-        .icon-remove, .icon-chevron-up{
+        .icon-remove {
+            display: inline-block;
+        }
+        .icon-chevron-up{
             display: inline;
         }
         .icon-reorder, .icon-chevron-down{
@@ -91,6 +95,7 @@
     }
     .navigation{
         display: none;
+        @include transition(all 1s ease-in-out);
         &.navigation--open{
             display: block;
         }
@@ -147,7 +152,7 @@
         }
     }
 }
-@media only screen and (min-width: $navigation-responsive-breakpoint){
+.desktop-nav {
     @include dropdown();
 }
 .lt-ie9{

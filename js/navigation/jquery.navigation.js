@@ -9,7 +9,8 @@ var cupcake = cupcake || {};
 
 cupcake.navigation = (function($, window, undefined) {
 
-    var init;
+    var init, toggleResponsiveNavigation;
+    var totalWidth = 0;
 
     init = function() {
         $('.js-navigation__toggle').on('touchstart mousedown', function(e){
@@ -20,6 +21,23 @@ cupcake.navigation = (function($, window, undefined) {
                    .next('.navigation')
                    .toggleClass('navigation--open');
         });
+
+        $('.js-navigation li').each(function() {
+            totalWidth += parseInt($(this).width());
+        });
+
+        $(window).resize(toggleResponsiveNavigation);
+        toggleResponsiveNavigation();
+    };
+    toggleResponsiveNavigation = function() {
+        var windowWidth = $(window).width();
+
+        console.log(totalWidth, windowWidth);
+        if (totalWidth > windowWidth) {
+            $('.js-responsive-nav').addClass('responsive-nav').removeClass('desktop-nav');
+        } else {
+            $('.js-responsive-nav').removeClass('responsive-nav').addClass('desktop-nav');
+        }
     };
 
     return {
@@ -27,3 +45,4 @@ cupcake.navigation = (function($, window, undefined) {
     };
 
 }(jQuery, window));
+
