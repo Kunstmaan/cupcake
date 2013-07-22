@@ -109,6 +109,9 @@
     .navigation__link{
         border-top: 1px solid $navigation-small-link-border-top-color;
         padding: 0 0 0 $navigation-item-link-padding;
+        &:hover {
+            color: $navigation-item-link-hover;
+        }
     }
     .navigation__sublevel{
         position: static;
