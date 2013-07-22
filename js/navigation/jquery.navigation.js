@@ -32,7 +32,6 @@ cupcake.navigation = (function($, window, undefined) {
     toggleResponsiveNavigation = function() {
         var windowWidth = $(window).width();
 
-        console.log(totalWidth, windowWidth);
         if (totalWidth > windowWidth) {
             $('.js-responsive-nav').addClass('responsive-nav').removeClass('desktop-nav');
         } else {
