@@ -23,7 +23,7 @@ cupcake.navigation = (function($, window, undefined) {
         });
 
         $('.js-navigation li').each(function() {
-            totalWidth += parseInt($(this).width());
+            totalWidth += parseInt($(this).width(), 10);
         });
 
         $(window).resize(toggleResponsiveNavigation);
