@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Cookie consent
+   ========================================================================== */
+
+.cookie-bar {
+    position: fixed;
+    bottom: $cookie-bar-position-bottom;
+    top: $cookie-bar-position-top;
+    left: $cookie-bar-position-left;
+    right: $cookie-bar-position-right;
+    background-color: $cookie-bar-color;
+    text-align: $cookie-bar-text-align;
+    width: $cookie-bar-width;
+    padding: $cookie-bar-padding;
+    color: $cookie-bar-font-color;
+    font-size: $cookie-bar-font-size;
+    .cookie-bar__policy {
+        color: $cookie-bar-policy-link-color;
+        text-decoration: $cookie-bar-policy-link-text-decoration;
+    }
+    .cookie-bar__btn {
+        margin: $cookie-bar-button-margin;
+    }
+}
