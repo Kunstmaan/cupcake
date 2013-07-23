@@ -1,0 +1,18 @@
+%slider-pp__caption__animate-in {
+    @include animation(animateIn 1s ease-in-out);
+}
+
+@include keyframes(animateIn) {
+    0% {
+        @include transform(translateX(-220px));
+        opacity: 0;
+    }
+    50% {
+        @include transform(translateX(-220px));
+        opacity: 0;
+    }
+    100% {
+        @include transform(translateX(0px));
+        opacity: 1;
+    }
+}
