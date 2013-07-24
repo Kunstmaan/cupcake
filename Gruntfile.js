@@ -59,18 +59,18 @@ module.exports = function(grunt) {
         },
 
         modernizr: {
-            devFile: 'remote',
-            outputFile: './vendor/modernizr/modernizr-custom.js',
-            parseFiles: true,
-            files: ['scss/**/*.*', 'js/**/*.*', 'examples/**/*.*'],
-            extra: {
+            "devFile": 'remote',
+            "outputFile": 'vendor/modernizr/modernizr-custom.js',
+            "parseFiles": true,
+            "files": ['scss/**/*.*', 'js/**/*.*', 'examples/**/*.*'],
+            "extra": {
                 "shiv" : true,
                 "printshiv" : false,
                 "load" : true,
                 "mq" : true,
                 "cssclasses" : true
             },
-            extensibility: {
+            "extensibility": {
                 "addtest" : false,
                 "prefixed" : false,
                 "teststyles" : false,
@@ -80,7 +80,11 @@ module.exports = function(grunt) {
                 "prefixes" : false,
                 "domprefixes" : false
             },
-            "tests" :['css_boxsizing', 'css_displaytable']
+            "tests" :[
+                'css_displaytable'
+            ],
+            // Added box-sizing as a custom test, because the standard comunity test for box-sizing makes the grunt modernizr fail :(
+            "customTests" : ['js/modernizr_custom_tests/box-sizing.js']
         }
     });
 
