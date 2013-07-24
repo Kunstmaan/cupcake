@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="82px" height="50px" viewBox="0 0 82 50" enable-background="new 0 0 82 50" xml:space="preserve">
-<path fill="#049CDB" d="M41.042,0v50h-20v-0.01c-0.08,0-0.16,0.01-0.24,0.01c-11.18,0-20.24-11.2-20.24-25c0-13.81,9.06-25,20.24-25
-	c0.08,0,0.16,0.01,0.24,0.01V0H41.042z"/>
-<polyline fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-	27.042,15.317 17.479,25 27.042,34.683 "/>
-<path fill="#049CDB" d="M41.042,50V0l20,0v0.01c0,0-0.08-0.01,0-0.01c11.18,0,20.12,11.2,20.12,25c0,13.81-8.88,25-20.06,25
-	c-0.08,0-0.06-0.01-0.06-0.01V50H41.042z"/>
-<polyline fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-	54.562,34.683 64.124,25 54.562,15.317 "/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="82" height="50"><path fill="#049CDB" d="M41.042 0v50h-20v-.01l-.24.01c-11.18 0-20.24-11.2-20.24-25 0-13.81 9.06-25 20.24-25l.24.01v-.01h20z"/><polyline stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="27.042,15.317 17.479,25 27.042,34.683" fill="none"/><path fill="#049CDB" d="M41.042 50v-50h20v0c11.18 0 20.12 11.2 20.12 25 0 13.81-8.88 25-20.06 25l-.06-.01v.01h-20z"/><polyline stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="54.562,34.683 64.124,25 54.562,15.317" fill="none"/></svg>
