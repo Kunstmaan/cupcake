@@ -9,7 +9,6 @@
 .slider-pp__wrapper {
     margin: 0;
     padding: 0;
-    -webkit-backface-visibility: hidden;
 }
 .slider-pp .slides > li {
     display: none;
@@ -30,6 +29,8 @@
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
 }
 
 .slider-pp {
@@ -103,13 +104,12 @@
 /* Slider custom nav block */
 .slider-pp__nav {
     padding: 0;
-    margin-bottom: 3.5em;
     z-index: 1;
     position: relative;
     width: 100%;
     display: table;
     &:before {
-        content: 'shadow'; /* without content shadow doesn't appear */
+        content: 'shadow'; /* empty content = shadow won't appear */
         position: absolute;
         bottom: 0;
         left: 0;
@@ -170,7 +170,8 @@
     a {
         width: $directionImageWidth;
         height: $directionImageHeight;
-        background: $directionImage;
+        background-image: $directionImage;
+        background-repeat: $directionImageRepeat;
         position: $directionPostion;
         top: $directionPostionTop;
         right: $directionPostionRight;
@@ -271,7 +272,3 @@
     }
     .flex-viewport {max-height: 100%;}
 }
-
-/* ==========================================================================
-   Button Mixin
-   ========================================================================== */

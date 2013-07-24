@@ -38,8 +38,9 @@
 
 /* Direction Controls */
 
-    $directionImage:                url(../img/buttons/slider_nav.svg) no-repeat 0 0!default;
-    $directionImageFallback:        url(../img/buttons/slider_nav.png) no-repeat !default;
+    $directionImage:                url(../img/buttons/slider_nav.svg) !default;
+    $directionImageFallback:        url(../img/buttons/slider_nav.png) !default;
+    $directionImageRepeat:          no-repeat;
     $directionImageWidth:           41px!default;
     $directionImageHeight:          50px!default;
     $directionImageMargin:          -25px 0 0 0!default;
@@ -72,7 +73,8 @@
    $activeItemBackground:           #555!default;
    $activeItemText:                 #fff!default;
 
-   $itemWidth:                      33.333333333333333333333333333%!default;
+   $itemAmount:                     3!default;
+   $itemWidth:                      100%/$itemAmount!default; //only change the amount of items, item width is calculated automatically
 
    $idleItemDevider:                1px solid #ddd!default;
    $activeItemDevider:              1px solid #555!default;

@@ -16,9 +16,9 @@ module.exports = function(grunt) {
             },
             modernizr: {
                 files: [
-                    './**/*.js',
-                    './**/*.scss',
-                    './**/*.html'
+                    '**/*.js',
+                    '**/*.scss',
+                    '**/*.html'
                 ],
                 tasks: ['modernizr']
             }
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
             devFile: 'remote',
             outputFile: './vendor/modernizr/modernizr-custom.js',
             parseFiles: true,
-            files: ['./**/*.*'],
+            files: ['scss/**/*.*', 'js/**/*.*', 'examples/**/*.*'],
             extra: {
                 "shiv" : true,
                 "printshiv" : false,
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
                 "prefixes" : false,
                 "domprefixes" : false
             },
-            "tests" :["css_boxsizing"]
+            "tests" :['css_boxsizing', 'css_displaytable']
         }
     });
 
