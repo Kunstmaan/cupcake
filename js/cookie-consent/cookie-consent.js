@@ -1,3 +1,10 @@
+/* ==========================================================================
+   Cookie Consent
+
+   Initialize:
+   cupcake.cookieconsent.init();
+   ========================================================================== */
+
 var cupcake = cupcake || {};
 
 cupcake.cookieconsent = (function($, window, undefined) {

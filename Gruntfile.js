@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ['./scss/**/*.scss'],
-                tasks: ['sass'],
+                tasks: ['sass']
             }
         },
 
@@ -47,12 +47,37 @@ module.exports = function(grunt) {
                 }
             },
             all: ['Gruntfile.js', 'js/**/*.js']
+        },
+
+        modernizr: {
+            devFile: 'remote',
+            outputFile: './vendor/modernizr/modernizr-custom.js',
+            files: ['scss/**/*.scss', 'js/**/*.js', 'examples/**/*.html', '!./vendor/modernizr/modernizr-custom.js'],
+            parseFiles: true,
+            extra: {
+                "shiv" : true,
+                "printshiv" : false,
+                "load" : true,
+                "mq" : false,
+                "cssclasses" : true
+            },
+            extensibility: {
+                "addtest" : false,
+                "prefixed" : false,
+                "teststyles" : false,
+                "testprops" : false,
+                "testallprops" : false,
+                "hasevents" : false,
+                "prefixes" : false,
+                "domprefixes" : false
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-modernizr');
 
     grunt.registerTask('default', ['sass', 'watch']);
 };
