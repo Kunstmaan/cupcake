@@ -1,5 +1,5 @@
 /* ==========================================================================
-   jQuery responsive navigation - v0.1
+   jQuery responsive navigation - v0.2
 
    Initialize:
    cupcake.navigation.init();
@@ -9,8 +9,7 @@ var cupcake = cupcake || {};
 
 cupcake.navigation = (function($, window, undefined) {
 
-    var init, toggleResponsiveNavigation;
-    var totalWidth = 0;
+    var init;
 
     init = function() {
         $('.js-navigation__toggle').on('touchstart mousedown', function(e){
@@ -26,10 +25,10 @@ cupcake.navigation = (function($, window, undefined) {
             totalWidth += parseInt($(this).width(), 10);
         });
 
-        $(window).resize(toggleResponsiveNavigation);
-        toggleResponsiveNavigation();
+        $(window).resize(toggleResponsivenavigation);
+        toggleResponsivenavigation();
     };
-    toggleResponsiveNavigation = function() {
+    toggleResponsivenavigation = function() {
         var windowWidth = $(window).width();
 
         if (totalWidth > windowWidth) {
