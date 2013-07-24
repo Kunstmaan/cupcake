@@ -16,13 +16,10 @@
     .slider-pp__nav {
         margin: 0;
         padding: 0;
-
     }
     .slider-pp__nav--item {
         padding: 1%;
-        width: $itemWidth - 2%;
-        min-height: 3em;
-        height: 100%;
+        width: $itemWidth - 2.1%;
     }
 }
 
@@ -38,6 +35,15 @@
     }
 }
 
-.no-displaytable {
-
+.no-display-table {
+    .slider-pp__nav {
+        display: block;
+        height: auto;
+    }
+    .slider-pp__nav--item {
+        display: inline-block;
+        float: left;
+        min-height: 3em;
+        height: 100%;
+    }
 }
