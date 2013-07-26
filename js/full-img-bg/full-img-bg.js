@@ -10,7 +10,7 @@ var cupcake = cupcake || {};
 
 cupcake.fullimagebackground = (function($, window, undefined) {
 
-    var init;
+    var init, imageUrl;
 
 
 
