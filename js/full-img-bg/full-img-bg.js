@@ -16,7 +16,7 @@ cupcake.fullimagebackground = (function($, window, undefined) {
 
     init = function() {
         var imageUrl = $('.full-img-bg').css("background-image");
-        imageUrl = imageUrl.replace('url(','').replace(')','');
+        imageUrl = imageUrl.replace('url("','').replace('")','');
         $('.full-img-bg').backstretch(imageUrl);
     };
 

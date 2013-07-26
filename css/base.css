@@ -1,0 +1,328 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Cupcake
+
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+/* Config
+   ========================================================================== */
+/* ==========================================================================
+   Config
+
+   Never add styles directly to this file - set up imports
+   ========================================================================== */
+/* ==========================================================================
+   Icons
+
+   This file is exclusively intended for setting up variables.
+   Never add styles directly to this file
+   ========================================================================== */
+/* ==========================================================================
+   Navigation
+
+   This file is exclusively intended for setting up variables.
+   Never add styles directly to this file
+   ========================================================================== */
+/* ==========================================================================
+   Cookie consent
+
+   This file is exclusively intended for setting up variables.
+   Never add styles directly to this file
+   ========================================================================== */
+/* ==========================================================================
+   Full Image Background
+
+   This file is exclusively intended for setting up variables.
+   Never add styles directly to this file
+   ========================================================================== */
+/* Bourbon - if working in cupcake, uncomment
+   ========================================================================== */
+/* Helpers
+   ========================================================================== */
+/* ==========================================================================
+   Helpers
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+/* ==========================================================================
+   Placeholders
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+/* ==========================================================================
+   Mixins
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+/* Components - if working in cupcake, uncomment
+   ========================================================================== */
+/* ==========================================================================
+   Components
+
+   Never add styles directly to this file - set up imports
+   ========================================================================== */
+    /* ==========================================================================
+       Icon font
+
+       Based on icomoon style.css
+       ========================================================================== */
+/* General
+   ========================================================================== */
+@font-face {
+  font-family: 'iconfont';
+  src: url("../fonts/iconfont/font-files/iconfont.eot");
+  src: url("../fonts/iconfont/font-files/iconfont.eot?#iefix") format("embedded-opentype"), url("../fonts/iconfont/font-files/iconfont.woff") format("woff"), url("../fonts/iconfont/font-files/iconfont.ttf") format("truetype"), url("../fonts/iconfont/font-files/iconfont.svg#iconfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-reorder, .icon-remove, .icon-chevron-right, .icon-chevron-down, .icon-chevron-up {
+  font-family: 'iconfont';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Icons
+   ========================================================================== */
+.icon-reorder:before {
+  content: "\2630";
+}
+
+.icon-remove:before {
+  content: "\78";
+}
+
+.icon-chevron-right:before {
+  content: "\25ba";
+}
+
+.icon-chevron-down:before {
+  content: "\25bc";
+}
+
+.icon-chevron-up:before {
+  content: "\25b2";
+}
+
+/* ==========================================================================
+   Responsive navigation
+   ========================================================================== */
+/* General
+   ========================================================================== */
+.navigation {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #444444;
+  list-style: none;
+}
+
+.navigation__item {
+  display: block;
+  float: left;
+  width: auto;
+  text-align: center;
+}
+
+.navigation__link {
+  display: block;
+  padding: 0 1.5em;
+  height: 3em;
+  line-height: 3em;
+  color: white;
+  text-decoration: none;
+}
+
+.navigation__item--active {
+  background: #333333;
+}
+
+.navigation__sublevel {
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  display: none;
+  width: 100%;
+  background: #cccccc;
+}
+.navigation__sublevel .navigation__link {
+  color: #333333;
+}
+.navigation__sublevel .navigation__item--active {
+  background: #aaaaaa;
+}
+.navigation__sublevel .navigation__item--active .icon-chevron-right {
+  display: none;
+}
+
+.navigation__toggle, .cupcake-submenu__toggle {
+  display: none;
+}
+
+/* Small version
+   ========================================================================== */
+.responsive-nav .navigation__toggle {
+  display: block;
+  height: 3em;
+  line-height: 3em;
+  color: white;
+  cursor: pointer;
+}
+.responsive-nav .navigation__toggle .icon-remove, .responsive-nav .navigation__toggle .icon-chevron-up {
+  display: none;
+}
+.responsive-nav .navigation__toggle .icon-remove, .responsive-nav .navigation__toggle .icon-reorder {
+  margin-left: .5em;
+}
+.responsive-nav .navigation__toggle--active .icon-remove {
+  display: inline-block;
+}
+.responsive-nav .navigation__toggle--active .icon-chevron-up {
+  display: inline;
+}
+.responsive-nav .navigation__toggle--active .icon-reorder, .responsive-nav .navigation__toggle--active .icon-chevron-down {
+  display: none;
+}
+.responsive-nav .navigation__toggle--top {
+  padding: 0 1.5em;
+  background: #333333;
+  text-align: right;
+}
+.responsive-nav .navigation__toggle--submenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3em;
+  text-align: center;
+  border-left: 1px solid white;
+}
+.responsive-nav .navigation {
+  display: none;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.responsive-nav .navigation.navigation--open {
+  display: block;
+}
+.responsive-nav .navigation__item {
+  position: relative;
+  float: none;
+  overflow: hidden;
+  text-align: left;
+}
+.responsive-nav .navigation__link {
+  border-top: 1px solid white;
+  padding: 0 0 0 1.5em;
+}
+.responsive-nav .navigation__link:hover {
+  color: #cccccc;
+}
+.responsive-nav .navigation__sublevel {
+  position: static;
+}
+.responsive-nav .navigation__sublevel .navigation__item--active {
+  background: #cccccc;
+}
+.responsive-nav .navigation__sublevel .navigation__item--active .icon-chevron-right {
+  display: block;
+  float: right;
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+}
+
+/* Dropdown
+   ========================================================================== */
+.desktop-nav .navigation__item:hover {
+  background: #cccccc;
+}
+.desktop-nav .navigation__item:hover .navigation__link {
+  color: #333333;
+}
+.desktop-nav .navigation__item:hover > .navigation__sublevel {
+  display: block;
+}
+.desktop-nav .navigation__sublevel .navigation__item:hover {
+  background: #aaaaaa;
+}
+.desktop-nav .navigation__sublevel .navigation__item:hover .navigation__link {
+  color: #333333;
+}
+
+/* ==========================================================================
+   Cookie consent
+   ========================================================================== */
+.cookie-bar {
+  position: fixed;
+  bottom: 0;
+  top: auto;
+  left: auto;
+  right: auto;
+  background-color: rgba(86, 86, 86, 0.95);
+  text-align: center;
+  width: 100%;
+  padding: 10px 0 0 0;
+  color: white;
+  font-size: 13px;
+}
+.cookie-bar .cookie-bar__policy {
+  color: white;
+  text-decoration: underline;
+}
+.cookie-bar .cookie-bar__btn {
+  margin: 0 0 0 5px;
+}
+
+.cookie-bar__hide {
+  display: none;
+}
+
+/* ==========================================================================
+   Full image background
+   ========================================================================== */
+/* General
+   ========================================================================== */
+.full-img-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-attachment: fixed;
+}
+
+/* Overrides
+   ========================================================================== */
+/* ==========================================================================
+   Overrides
+
+   Never add styles directly to this file - set up imports
+   ========================================================================== */
+/* ==========================================================================
+   Boostrap overrides
+   ========================================================================== */
+/* Fix aggressive required focus state
+   ========================================================================== */
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+  color: #ccc;
+}
+input:focus:invalid:focus,
+textarea:focus:invalid:focus,
+select:focus:invalid:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
