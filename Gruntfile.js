@@ -12,15 +12,7 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ['./scss/**/*.scss'],
-                tasks: ['sass'],
-            },
-            modernizr: {
-                files: [
-                    '**/*.js',
-                    '**/*.scss',
-                    '**/*.html'
-                ],
-                tasks: ['modernizr']
+                tasks: ['sass']
             }
         },
 
@@ -34,7 +26,6 @@ module.exports = function(grunt) {
                     './css/bootstrap.css': './vendor/sass-bootstrap/lib/bootstrap.scss'
                 }
             }
-
         },
 
         jshint: {
@@ -59,18 +50,18 @@ module.exports = function(grunt) {
         },
 
         modernizr: {
-            "devFile": 'remote',
-            "outputFile": 'vendor/modernizr/modernizr-custom.js',
-            "parseFiles": true,
-            "files": ['scss/**/*.*', 'js/**/*.*', 'examples/**/*.*'],
-            "extra": {
+            devFile: 'remote',
+            outputFile: './vendor/modernizr/modernizr-custom.js',
+            files: ['scss/**/*.scss', 'js/**/*.js', 'examples/**/*.html', '!./vendor/modernizr/modernizr-custom.js'],
+            parseFiles: true,
+            extra: {
                 "shiv" : true,
                 "printshiv" : false,
                 "load" : true,
-                "mq" : true,
+                "mq" : false,
                 "cssclasses" : true
             },
-            "extensibility": {
+            extensibility: {
                 "addtest" : false,
                 "prefixed" : false,
                 "teststyles" : false,
@@ -79,19 +70,14 @@ module.exports = function(grunt) {
                 "hasevents" : false,
                 "prefixes" : false,
                 "domprefixes" : false
-            },
-            "tests" :[
-                'css_displaytable'
-            ],
-            // Added box-sizing as a custom test, because the standard comunity test for box-sizing makes the grunt modernizr fail :(
-            "customTests" : ['js/modernizr_custom_tests/box-sizing.js']
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks("grunt-modernizr");
+    grunt.loadNpmTasks('grunt-modernizr');
 
     grunt.registerTask('default', ['sass', 'watch']);
 };
