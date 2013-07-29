@@ -1,2 +1,5 @@
-Model Folder
-*.pyc
+.DS_Store
+css
+vendor
+node_modules
+.sass-cache
