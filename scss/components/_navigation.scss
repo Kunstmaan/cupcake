@@ -110,7 +110,8 @@
         border-top: 1px solid $navigation-small-link-border-top-color;
         padding: 0 0 0 $navigation-item-link-padding;
         &:hover {
-            color: $navigation-item-link-hover;
+            background-color: $navigation-item-link-hover-background;
+            color: $navigation-item-link-hover-color;
         }
     }
     .navigation__sublevel{
