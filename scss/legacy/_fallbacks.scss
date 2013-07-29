@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Fallbacks
+
+   Trough feature-detection (by Modernizr)
+   ========================================================================== */
+
+.no-boxshadow{
+
+}
+
+.css_boxsizing {}
+.no-boxsizing {
+    .slider-pp__caption {
+        width: $captionWidthFallback;
+        padding: $captionPaddingFallback;
+    }
+    .slider-pp__nav {
+        margin: 0;
+        padding: 0;
+    }
+    .slider-pp__nav--item {
+        width: $itemWidthFallback;
+        padding: $itemPaddingFallback;
+    }
+}
+
+.no-inlinesvg {
+    .flex-direction-nav a {
+        background-image: $directionImageFallback;
+    }
+    .flex-next {
+        font-size: 0;
+        text-decoration: none;
+        text-indent: -9999px;
+        line-height: 0;
+    }
+}
+
+.css_displaytable {}
+.no-display-table {
+    .slider-pp__nav {
+        display: block;
+        height: auto;
+    }
+    .slider-pp__nav--item {
+        display: inline-block;
+        float: left;
+        min-height: 3em;
+        height: 100%;
+    }
+}

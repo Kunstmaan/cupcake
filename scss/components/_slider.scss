@@ -1,0 +1,294 @@
+.flex-container, .slider-pp__wrapper, .flex-container, .slider-pp {
+    a:focus, a:active {
+        outline: none;
+    }
+}
+
+.slides, .flex-control-nav, .flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slider-pp__wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.slider-pp .slides > li {
+    display: none;
+    -webkit-backface-visibility: hidden;
+}
+
+.container {
+    max-width: 62.5em;
+    width: 100%;
+    margin: 0 auto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+
+.slider-pp * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+}
+
+.slider-pp {
+    margin: 0;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    zoom: 1;
+    z-index: 1;
+    &:before, &:after {
+        position: absolute;
+        width: 2%;
+        height: 90%;
+        content: '';
+        border-radius: 50%;
+        box-shadow: 0 0 20px rgba(#000, .5);
+        z-index: -1;
+    }
+    &:before {
+        left: 0;
+        top: 0;
+    }
+    &:after {
+        right: 0;
+        top: 0;
+    }
+    .slides {
+        position: relative;
+        li {
+            position: $slidePosition;
+            background: $slideBackgroundColor;
+        }
+        img {
+            width: $imageWidth;
+            float: $imageFloat;
+            display: block;
+        }
+    }
+}
+
+.slider-pp__caption {
+    float: $captionFloat;
+    width: $captionWidth;
+    padding: $captionPadding;
+    height: $captionHeight;
+    color: #fff;
+    background: $captionBackground;
+    position: $captionPosition;
+    top: $captionPositionTop;
+    right: $captionPositionRight;
+    left: $captionPositionBottom;
+    bottom: $captionPositionLeft;
+    h3 {
+        margin: 0 0 .5em 0;
+    }
+    p {
+        margin: 0;
+    }
+    .slider-pp__caption--button {
+        @extend %button__small--white;
+    }
+}
+
+.flex-viewport {
+    max-height: $viewportHeight;
+    .loading & {
+        max-height: 300px;
+    }
+}
+
+.carousel li {
+    margin-right: 5px;
+}
+
+/* Slider custom nav block */
+.slider-pp__nav {
+    padding: 0;
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    display: table;
+    &:before {
+        content: ' '; /* empty content = shadow won't appear */
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+
+        border-radius: 50%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+        font-size: 0;
+    }
+}
+
+.slider-pp__nav-wrapper {
+    display: table-row;
+}
+
+.slider-pp__nav--item {
+    margin: 0;
+    width: $itemWidth;
+    padding: $itemPadding;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    background: $idleItemBackground;
+    color: $idleItemText;
+    border-left: $idleItemDevider;
+    cursor: pointer;
+    @include transition (all .3s ease-in);
+    &:first-child {
+        border: none;
+    }
+    p {
+        margin: 0;
+    }
+    &:hover, &:focus {
+        background: $hoverItemBackground;
+        color: $hoverItemText;
+    }
+}
+
+.flex-active {
+    border-left: $activeItemDevider;
+    background: $activeItemBackground;
+    color: $activeItemText;
+    &:hover {
+        background: $activeItemBackground;
+        color: $activeItemText;
+    }
+}
+
+/* Direction Nav */
+.flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    *height: 0;
+    list-style: none;
+    font-size: 0;
+    line-height: 0;
+    *width: 100%;
+    a {
+        width: $directionImageWidth;
+        height: $directionImageHeight;
+        background-image: $directionImage;
+        background-repeat: $directionImageRepeat;
+        position: $directionPostion;
+        margin: $directionImageMargin;
+        display: block;
+        z-index: -9999;
+        text-indent: -9999px;
+        opacity: 1;
+    }
+    a.flex-next:before {
+        content: ' ';
+    }
+    .flex-next {
+        background-position: $nextBackgroundPosition;
+        top: $nextPositionTop;
+        right: $nextPositionRight;
+        bottom: $nextPositionBottom;
+        left: $nextPositionLeft;
+    }
+    .flex-prev {
+        background-position: $prevBackgroundPosition;
+        top: $prevPositionTop;
+        right: $prevPositionRight;
+        bottom: $prevPositionBottom;
+        left: $prevPositionLeft;
+    }
+}
+
+.flexslider:hover .flex-next{
+    right: $nextPositionRight;
+}
+
+.flexslider:hover .flex-prev{
+    left: $prevPositionLeft;
+}
+
+/* Fix for the caption animation */
+.clone .slider-pp__caption {
+    opacity: 0;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media (max-width: 67em) {
+    .flex-direction-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 48em) {
+    .slider-pp__nav {
+        margin-top: 1em;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 3.5em;
+        z-index: 1;
+        position: relative;
+        &:before {
+            content: '';
+            display: none;
+        }
+    }
+    .slider-pp__nav--item {
+        p {
+            display: none;
+        }
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        padding: 0;
+        margin-right: .5em;
+        display: inline-block;
+        border: 1px solid $activeItemBackground;
+        float: none;
+        &:first-child {
+            border: 1px solid $activeItemBackground;
+        }
+        &:before {
+            box-shadow: none;
+        }
+    }
+    .slider-pp .slides img{
+        width: 100%;
+    }
+    .slider-pp__caption {
+        width: 100%;
+        height: 100%;
+        padding: .5em !important;
+        h3 {
+            margin: 0 0 .5em 0;
+            font-size: 1em;
+            line-height: 100%;
+        }
+        p {
+            margin: 0;
+        }
+    }
+    .flex-viewport {max-height: 100%;}
+}
+
+/* ==========================================================================
+   No JavaScript Fallback
+   ========================================================================== */
+
+.no-js .slides > li:first-child {
+    display: block;
+}
