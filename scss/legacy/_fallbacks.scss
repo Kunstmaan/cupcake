@@ -10,16 +10,16 @@
 
 .no-boxsizing {
     .slider-pp__caption {
-        padding: 1%;
-        width: $captionWidth - 2%;
+        width: $captionWidthFallback;
+        padding: $captionPaddingFallback;
     }
     .slider-pp__nav {
         margin: 0;
         padding: 0;
     }
     .slider-pp__nav--item {
-        padding: 1%;
-        width: $itemWidth - 2.1%;
+        width: $itemWidthFallback;
+        padding: $itemPaddingFallback;
     }
 }
 
@@ -34,7 +34,6 @@
         line-height: 0;
     }
 }
-
 .no-display-table {
     .slider-pp__nav {
         display: block;

@@ -23,6 +23,7 @@
     $captionFloat:                  right!default;
     $captionWidth:                  20%!default;
     $captionHeight:                 100%!default;
+    $captionPadding:                1.5% !default;
     $captionPosition:               static!default;
     $captionPositionTop:            auto!default;
     $captionPositionRight:          auto!default;
@@ -30,6 +31,10 @@
     $captionPositionLeft:           auto!default;
 
     $captionBackground:             none!default;
+
+    //Fallbacks
+    $captionPaddingFallback:        $captionPadding!default;
+    $captionWidthFallback:          $captionWidth - ($captionPaddingFallback * 2)!default;
 
 /* Image Controls */
 
@@ -75,9 +80,14 @@
 
    $itemAmount:                     3!default;
    $itemWidth:                      100%/$itemAmount!default; //only change the amount of items, item width is calculated automatically
+   $itemPadding:                    2%!default;
 
    $idleItemDevider:                1px solid #ddd!default;
    $activeItemDevider:              1px solid #555!default;
+
+   //Fallbacks
+    $itemPaddingFallback:           $itemPadding!default;
+    $itemWidthFallback:             $itemWidth - ($itemPaddingFallback * 2)!default;
 
 /* Slider Animations
    ========================================================================== */

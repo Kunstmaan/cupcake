@@ -12,7 +12,7 @@
 ### Support
 
 #### Desktop
-* IE 7 -10
+* IE 7 - 10
 * Firefox
 * Chrome
 * Safari
@@ -103,6 +103,13 @@ initSliders = function() {
 ### SCSS Variables
 
 ```scss
+/* ==========================================================================
+   Slider
+
+   Never add styles directly to this file - set up variables
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+
 /* Viewport max-height
    ========================================================================== */
 
@@ -121,6 +128,7 @@ initSliders = function() {
     $captionFloat:                  right!default;
     $captionWidth:                  20%!default;
     $captionHeight:                 100%!default;
+    $captionPadding:                1.5% !default;
     $captionPosition:               static!default;
     $captionPositionTop:            auto!default;
     $captionPositionRight:          auto!default;
@@ -128,6 +136,10 @@ initSliders = function() {
     $captionPositionLeft:           auto!default;
 
     $captionBackground:             none!default;
+
+    //Fallbacks
+    $captionPaddingFallback:        $captionPadding!default;
+    $captionWidthFallback:          $captionWidth - ($captionPaddingFallback * 2)!default;
 
 /* Image Controls */
 
@@ -173,9 +185,14 @@ initSliders = function() {
 
    $itemAmount:                     3!default;
    $itemWidth:                      100%/$itemAmount!default; //only change the amount of items, item width is calculated automatically
+   $itemPadding:                    2%!default;
 
    $idleItemDevider:                1px solid #ddd!default;
    $activeItemDevider:              1px solid #555!default;
+
+   //Fallbacks
+    $itemPaddingFallback:           $itemPadding!default;
+    $itemWidthFallback:             $itemWidth - ($itemPaddingFallback * 2)!default;
 
 /* Slider Animations
    ========================================================================== */
@@ -216,21 +233,22 @@ initSliders = function() {
     }
 }
 /* Slider custom nav block */
+/* Slider custom nav block */
 .slider-pp__nav {
     padding: 0;
     z-index: 1;
     position: relative;
     width: 100%;
     display: table;
-    /* fancy shadow */
     &:before {
         content: 'shadow'; /* empty content = shadow won't appear */
         position: absolute;
+        width: 100%;
+        height: 10%;
         bottom: 0;
         left: 0;
         z-index: -1;
-        width: 100%;
-        height: 2%;
+
         border-radius: 50%;
         box-shadow: 0 0 20px rgba(0, 0, 0, .5);
         font-size: 0;
@@ -242,7 +260,7 @@ initSliders = function() {
 .slider-pp__nav--item {
     margin: 0;
     width: $itemWidth;
-    padding: 2em;
+    padding: $itemPadding;
     position: relative;
     display: table-cell;
     vertical-align: middle;
@@ -258,7 +276,7 @@ initSliders = function() {
     p {
         margin: 0;
     }
-    &:hover {
+    &:hover, &:focus {
         background: $hoverItemBackground;
         color: $hoverItemText;
     }
