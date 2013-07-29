@@ -9,7 +9,8 @@ var cupcake = cupcake || {};
 
 cupcake.navigation = (function($, window, undefined) {
 
-    var init, totalWidth, windowWidth, toggleResponsivenavigation;
+    var init, windowWidth, toggleResponsivenavigation;
+    var totalWidth = 0;
 
     init = function() {
         $('.js-navigation__toggle').on('touchstart mousedown', function(e){
