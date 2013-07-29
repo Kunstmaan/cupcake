@@ -8,86 +8,84 @@
 /* Viewport max-height
    ========================================================================== */
 
-    $viewportHeight:                100%!default;
+    $viewportHeight:                100% !default;
 
 /* Slide controls
    ========================================================================== */
 
-   //Setup for caption aside of slides: change floats, imageWidth and captionPosition for other lay-out options
-
-    $slideBackgroundColor:          #049cdb!default;
-    $slidePosition:                 relative!default;
+    $slideBackgroundColor:          #049cdb !default;
+    $slidePosition:                 relative !default;
 
 /* Caption Controls */
 
-    $captionFloat:                  right!default;
-    $captionWidth:                  20%!default;
-    $captionHeight:                 100%!default;
+    $captionFloat:                  right !default;
+    $captionWidth:                  20% !default;
+    $captionHeight:                 100% !default;
     $captionPadding:                1.5% !default;
-    $captionPosition:               static!default;
-    $captionPositionTop:            auto!default;
-    $captionPositionRight:          auto!default;
-    $captionPositionBottom:         auto!default;
-    $captionPositionLeft:           auto!default;
+    $captionPosition:               static !default;
+    $captionPositionTop:            auto !default;
+    $captionPositionRight:          auto !default;
+    $captionPositionBottom:         auto !default;
+    $captionPositionLeft:           auto !default;
 
-    $captionBackground:             none!default;
+    $captionBackground:             none !default;
 
     //Fallbacks
-    $captionPaddingFallback:        $captionPadding!default;
-    $captionWidthFallback:          $captionWidth - ($captionPaddingFallback * 2)!default;
+    $captionPaddingFallback:        $captionPadding !default;
+    $captionWidthFallback:          $captionWidth - ($captionPaddingFallback * 2) !default;
 
 /* Image Controls */
 
-    $imageWidth:                    80%!default;
-    $imageFloat:                    right!default;
+    $imageWidth:                    80% !default;
+    $imageFloat:                    right !default;
 
 /* Direction Controls */
 
     $directionImage:                url(../img/buttons/slider_nav.svg) !default;
     $directionImageFallback:        url(../img/buttons/slider_nav.png) !default;
-    $directionImageRepeat:          no-repeat;
-    $directionImageWidth:           41px!default;
-    $directionImageHeight:          50px!default;
-    $directionImageMargin:          -25px 0 0 0!default;
+    $directionImageRepeat:          no-repeat !default;
+    $directionImageWidth:           41px !default;
+    $directionImageHeight:          50px !default;
+    $directionImageMargin:          -25px 0 0 0 !default;
 
-    $directionPostion:              absolute!default;
-    $directionPostionTop:           50%!default;
-    $directionPostionRight:         auto!default;
-    $directionPostionBottom:        auto!default;
-    $directionPostionLeft:          auto!default;
+    $directionPostion:              absolute !default;
+    $directionPostionTop:           50% !default;
+    $directionPostionRight:         auto !default;
+    $directionPostionBottom:        auto !default;
+    $directionPostionLeft:          auto !default;
 
-    $nextPositionTop:               $directionPostionTop!default;
-    $nextPositionRight:             -41px!default;
-    $nextPositionBottom:            auto!default;
-    $nextPositionLeft:              auto!default;
-    $nextBackgroundPosition:        100% 0!default;
+    $nextPositionTop:               $directionPostionTop !default;
+    $nextPositionRight:             -41px !default;
+    $nextPositionBottom:            auto !default;
+    $nextPositionLeft:              auto !default;
+    $nextBackgroundPosition:        100% 0 !default;
 
-    $prevPositionTop:               $directionPostionTop!default;
-    $prevPositionRight:             auto!default;
-    $prevPositionBottom:            auto!default;
-    $prevPositionLeft:              -41px!default;
-    $prevBackgroundPosition:        0 0!default;
+    $prevPositionTop:               $directionPostionTop !default;
+    $prevPositionRight:             auto !default;
+    $prevPositionBottom:            auto !default;
+    $prevPositionLeft:              -41px !default;
+    $prevBackgroundPosition:        0 0 !default;
 
 /* Navbar controls
    ========================================================================== */
 
-   $idleItemBackground:             #fff!default;
-   $idleItemText:                   #555!default;
-   $hoverItemBackground:            #ddd!default;
-   $hoverItemText:                  #555!default;
-   $activeItemBackground:           #555!default;
-   $activeItemText:                 #fff!default;
+   $idleItemBackground:             #fff !default;
+   $idleItemText:                   #555 !default;
+   $hoverItemBackground:            #ddd !default;
+   $hoverItemText:                  #555 !default;
+   $activeItemBackground:           #555 !default;
+   $activeItemText:                 #fff !default;
 
-   $itemAmount:                     3!default;
-   $itemWidth:                      100%/$itemAmount!default; //only change the amount of items, item width is calculated automatically
-   $itemPadding:                    2%!default;
+   $itemAmount:                     3 !default;
+   $itemWidth:                      100%/$itemAmount !default; //only change the amount of items, item width is calculated automatically
+   $itemPadding:                    2% !default;
 
-   $idleItemDevider:                1px solid #ddd!default;
-   $activeItemDevider:              1px solid #555!default;
+   $idleItemDevider:                1px solid #ddd !default;
+   $activeItemDevider:              1px solid #555 !default;
 
    //Fallbacks
-    $itemPaddingFallback:           $itemPadding!default;
-    $itemWidthFallback:             $itemWidth - ($itemPaddingFallback * 2)!default;
+    $itemPaddingFallback:           $itemPadding !default;
+    $itemWidthFallback:             $itemWidth - ($itemPaddingFallback * 2) !default;
 
 /* Slider Animations
    ========================================================================== */

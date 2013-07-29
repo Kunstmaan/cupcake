@@ -12,13 +12,13 @@
 
     <meta name="description" content="Responsive navigation manual test">
 
-    <link rel="stylesheet" href="../../css/base.css" type='text/css' />
-    <link rel="stylesheet" href="../../css/bootstrap.css" type='text/css' />
+    <link rel="stylesheet" href="../../css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../../css/base.css" type="text/css"/>
     <script src="../../vendor/modernizr/modernizr-custom.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="slider-pp__wrapper">
+        <section class="slider-pp__wrapper">
             <div class="slider-pp flexslider">
                 <ul class="slides">
                     <li>
@@ -47,65 +47,45 @@
                     </li>
                 </ul>
             </div>
-        </div>
-        <div class="slider-pp__nav">
-            <div class="slider-pp__nav-wrapper">
-                <div class="slider-pp__nav--item">
-                    <p>Narratives of failure</p>
+            <nav class="slider-pp__nav">
+                <div class="slider-pp__nav-wrapper">
+                    <div class="slider-pp__nav--item">
+                        <p>Narratives of failure</p>
+                    </div>
+                    <div class="slider-pp__nav--item">
+                        <p>Dialectic nationalism a study of structural symbolism</p>
+                    </div>
+                    <div class="slider-pp__nav--item">
+                        <p>Contexts of dialectic</p>
+                    </div>
                 </div>
-                <div class="slider-pp__nav--item">
-                    <p>Dialectic nationalism a study of structural symbolism</p>
-                </div>
-                <div class="slider-pp__nav--item">
-                    <p>Contexts of dialectic</p>
-                </div>
-            </div>
-        </div>
+            </nav>
+        </section>
     </div>
 
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/flexslider/jquery.flexslider.js"></script>
     <script src="../../js/slider/slider.js"></script>
-    <!--<<script src="../../../js/navigation/vanilla.navigation.js"></script>-->
 
     <script>
         $(function() {
-            cupcake.slider.init();
+            $('.slider-pp').flexslider({
+                animation: "slide",
+                controlNav: true,
+                slideshow: false,
+                startAt: 0,
+                manualControls: ".slider-pp__nav .slider-pp__nav--item",
+                start: function(slider){
+                    $(slider.slides.eq(0)).addClass('flex-animateIn');
+                },
+                before: function(slider){
+                    var thisSlide = slider.slides.eq(slider.currentSlide),
+                        animateSlide = slider.slides.eq(slider.animatingTo);
+                    $(thisSlide).removeClass('flex-animateIn');
+                    $(animateSlide).addClass('flex-animateIn');
+                }
+            });
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
