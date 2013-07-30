@@ -8,7 +8,8 @@
     "vendor"
   ],
   "dependencies": {
-    "jquery": "<2.0.0"
+    "jquery": "<2.0.0",
+    "jquery-backstretch": "~2.0.4"
   },
   "devDependencies": {
     "sass-bootstrap": "~2.3.2",
