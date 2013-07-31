@@ -3,12 +3,12 @@
    https://github.com/srobbin/jquery-backstretch
 
    Initialize:
-   cupcake.fullimagebackground.init();
+   cupcake.backstretch.init();
    ========================================================================== */
 
 var cupcake = cupcake || {};
 
-cupcake.fullimagebackground = (function($, window, undefined) {
+cupcake.backstretch = (function($, window, undefined) {
 
     var init;
 
