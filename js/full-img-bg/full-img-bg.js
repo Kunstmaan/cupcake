@@ -3,20 +3,20 @@
    https://github.com/srobbin/jquery-backstretch
 
    Initialize:
-   cupcake.fullimagebackground.init();
+   cupcake.backstretch.init();
    ========================================================================== */
 
 var cupcake = cupcake || {};
 
-cupcake.fullimagebackground = (function($, window, undefined) {
+cupcake.backstretch = (function($, window, undefined) {
 
-    var init, imageUrl;
-
-
+    var init;
 
     init = function() {
-        var imageUrl = $('.full-img-bg').css("background-image");
-        imageUrl = imageUrl.replace('url("','').replace('")','');
+        var imageUrl = $('.full-img-bg').css("background-image")
+                          .replace('url(','')
+                          .replace(')','');
+
         $('.full-img-bg').backstretch(imageUrl);
     };
 
@@ -25,7 +25,3 @@ cupcake.fullimagebackground = (function($, window, undefined) {
     };
 
 }(jQuery, window));
-
-$(function() {
-    cupcake.fullimagebackground.init();
-});
