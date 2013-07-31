@@ -35,7 +35,12 @@
     <script>
         Modernizr.load({
           test: Modernizr.backgroundsize,
-          nope: ['../../js/full-img-bg/jquery.backstretch.min.js', '../../js/full-img-bg/full-img-bg.js']
+          nope: ['../../vendor/jquery-backstretch/jquery.backstretch.min.js', '../../js/full-img-bg/full-img-bg.js'],
+          callback: function(url, result, key) {
+              if(key == 1) { // when second file in array is loaded, execute the init
+                cupcake.fullimagebackground.init();
+              }
+          }
         });
     </script>
 
