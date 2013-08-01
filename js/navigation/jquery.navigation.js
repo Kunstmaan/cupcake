@@ -1,41 +1,58 @@
 /* ==========================================================================
-   jQuery responsive navigation - v0.2
+   jQuery responsive navigation - v0.3
 
    Initialize:
    cupcake.navigation.init();
+
+   Support:
+   Android >=2.0
+   iOS >=4.0
+   WP >=7.5
    ========================================================================== */
 
 var cupcake = cupcake || {};
 
 cupcake.navigation = (function($, window, undefined) {
 
-    var init, windowWidth, toggleResponsivenavigation;
-    var totalWidth = 0;
+    var init, smallNavigationToggles, calcBigViewWidth, toggleNavigationState,
+        $navigationHook = $('.js-navigation'),
+        bigViewWidth = 0,
+        availableSpace = 0;
 
     init = function() {
-        $('.js-navigation__toggle').on('touchstart mousedown', function(e){
+        smallNavigationToggles();
+        calcBigViewWidth();
+        toggleNavigationState();
+
+        $(window).resize(toggleNavigationState);
+    };
+
+    smallNavigationToggles = function() {
+        $('.js-navigation__toggle').on('touchstart mousedown', function(e) {
             e.preventDefault();
             e.stopPropagation();
-        }).on('touchend mouseup', function(){
+        }).on('touchend mouseup', function() {
             $(this).toggleClass('navigation__toggle--active')
-                   .next('.navigation')
-                   .toggleClass('navigation--open');
+                   .next('.navigation__level')
+                   .toggleClass('navigation__level--open');
         });
-
-        $('.js-navigation li').each(function() {
-            totalWidth += parseInt($(this).width(), 10);
-        });
-
-        $(window).resize(toggleResponsivenavigation);
-        toggleResponsivenavigation();
     };
-    toggleResponsivenavigation = function() {
-        var windowWidth = $(window).width();
 
-        if (totalWidth > windowWidth) {
-            $('.js-responsive-nav').addClass('responsive-nav').removeClass('desktop-nav');
+    calcBigViewWidth = function() {
+        $('.js-main-navigation-level > .navigation__item').each(function() {
+            bigViewWidth += parseInt($(this).width(), 10);
+        });
+    };
+
+    toggleNavigationState = function() {
+        availableSpace = $navigationHook.width();
+
+        if (bigViewWidth > availableSpace) {
+            $navigationHook.addClass('navigation--small')
+                           .removeClass('navigation--big');
         } else {
-            $('.js-responsive-nav').removeClass('responsive-nav').addClass('desktop-nav');
+            $navigationHook.addClass('navigation--big')
+                           .removeClass('navigation--small');
         }
     };
 
@@ -44,4 +61,3 @@ cupcake.navigation = (function($, window, undefined) {
     };
 
 }(jQuery, window));
-

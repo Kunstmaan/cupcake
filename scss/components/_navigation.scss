@@ -1,11 +1,13 @@
 /* ==========================================================================
    Responsive navigation
+
+   v0.3
    ========================================================================== */
 
 
 /* General
    ========================================================================== */
-.navigation{
+.navigation__level {
     position: relative;
     float: left;
     width: 100%;
@@ -14,13 +16,35 @@
     background: $navigation-background;
     list-style: none;
 }
-.navigation__item{
+.navigation__level--sublevel {
+    position: absolute;
+    left: 0;
+    z-index: $navigation-sublevel-z-index;
+    display: none;
+    width: 100%;
+    background: $navigation-sublevel-background;
+    .navigation__link {
+        color: $navigation-sublevel-item-color;
+    }
+    .navigation__item--active {
+        background: $navigation-sublevel-item-active-background;
+        .icon-chevron-right {
+            display: none;
+        }
+    }
+}
+
+.navigation__item {
     display: block;
     float: left;
     width: $navigation-item-width;
     text-align: $navigation-item-text-align;
 }
-.navigation__link{
+.navigation__item--active {
+    background: $navigation-item-active-background;
+}
+
+.navigation__link {
     display: block;
     padding: 0 $navigation-item-link-padding;
     height: $navigation-height;
@@ -28,85 +52,57 @@
     color: $navigation-item-color;
     text-decoration: none;
 }
-.navigation__item--active{
-    background: $navigation-item-active-background;
-}
-.navigation__sublevel{
-    position: absolute;
-    left: 0;
-    z-index: $navigation-sublevel-z-index;
+
+.navigation__toggle, .cupcake-submenu__toggle {
     display: none;
-    width: 100%;
-    background: $navigation-sublevel-background;
-    .navigation__link{
-        color: $navigation-sublevel-item-color;
-    }
-    .navigation__item--active{
-        background: $navigation-sublevel-item-active-background;
-        .icon-chevron-right{
-            display: none;
+}
+
+
+/* Big version
+   ========================================================================== */
+.navigation--big {
+    .navigation__item {
+        &:hover {
+            background: $navigation-item-hover-background;
+            .navigation__link {
+                color: $navigation-item-hover-color;
+            }
+            > .navigation__level--sublevel {
+                display: block;
+            }
         }
     }
-}
-.navigation__toggle, .cupcake-submenu__toggle{
-    display: none;
+    .navigation__level--sublevel {
+        .navigation__item {
+            &:hover{
+                background: $navigation-sublevel-item-hover-background;
+                .navigation__link {
+                    color: $navigation-sublevel-item-hover-color;
+                }
+            }
+        }
+    }
 }
 
 
 /* Small version
    ========================================================================== */
-.responsive-nav {
-    .navigation__toggle{
-        display: block;
-        height: $navigation-height;
-        line-height: $navigation-height;
-        color: $navigation-toggle-color;
-        cursor: pointer;
-        .icon-remove, .icon-chevron-up{
-            display: none;
-        }
-        .icon-remove, .icon-reorder{
-            margin-left: .5em;
-        }
-    }
-    .navigation__toggle--active{
-        .icon-remove {
-            display: inline-block;
-        }
-        .icon-chevron-up{
-            display: inline;
-        }
-        .icon-reorder, .icon-chevron-down{
-            display: none;
-        }
-    }
-    .navigation__toggle--top{
-        padding: 0 $navigation-item-link-padding;
-        background: $navigation-toggle-top-background;
-        text-align: $navigation-toggle-top-text-align;
-    }
-    .navigation__toggle--submenu{
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: $navigation-height;
-        text-align: center;
-        border-left: 1px solid $navigation-toggle-submenu-border-color;
-    }
-    .navigation{
+.navigation--small {
+    .navigation__level {
         display: none;
-        @include transition(all 1s ease-in-out);
-        &.navigation--open{
+        &.navigation__level--open {
             display: block;
         }
     }
-    .navigation__item{
+
+    .navigation__item {
         position: relative;
         float: none;
         overflow: hidden;
         text-align: $navigation-item-small-text-align;
     }
-    .navigation__link{
+
+    .navigation__link {
         border-top: 1px solid $navigation-small-link-border-top-color;
         padding: 0 0 0 $navigation-item-link-padding;
         &:hover {
@@ -114,11 +110,12 @@
             color: $navigation-item-link-hover-color;
         }
     }
-    .navigation__sublevel{
+
+    .navigation__level--sublevel {
         position: static;
-        .navigation__item--active{
+        .navigation__item--active {
             background: $navigation-sublevel-background;
-            .icon-chevron-right{
+            .icon-chevron-right {
                 display: block;
                 float: right;
                 width: $navigation-height;
@@ -128,34 +125,42 @@
             }
         }
     }
-}
 
-
-/* Dropdown
-   ========================================================================== */
-@mixin dropdown(){
-    .navigation__item{
-        &:hover{
-            background: $navigation-item-hover-background;
-            .navigation__link{
-                color: $navigation-item-hover-color;
-            }
-            > .navigation__sublevel{
-                display: block;
-            }
+    .navigation__toggle {
+        display: block;
+        height: $navigation-height;
+        line-height: $navigation-height;
+        color: $navigation-toggle-color;
+        cursor: pointer;
+        .icon-remove, .icon-chevron-up {
+            display: none;
+        }
+        .icon-remove, .icon-reorder {
+            margin-left: .5em;
         }
     }
-    .navigation__sublevel{
-        .navigation__item{
-            &:hover{
-                background: $navigation-sublevel-item-hover-background;
-                .navigation__link{
-                    color: $navigation-sublevel-item-hover-color;
-                }
-            }
+    .navigation__toggle--active {
+        .icon-remove {
+            display: inline-block;
+        }
+        .icon-chevron-up {
+            display: inline;
+        }
+        .icon-reorder, .icon-chevron-down {
+            display: none;
         }
     }
-}
-.desktop-nav {
-    @include dropdown();
+    .navigation__toggle--top {
+        padding: 0 $navigation-item-link-padding;
+        background: $navigation-toggle-top-background;
+        text-align: $navigation-toggle-top-text-align;
+    }
+    .navigation__toggle--submenu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: $navigation-height;
+        text-align: center;
+        border-left: 1px solid $navigation-toggle-submenu-border-color;
+    }
 }

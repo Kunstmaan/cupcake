@@ -12,18 +12,19 @@
 
     <meta name="description" content="Responsive navigation manual test">
 
-    <link rel="stylesheet" href="../../css/base.css" type='text/css' />
     <link rel="stylesheet" href="../../css/bootstrap.css" type='text/css' />
+    <link rel="stylesheet" href="../../css/base.css" type='text/css' />
 </head>
 <body>
-    <h3>jQuery</h3>
-    <nav class="js-responsive-nav">
+    <h3>Cupcake navigation - jQuery v0.3</h3>
+
+    <nav role="navigation" class="js-navigation navigation navigation--big">
         <div class="js-navigation__toggle navigation__toggle navigation__toggle--top">
             MENU
             <i class="icon-reorder"></i>
             <i class="icon-remove"></i>
         </div>
-        <ul class="js-navigation navigation">
+        <ul class="js-main-navigation-level navigation__level">
             <li class="navigation__item">
                 <a href="#" class="navigation__link">
                     Navitem L1
@@ -37,7 +38,7 @@
                     <i class="icon-chevron-down"></i>
                     <i class="icon-chevron-up"></i>
                 </div>
-                <ul class="navigation navigation__sublevel">
+                <ul class="navigation__level navigation__level--sublevel">
                     <li class="navigation__item navigation__item--active">
                         <a href="#" class="navigation__link">
                             Navitem L2
@@ -50,29 +51,18 @@
                 <a href="#" class="navigation__link">
                     Navitem L1
                 </a>
-                <div class="js-navigation__toggle navigation__toggle navigation__toggle--submenu">
-                    <i class="icon-chevron-down"></i>
-                    <i class="icon-chevron-up"></i>
-                </div>
-                <ul class="navigation navigation__sublevel">
-                    <li class="navigation__item">
-                        <a href="#" class="navigation__link">
-                            Navitem L2
-                        </a>
-                    </li>
-                    <li class="navigation__item">
-                        <a href="#" class="navigation__link">
-                            Navitem L2
-                        </a>
-                    </li>
-                    <li class="navigation__item">
-                        <a href="#" class="navigation__link">
-                            Navitem L2
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="navigation__item navigation__item--active">
+            <li class="navigation__item">
+                <a href="#" class="navigation__link">
+                    Navitem L1
+                </a>
+            </li>
+            <li class="navigation__item">
+                <a href="#" class="navigation__link">
+                    Navitem L1
+                </a>
+            </li>
+            <li class="navigation__item">
                 <a href="#" class="navigation__link">
                     Navitem L1
                 </a>
@@ -87,7 +77,6 @@
 
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../js/navigation/jquery.navigation.js"></script>
-    <!--<<script src="../../../js/navigation/vanilla.navigation.js"></script>-->
 
     <script>
         $(function() {
