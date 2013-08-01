@@ -4,11 +4,11 @@
 
 @include keyframes(animateIn) {
     0% {
-        @include transform(translateX(-220px));
+        @include transform(translateX(220px));
         opacity: 0;
     }
     50% {
-        @include transform(translateX(-220px));
+        @include transform(translateX(220px));
         opacity: 0;
     }
     100% {

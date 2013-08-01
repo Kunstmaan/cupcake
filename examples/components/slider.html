@@ -18,52 +18,22 @@
 </head>
 <body>
     <div class="container">
-        <section class="slider-pp__wrapper">
-            <div class="slider-pp flexslider">
-                <ul class="slides">
-                    <li>
-                        <img src="../../img/general/placeholder_img.png">
-                        <div class="slider-pp__caption">
-                            <h3 class="slider-pp__caption--title">Title</h3>
-                            <p class="slider-pp__caption--text">In the works of Stone, a predominant concept is the concept of postsemioticist consciousness.</p>
-                            <a href="#" class="slider-pp__caption--button btn" type="button">Button</a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="../../img/general/placeholder_img.png">
-                        <div class="slider-pp__caption">
-                            <h3 class="slider-pp__caption--title">Title</h3>
-                            <p class="slider-pp__caption--text">In the works of Stone, a predominant concept is the concept of postsemioticist consciousness.</p>
-                            <a href="#" class="slider-pp__caption--button btn" type="button">Button</a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="../../img/general/placeholder_img.png">
-                        <div class="slider-pp__caption">
-                            <h3 class="slider-pp__caption--title">Title</h3>
-                            <p class="slider-pp__caption--text">In the works of Stone, a predominant concept is the concept of postsemioticist consciousness.</p>
-                            <a href="#" class="slider-pp__caption--button btn" type="button">Button</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <nav class="slider-pp__nav">
-                <div class="slider-pp__nav-wrapper">
-                    <div class="slider-pp__nav--item">
+        <section class="slider-pp slider-pp--left">
+            <nav class="slider-pp__thumbs js-thumbs">
+                <div class="slider-pp__thumbs-wrapper">
+                    <div class="slider-pp__thumbs--item js-thumbs--item">
                         <p>Narratives of failure</p>
                     </div>
-                    <div class="slider-pp__nav--item">
+                    <div class="slider-pp__thumbs--item js-thumbs--item">
                         <p>Dialectic nationalism a study of structural symbolism</p>
                     </div>
-                    <div class="slider-pp__nav--item">
+                    <div class="slider-pp__thumbs--item js-thumbs--item">
                         <p>Contexts of dialectic</p>
                     </div>
                 </div>
             </nav>
-        </section>
 
-        <section class="slider-pp__wrapper">
-            <div class="slider-pp--aside flexslider">
+            <div class="slider-pp__flexslider js-flexslider flexslider">
                 <ul class="slides">
                     <li>
                         <img src="../../img/general/placeholder_img.png">
@@ -91,19 +61,6 @@
                     </li>
                 </ul>
             </div>
-            <nav class="slider-pp__nav--aside">
-                <div class="slider-pp__nav-wrapper">
-                    <div class="slider-pp__nav--item">
-                        <p>Narratives of failure</p>
-                    </div>
-                    <div class="slider-pp__nav--item">
-                        <p>Dialectic nationalism a study of structural symbolism</p>
-                    </div>
-                    <div class="slider-pp__nav--item">
-                        <p>Contexts of dialectic</p>
-                    </div>
-                </div>
-            </nav>
         </section>
 
     </div>
@@ -114,28 +71,12 @@
 
     <script>
         $(function() {
-            $('.slider-pp').flexslider({
+            $('.js-flexslider').flexslider({
                 animation: "slide",
                 controlNav: true,
                 slideshow: false,
                 startAt: 0,
-                manualControls: ".slider-pp__nav .slider-pp__nav--item",
-                start: function(slider){
-                    $(slider.slides.eq(0)).addClass('flex-animateIn');
-                },
-                before: function(slider){
-                    var thisSlide = slider.slides.eq(slider.currentSlide),
-                        animateSlide = slider.slides.eq(slider.animatingTo);
-                    $(thisSlide).removeClass('flex-animateIn');
-                    $(animateSlide).addClass('flex-animateIn');
-                }
-            });
-            $('.slider-pp--aside').flexslider({
-                animation: "slide",
-                controlNav: true,
-                slideshow: false,
-                startAt: 0,
-                manualControls: ".slider-pp__nav--aside .slider-pp__nav--item",
+                manualControls: ".js-thumbs .js-thumbs--item",
                 start: function(slider){
                     $(slider.slides.eq(0)).addClass('flex-animateIn');
                 },
