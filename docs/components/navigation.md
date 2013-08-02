@@ -8,8 +8,16 @@
 
 
 ### Required includes
-- **Javascript**: jquery.navigation.js or vanilla.navigation.js
-- **Styles**: navigation.scss
+- **Javascript**
+ - jquery.navigation.js (and jQuery) or vanilla.navigation.js
+ - modernizr.js (for support of IE8 and below)
+- **Styles**
+ - navigation.scss
+
+
+### Dependencies
+- Font-awesome (icons for toggles and active state of small version)
+- Modernizr for the support of IE8 and below (HTML5 nav-element)
 
 
 ### Initialize
@@ -128,9 +136,3 @@ $navigation-item-link-hover-color: #ccc!default;
 - Android 3.0 and up
 - iOS 5.0 and up
 - WP 7.8 and up
-
-
-### Dependencies
-- Font-awesome
-- Modernizr for the support of IE8 and below (HTML5 nav-element)
-
