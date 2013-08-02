@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" href="../../css/bootstrap.css" type='text/css' />
     <link rel="stylesheet" href="../../css/base.css" type='text/css' />
+
+    <script src="../../vendor/modernizr/modernizr.custom.js"></script>
 </head>
 <body>
     <h3>Cupcake navigation - jQuery v0.3</h3>
@@ -45,6 +47,11 @@
                             <i class="icon-chevron-right"></i>
                         </a>
                     </li>
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link">
+                            Navitem L2
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="navigation__item">
@@ -56,6 +63,23 @@
                 <a href="#" class="navigation__link">
                     Navitem L1
                 </a>
+                <div class="js-navigation__toggle navigation__toggle navigation__toggle--submenu">
+                    <i class="icon-chevron-down"></i>
+                    <i class="icon-chevron-up"></i>
+                </div>
+                <ul class="navigation__level navigation__level--sublevel">
+                    <li class="navigation__item navigation__item--active">
+                        <a href="#" class="navigation__link">
+                            Navitem L2
+                            <i class="icon-chevron-right"></i>
+                        </a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link">
+                            Navitem L2
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="navigation__item">
                 <a href="#" class="navigation__link">
