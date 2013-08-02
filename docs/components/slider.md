@@ -5,7 +5,7 @@
 
 #### An extension of Flexslider which:
 
-* ads a fully customizable thumbnail navigation block
+* ads a fully customizable thumbnail navigation block on top, right, bottom or left of the slider
 * ads content animation options
 * is built with scss variables to easily configure the position, colors, etc of elements like caption and prev / next buttons
 
@@ -31,48 +31,51 @@
 
 ### HTML structure
 
+Note: for semantic reasons it's advised to place the thumb navigation block ackording to which lay-out you're using i.e. if you're using the top or left lay-out, the navigation sits on top of slider-pp__flexslider, when you're using the right or bottom set-up the nav block has to go below the slider-pp__flexslider.
+
 ```html
 <!-- Slider -->
-<section class="slider-pp flexslider">
-    <ul class="slides">
-        <li>
-            <img src="../../img/general/placeholder_img.png">
-            <div class="slider-pp__caption">
-                <h3 class="slider-pp__caption--title">Title</h3>
-                <p class="slider-pp__caption--text">Caption text</p>
-                <a href="#" class="slider-pp__caption--button btn" type="button">Button</a>
+<section class="slider-pp slider-pp--left">
+    <nav class="slider-pp__thumbs js-thumbs">
+        <div class="slider-pp__thumbs-wrapper">
+            <div class="slider-pp__thumbs--item js-thumbs--item">
+                <p>Narratives of failure</p>
             </div>
-        </li>
-        <li>
-            <img src="../../img/general/placeholder_img.png">
-            <div class="slider-pp__caption">
-                <h3 class="slider-pp__caption--title">Title</h3>
-                <p class="slider-pp__caption--text">Caption text</p>
-                <a href="#" class="slider-pp__caption--button btn" type="button">Button</a>
+            <div class="slider-pp__thumbs--item js-thumbs--item">
+                <p>Dialectic nationalism a study of structural symbolism</p>
             </div>
-        </li>
-        <li>
-            <img src="../../img/general/placeholder_img.png">
-            <div class="slider-pp__caption">
-                <h3 class="slider-pp__caption--title">Title</h3>
-                <p class="slider-pp__caption--text">Caption text</p>
-                <a href="#" class="slider-pp__caption--button btn" type="button">Button</a>
+            <div class="slider-pp__thumbs--item js-thumbs--item">
+                <p>Contexts of dialectic</p>
             </div>
-        </li>
-    </ul>
-</section>
-<!-- Slider Nav -->
-<section class="slider-pp__nav">
-    <div class="slider-pp__nav-wrapper">
-        <div class="slider-pp__nav--item">
-            <p>Thumbnail title</p>
         </div>
-        <div class="slider-pp__nav--item">
-            <p>Thumbnail title</p>
-        </div>
-        <div class="slider-pp__nav--item">
-            <p>Thumbnail title</p>
-        </div>
+    </nav>
+    <div class="slider-pp__flexslider js-flexslider flexslider">
+        <ul class="slides">
+            <li>
+                <img src="../../img/general/placeholder_img.png">
+                <div class="slider-pp__caption">
+                    <h3 class="slider-pp__caption--title">Title</h3>
+                    <p class="slider-pp__caption--text">In the works of Stone, a predominant concept is the concept of postsemioticist consciousness.</p>
+                    <a href="#" class="slider-pp__caption--button btn" type="button">Button</a>
+                </div>
+            </li>
+            <li>
+                <img src="../../img/general/placeholder_img.png">
+                <div class="slider-pp__caption">
+                    <h3 class="slider-pp__caption--title">Title</h3>
+                    <p class="slider-pp__caption--text">In the works of Stone, a predominant concept is the concept of postsemioticist consciousness.</p>
+                    <a href="#" class="slider-pp__caption--button btn" type="button">Button</a>
+                </div>
+            </li>
+            <li>
+                <img src="../../img/general/placeholder_img.png">
+                <div class="slider-pp__caption">
+                    <h3 class="slider-pp__caption--title">Title</h3>
+                    <p class="slider-pp__caption--text">In the works of Stone, a predominant concept is the concept of postsemioticist consciousness.</p>
+                    <a href="#" class="slider-pp__caption--button btn" type="button">Button</a>
+                </div>
+            </li>
+        </ul>
     </div>
 </section>
 ```
@@ -80,24 +83,26 @@
 ### jquery goodness
 
 ```javascript
-initSliders = function() {
-    $('.slider-pp').flexslider({
-        animation: "slide",
-        controlNav: true,
-        slideshow: false,
-        startAt: 0,
-        manualControls: ".slider-pp__nav .slider-pp__nav--item",
-        start: function(slider){
-            $(slider.slides.eq(0)).addClass('flex-animateIn');
-        },
-        before: function(slider){
-            var thisSlide = slider.slides.eq(slider.currentSlide),
-                animateSlide = slider.slides.eq(slider.animatingTo);
-            $(thisSlide).removeClass('flex-animateIn');
-            $(animateSlide).addClass('flex-animateIn');
-        }
+<script>
+    $(function() {
+        $('.js-flexslider').flexslider({
+            animation: "slide",
+            controlNav: true,
+            slideshow: false,
+            startAt: 0,
+            manualControls: ".js-thumbs .js-thumbs--item",
+            start: function(slider){
+                $(slider.slides.eq(0)).addClass('flex-animateIn');
+            },
+            before: function(slider){
+                var thisSlide = slider.slides.eq(slider.currentSlide),
+                    animateSlide = slider.slides.eq(slider.animatingTo);
+                $(thisSlide).removeClass('flex-animateIn');
+                $(animateSlide).addClass('flex-animateIn');
+            }
+        });
     });
-};
+</script>
 ```
 
 ### SCSS Variables
@@ -113,182 +118,116 @@ initSliders = function() {
 /* Viewport max-height
    ========================================================================== */
 
-    $viewportHeight:                100%!default;
+    $viewportHeight:                100% !default;
 
 /* Slide controls
    ========================================================================== */
 
-   //Setup for caption aside of slides: change floats, imageWidth and captionPosition for other lay-out options
+    $slideBackgroundColor:          lighten(tomato, 5%) !default;
+    $slidePosition:                 relative !default;
 
-    $slideBackgroundColor:          #049cdb!default;
-    $slidePosition:                 relative!default;
+/* Aside nav controls */
+
+    $asideThumbWidth:               20% !default;
+    $asideSlideWidth:               (100% - $asideThumbWidth) !default;
+    $asideLeftMarginLeft:           $asideThumbWidth !default;
 
 /* Caption Controls */
 
-    $captionFloat:                  right!default;
-    $captionWidth:                  20%!default;
-    $captionHeight:                 100%!default;
-    $captionPadding:                1.5% !default;
-    $captionPosition:               static!default;
-    $captionPositionTop:            auto!default;
-    $captionPositionRight:          auto!default;
-    $captionPositionBottom:         auto!default;
-    $captionPositionLeft:           auto!default;
+    //Setup for caption aside of slides: change floats, imageWidth and captionPosition for other lay-out options
 
-    $captionBackground:             none!default;
+    $captionFloat:                  left !default;
+    $captionWidth:                  20% !default;
+    $captionHeight:                 100% !default;
+    $captionPadding:                1.5% !default;
+    $captionPosition:               static !default;
+    $captionPositionTop:            auto !default;
+    $captionPositionRight:          auto !default;
+    $captionPositionBottom:         auto !default;
+    $captionPositionLeft:           auto !default;
+
+    $captionBackground:             none !default;
+
+    //Button
+    $buttonBackground:              #FFF !default;
+    $buttonStateBackground:         #F5F5F5 !default;
+    $buttonColor:                   tomato !default;
+    $buttonBorder:                  none !default;
+    $buttonBorderRadius:            5px !default;
+    $buttonPadding:                 0 .6em !default;
 
     //Fallbacks
-    $captionPaddingFallback:        $captionPadding!default;
-    $captionWidthFallback:          $captionWidth - ($captionPaddingFallback * 2)!default;
+    $captionPaddingFallback:        $captionPadding !default;
+    $captionWidthFallback:          $captionWidth - ($captionPaddingFallback * 2) !default;
 
 /* Image Controls */
 
-    $imageWidth:                    80%!default;
-    $imageFloat:                    right!default;
+    $imageWidth:                    (100% - $captionWidth) !default;                //defines the width of the images ackording to the width of the caption defined above. (When using the caption aside of the slides and not on top of them)
+    $imageFloat:                    left !default;
 
 /* Direction Controls */
 
+    $directionDisplay:              none !default;
+    $directionColor:                tomato !default;
+    $directionHoverColor:           lighten($directionColor, 10%) !default;
+
     $directionImage:                url(../img/buttons/slider_nav.svg) !default;
     $directionImageFallback:        url(../img/buttons/slider_nav.png) !default;
-    $directionImageRepeat:          no-repeat;
-    $directionImageWidth:           41px!default;
-    $directionImageHeight:          50px!default;
-    $directionImageMargin:          -25px 0 0 0!default;
+    $directionImageRepeat:          no-repeat !default;
+    $directionImageWidth:           50px !default;
+    $directionImageHeight:          50px !default;
+    $directionImageMargin:          -25px 0 0 0 !default;
 
-    $directionPostion:              absolute!default;
-    $directionPostionTop:           50%!default;
-    $directionPostionRight:         auto!default;
-    $directionPostionBottom:        auto!default;
-    $directionPostionLeft:          auto!default;
+    $directionPostion:              absolute !default;
+    $directionPostionTop:           50% !default;
+    $directionPostionRight:         auto !default;
+    $directionPostionBottom:        auto !default;
+    $directionPostionLeft:          auto !default;
 
-    $nextPositionTop:               $directionPostionTop!default;
-    $nextPositionRight:             -41px!default;
-    $nextPositionBottom:            auto!default;
-    $nextPositionLeft:              auto!default;
-    $nextBackgroundPosition:        100% 0!default;
+    $nextPositionTop:               $directionPostionTop !default;
+    $nextPositionRight:             -50px !default;
+    $nextPositionBottom:            auto !default;
+    $nextPositionLeft:              auto !default;
+    $nextBackgroundPosition:        100% 0 !default;
 
-    $prevPositionTop:               $directionPostionTop!default;
-    $prevPositionRight:             auto!default;
-    $prevPositionBottom:            auto!default;
-    $prevPositionLeft:              -41px!default;
-    $prevBackgroundPosition:        0 0!default;
+    $prevPositionTop:               $directionPostionTop !default;
+    $prevPositionRight:             auto !default;
+    $prevPositionBottom:            auto !default;
+    $prevPositionLeft:              -50px !default;
+    $prevBackgroundPosition:        0 0 !default;
 
 /* Navbar controls
    ========================================================================== */
 
-   $idleItemBackground:             #fff!default;
-   $idleItemText:                   #555!default;
-   $hoverItemBackground:            #ddd!default;
-   $hoverItemText:                  #555!default;
-   $activeItemBackground:           #555!default;
-   $activeItemText:                 #fff!default;
+   $idleItemBackground:             #555 !default;
+   $idleItemText:                   #EBEBEB !default;
+   $hoverItemBackground:            #EBEBEB !default;
+   $hoverItemText:                  #555 !default;
+   $activeItemBackground:           tomato !default;
+   $activeItemText:                 #fff !default;
 
-   $itemAmount:                     3!default;
-   $itemWidth:                      100%/$itemAmount!default; //only change the amount of items, item width is calculated automatically
-   $itemPadding:                    2%!default;
+   $itemAmount:                     3 !default;
+   $itemSize:                       100%/$itemAmount !default; //only change the amount of items, item width is calculated automatically
+   $itemPadding:                    3% !default;
 
-   $idleItemDevider:                1px solid #ddd!default;
-   $activeItemDevider:              1px solid #555!default;
+   $idleItemDevider:                1px solid #ddd !default;
+   $activeItemDevider:              1px solid #555 !default;
 
    //Fallbacks
-    $itemPaddingFallback:           $itemPadding!default;
-    $itemWidthFallback:             $itemWidth - ($itemPaddingFallback * 2)!default;
+    $itemPaddingFallback:           $itemPadding !default;
+    $itemWidthFallback:             $itemSize - ($itemPaddingFallback * 2) !default;
 
 /* Slider Animations
    ========================================================================== */
 
    $animateContent :                true !default;
+   $animateKeyframe0:               translateX(220px) !default;
+   $animateKeyframe50:              translateX(220px) !default;
+   $animateKeyframe100:             translateX(0) !default;
 
    @if $animateContent == true {
       .flex-animateIn .slider-pp__caption {
          @extend %slider-pp__caption__animate-in;
       }
    }
-```
-
-### Caption & navigation block SCSS
-
-```scss
-/* Caption */
-.slider-pp__caption {
-    float: $captionFloat;
-    width: $captionWidth;
-    height: $captionHeight;
-    color: #fff;
-    background: $captionBackground;
-    position: $captionPosition;
-    top: $captionPositionTop;
-    right: $captionPositionRight;
-    left: $captionPositionBottom;
-    bottom: $captionPositionLeft;
-    padding: 1em;
-    h3 {
-        margin: 0 0 .5em 0;
-    }
-    p {
-        margin: 0;
-    }
-    .slider-pp__caption--button {
-        @extend %button__small--white;
-    }
-}
-/* Slider custom nav block */
-/* Slider custom nav block */
-.slider-pp__nav {
-    padding: 0;
-    z-index: 1;
-    position: relative;
-    width: 100%;
-    display: table;
-    &:before {
-        content: 'shadow'; /* empty content = shadow won't appear */
-        position: absolute;
-        width: 100%;
-        height: 10%;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-
-        border-radius: 50%;
-        box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-        font-size: 0;
-    }
-}
-.slider-pp__nav-wrapper {
-    display: table-row;
-}
-.slider-pp__nav--item {
-    margin: 0;
-    width: $itemWidth;
-    padding: $itemPadding;
-    position: relative;
-    display: table-cell;
-    vertical-align: middle;
-
-    background: $idleItemBackground;
-    color: $idleItemText;
-    border-left: $idleItemDevider;
-    cursor: pointer;
-    @include transition (all .3s ease-in);
-    &:first-child {
-        border: none;
-    }
-    p {
-        margin: 0;
-    }
-    &:hover, &:focus {
-        background: $hoverItemBackground;
-        color: $hoverItemText;
-    }
-}
-
-.flex-active {
-    border-left: $activeItemDevider;
-    background: $activeItemBackground;
-    color: $activeItemText;
-    &:hover {
-        background: $activeItemBackground;
-        color: $activeItemText;
-    }
-}
 ```

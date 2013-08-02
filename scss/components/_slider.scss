@@ -1,7 +1,7 @@
 /* ==========================================================================
    General
    ========================================================================== */
-html, body {height:100%}
+
 * {
    -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -36,10 +36,9 @@ html, body {height:100%}
 }
 
 .slider-pp {
+    width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
-    @include clearfix;
 }
 
 .slider-pp .slides > li {
@@ -49,13 +48,13 @@ html, body {height:100%}
 
 .slider-pp__flexslider {
     margin: 0;
+    position: relative;
+    zoom: 1;
+    z-index: 1;
     background: #fff;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    position: relative;
-    zoom: 1;
-    z-index: 1;
     .slides {
         position: relative;
         li {
@@ -71,17 +70,17 @@ html, body {height:100%}
 }
 
 .slider-pp__caption {
-    float: $captionFloat;
     width: $captionWidth;
-    padding: $captionPadding;
     height: $captionHeight;
-    color: #fff;
-    background: $captionBackground;
+    padding: $captionPadding;
+    float: $captionFloat;
     position: $captionPosition;
     top: $captionPositionTop;
     right: $captionPositionRight;
     left: $captionPositionBottom;
     bottom: $captionPositionLeft;
+    color: #fff;
+    background: $captionBackground;
     h3 {
         margin: 0 0 .5em 0;
     }
@@ -138,26 +137,25 @@ html, body {height:100%}
 
 /* Direction Nav */
 .flex-direction-nav {
-    margin: 0;
-    padding: 0;
     *height: 0;
     *width: 100%;
+    display: $directionDisplay;
+    margin: 0;
+    padding: 0;
     list-style: none;
     font-size: 0;
     line-height: 0;
-
-
     a {
         width: $directionImageWidth;
         height: $directionImageHeight;
-        background-image: $directionImage;
-        background-repeat: $directionImageRepeat;
-        position: $directionPostion;
         margin: $directionImageMargin;
+        position: $directionPostion;
         display: block;
         z-index: -9999;
-        text-indent: -9999px;
+        background-image: $directionImage;
+        background-repeat: $directionImageRepeat;
         background-color: $directionColor;
+        text-indent: -9999px;
         opacity: 1;
         @include transition (all .3s ease-in);
         &:hover {
@@ -200,10 +198,10 @@ html, body {height:100%}
    Specific sliders
    ========================================================================== */
 
-.slider-pp--bottom {
+.slider-pp--bottom, .slider-pp--top {
     .slider-pp__thumbs {
-        position: relative;
         width: 100%;
+        position: relative;
         display: table;
     }
 
@@ -225,37 +223,33 @@ html, body {height:100%}
 }
 
 .slider-pp--right, .slider-pp--left {
-    position: relative;
     height: 100%;
-
+    position: relative;
     .slider-pp__flexslider {
-        width: 80%;                                                            //VARIABEL
+        width: $asideSlideWidth;
     }
-
     /* Slider custom nav block */
     .slider-pp__thumbs {
-        position: static;
-        display: block;
-        width: 20%;
+        width: $asideThumbWidth;
         height: 100%;
+        position: absolute;
+        top: 0;
+        display: block;
     }
-
     .slider-pp__thumbs-wrapper {
         width: 100%;
         height: 100%;
         display: block;
     }
-
     .slider-pp__thumbs--item {
-        display: block;
         width: 100%;
         height: $itemSize;
+        display: block;
         border-top: $idleItemDevider;
         &:first-child {
             border: none;
         }
     }
-
     /* Direction Nav */
     .flex-direction-nav {
         display: $directionDisplay;
@@ -263,19 +257,15 @@ html, body {height:100%}
 }
 
 .slider-pp--right .slider-pp__thumbs {
-    float: right;
-}
-
-.slider-pp--right .slider-pp__flexslider {
-    float: right;
+        right: 0;
 }
 
 .slider-pp--left .slider-pp__thumbs {
-    float: left;
+        left: 0;
 }
 
 .slider-pp--left .slider-pp__flexslider {
-    float: left;
+    margin-left: $asideLeftMarginLeft;
 }
 
 /* ==========================================================================
@@ -289,14 +279,14 @@ html, body {height:100%}
 }
 
 @media (max-width: 48em) {
-    .slider-pp {
+    .slider-pp, .slider-pp--top, .slider-pp--right, .slider-pp--bottom, .slider-pp--left {
+        position: relative;
         .slider-pp__thumbs {
-            margin-top: 1em;
-            text-align: center;
+            width: 100%;
+            margin: 0;
             padding: 0;
-            margin-bottom: 3.5em;
             z-index: 1;
-            position: relative;
+            text-align: center;
             &:before {
                 content: '';
                 display: none;
@@ -308,12 +298,13 @@ html, body {height:100%}
             }
             height: 15px;
             width: 15px;
-            border-radius: 50%;
             padding: 0;
             margin-right: .5em;
-            display: inline-block;
-            border: 1px solid $activeItemBackground;
             float: none;
+            display: inline-block;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid $activeItemBackground;
             &:first-child {
                 border: 1px solid $activeItemBackground;
             }
@@ -321,12 +312,16 @@ html, body {height:100%}
                 box-shadow: none;
             }
         }
+        .slider-pp__flexslider {
+            width: 100%;
+        }
         .slider-pp__flexslider .slides img{
             width: 100%;
         }
         .slider-pp__caption {
             width: 100%;
             height: 100%;
+            position: static;
             padding: .5em !important;
             h3 {
                 margin: 0 0 .5em 0;
@@ -337,7 +332,23 @@ html, body {height:100%}
                 margin: 0;
             }
         }
-        .flex-viewport {max-height: 100%;}
+        .flex-viewport {
+            max-height: 100%;
+        }
+        .flex-active {
+            background: $activeItemBackground;
+        }
+    }
+
+    .slider-pp--top, .slider-pp--left{
+        .slider-pp__thumbs {
+            position: absolute;
+            bottom: -100px;
+        }
+    }
+
+    .slider-pp--left .slider-pp__flexslider {
+        margin: 0;
     }
 }
 
