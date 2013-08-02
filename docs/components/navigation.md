@@ -26,6 +26,7 @@ cupcake.navigation.init();
 ```
 
 ### Basic html structure
+The class '.navigation--big' is already on the nav-element because this is the default state and the state for when there is no javascript.
 ```html
 <!-- Navigation -->
 <nav role="navigation" class="js-navigation navigation navigation--big">
