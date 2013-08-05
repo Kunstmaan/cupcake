@@ -1,4 +1,29 @@
-.flex-container, .slider-pp__wrapper, .flex-container, .slider-pp {
+/* ==========================================================================
+   General
+   ========================================================================== */
+
+.slider-pp * {
+   -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+           box-sizing: border-box;
+   -webkit-font-smoothing: antialiased;
+           font-smoothing: antialiased;
+   -webkit-backface-visibility: hidden;
+}
+
+.container {
+    max-width: 62.5em;
+    width: 100%;
+    margin: 0 auto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+
+/* ==========================================================================
+   General Slider
+   ========================================================================== */
+
+.flex-container, .slider-pp, .flex-container, .slider-pp__flexslider {
     a:focus, a:active {
         outline: none;
     }
@@ -10,60 +35,26 @@
     list-style: none;
 }
 
-.slider-pp__wrapper {
+.slider-pp {
+    width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
 .slider-pp .slides > li {
     display: none;
-    -webkit-backface-visibility: hidden;
 }
 
-.container {
-    max-width: 62.5em;
-    width: 100%;
-    margin: 0 auto;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: normal;
-}
-
-.slider-pp * {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-            font-smoothing: antialiased;
-    -webkit-backface-visibility: hidden;
-}
-
-.slider-pp {
+.slider-pp__flexslider {
     margin: 0;
+    padding: 0;
+    position: relative;
+    zoom: 1;
+    z-index: 1;
     background: #fff;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    position: relative;
-    zoom: 1;
-    z-index: 1;
-    &:before, &:after {
-        position: absolute;
-        width: 2%;
-        height: 90%;
-        content: '';
-        border-radius: 50%;
-        box-shadow: 0 0 20px rgba(#000, .5);
-        z-index: -1;
-    }
-    &:before {
-        left: 0;
-        top: 0;
-    }
-    &:after {
-        right: 0;
-        top: 0;
-    }
     .slides {
         position: relative;
         li {
@@ -76,20 +67,30 @@
             display: block;
         }
     }
+
+    &:hover {
+        .flex-next{
+            right: $nextPositionRight;
+        }
+
+        .flex-prev{
+            left: $prevPositionLeft;
+        }
+    }
 }
 
 .slider-pp__caption {
-    float: $captionFloat;
     width: $captionWidth;
-    padding: $captionPadding;
     height: $captionHeight;
-    color: #fff;
-    background: $captionBackground;
+    padding: $captionPadding;
+    float: $captionFloat;
     position: $captionPosition;
     top: $captionPositionTop;
     right: $captionPositionRight;
     left: $captionPositionBottom;
     bottom: $captionPositionLeft;
+    color: #fff;
+    background: $captionBackground;
     h3 {
         margin: 0 0 .5em 0;
     }
@@ -113,46 +114,19 @@
 }
 
 /* Slider custom nav block */
-.slider-pp__nav {
+.slider-pp__thumbs {
     padding: 0;
     z-index: 1;
-    position: relative;
-    width: 100%;
-    display: table;
-    &:before {
-        content: ' '; /* empty content = shadow won't appear */
-        position: absolute;
-        width: 100%;
-        height: 10%;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-
-        border-radius: 50%;
-        box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-        font-size: 0;
-    }
 }
 
-.slider-pp__nav-wrapper {
-    display: table-row;
-}
-
-.slider-pp__nav--item {
+.slider-pp__thumbs--item {
     margin: 0;
-    width: $itemWidth;
     padding: $itemPadding;
     position: relative;
-    display: table-cell;
-    vertical-align: middle;
     background: $idleItemBackground;
     color: $idleItemText;
-    border-left: $idleItemDevider;
     cursor: pointer;
     @include transition (all .3s ease-in);
-    &:first-child {
-        border: none;
-    }
     p {
         margin: 0;
     }
@@ -163,7 +137,6 @@
 }
 
 .flex-active {
-    border-left: $activeItemDevider;
     background: $activeItemBackground;
     color: $activeItemText;
     &:hover {
@@ -174,24 +147,30 @@
 
 /* Direction Nav */
 .flex-direction-nav {
+    *height: 0;
+    *width: 100%;
     margin: 0;
     padding: 0;
-    *height: 0;
+    display: $directionDisplay;
     list-style: none;
     font-size: 0;
     line-height: 0;
-    *width: 100%;
     a {
         width: $directionImageWidth;
         height: $directionImageHeight;
-        background-image: $directionImage;
-        background-repeat: $directionImageRepeat;
-        position: $directionPostion;
         margin: $directionImageMargin;
+        position: $directionPostion;
         display: block;
         z-index: -9999;
+        background-image: $directionImage;
+        background-repeat: $directionImageRepeat;
+        background-color: $directionColor;
         text-indent: -9999px;
         opacity: 1;
+        @include transition (all .3s ease-in);
+        &:hover {
+            background-color: $directionHoverColor;
+        }
     }
     a.flex-next:before {
         content: ' ';
@@ -212,22 +191,89 @@
     }
 }
 
-.flexslider:hover .flex-next{
-    right: $nextPositionRight;
-}
-
-.flexslider:hover .flex-prev{
-    left: $prevPositionLeft;
-}
-
 /* Fix for the caption animation */
 .clone .slider-pp__caption {
     opacity: 0;
 }
 
 /* ==========================================================================
+   Specific sliders
+   ========================================================================== */
+
+.slider-pp--bottom, .slider-pp--top {
+    .slider-pp__thumbs {
+        width: 100%;
+        position: relative;
+        display: table;
+    }
+
+    .slider-pp__thumbs-wrapper {
+        display: table-row;
+    }
+
+    .slider-pp__thumbs--item {
+        width: $itemSize;
+        height: 100%;
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        border-left: $idleItemDevider;
+        &:first-child {
+            border: none;
+        }
+    }
+}
+
+.slider-pp--right, .slider-pp--left {
+    height: 100%;
+    position: relative;
+    .slider-pp__flexslider {
+        width: $asideSlideWidth;
+    }
+    /* Slider custom nav block */
+    .slider-pp__thumbs {
+        width: $asideThumbWidth;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: block;
+    }
+    .slider-pp__thumbs-wrapper {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .slider-pp__thumbs--item {
+        width: 100%;
+        height: $itemSize;
+        display: block;
+        border-top: $idleItemDevider;
+        &:first-child {
+            border: none;
+        }
+    }
+    /* Direction Nav */
+    .flex-direction-nav {
+        display: $directionDisplay;
+    }
+}
+
+.slider-pp--right .slider-pp__thumbs {
+    right: 0;
+}
+
+.slider-pp--left .slider-pp__thumbs {
+    left: 0;
+}
+
+.slider-pp--left .slider-pp__flexslider {
+    margin-left: $asideLeftMarginLeft;
+}
+
+/* ==========================================================================
    Media Queries
    ========================================================================== */
+
 @media (max-width: 67em) {
     .flex-direction-nav {
         display: none;
@@ -235,54 +281,81 @@
 }
 
 @media (max-width: 48em) {
-    .slider-pp__nav {
-        margin-top: 1em;
-        text-align: center;
-        padding: 0;
-        margin-bottom: 3.5em;
-        z-index: 1;
+    .slider-pp, .slider-pp--top, .slider-pp--right, .slider-pp--bottom, .slider-pp--left {
         position: relative;
-        &:before {
-            content: '';
-            display: none;
+        margin: 0 0 40px 0;
+
+        .slider-pp__thumbs {
+            position: absolute;
+            top: auto;
+            bottom: -30px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            z-index: 1;
+            text-align: center;
+            &:before {
+                content: '';
+                display: none;
+            }
         }
-    }
-    .slider-pp__nav--item {
-        p {
-            display: none;
-        }
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        padding: 0;
-        margin-right: .5em;
-        display: inline-block;
-        border: 1px solid $activeItemBackground;
-        float: none;
-        &:first-child {
+        .slider-pp__thumbs--item {
+            p {
+                display: none;
+            }
+            height: 15px;
+            width: 15px;
+            padding: 0;
+            margin-right: .5em;
+            float: none;
+            display: inline-block;
+            border-radius: 50%;
+            background: #fff;
             border: 1px solid $activeItemBackground;
+            &:first-child {
+                border: 1px solid $activeItemBackground;
+            }
+            &:before {
+                box-shadow: none;
+            }
         }
-        &:before {
-            box-shadow: none;
+        .slider-pp__flexslider {
+            width: 100%;
+        }
+        .slider-pp__flexslider .slides img{
+            width: 100%;
+        }
+        .slider-pp__caption {
+            width: 100%;
+            height: 100%;
+            position: static;
+            padding: .5em !important;
+            h3 {
+                margin: 0 0 .5em 0;
+                font-size: 1em;
+                line-height: 100%;
+            }
+            p {
+                margin: 0;
+            }
+        }
+        .flex-viewport {
+            max-height: 100%;
+        }
+        .flex-active {
+            background: $activeItemBackground;
         }
     }
-    .slider-pp .slides img{
-        width: 100%;
-    }
-    .slider-pp__caption {
-        width: 100%;
-        height: 100%;
-        padding: .5em !important;
-        h3 {
-            margin: 0 0 .5em 0;
-            font-size: 1em;
-            line-height: 100%;
-        }
-        p {
+
+    .slider-pp--left, .slider-pp--right {
+        .slider-pp__flexslider {
             margin: 0;
         }
+
+        .slider-pp__thumbs, .slider-pp__thumbs-wrapper {
+            height: auto;
+        }
     }
-    .flex-viewport {max-height: 100%;}
 }
 
 /* ==========================================================================
