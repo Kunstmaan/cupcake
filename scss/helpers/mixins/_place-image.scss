@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Place image
+   ========================================================================== */
+
+@mixin place_image($width, $height){
+    text-indent: 100%;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    width: $width;
+    height: $height;
+}
