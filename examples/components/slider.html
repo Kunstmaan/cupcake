@@ -18,8 +18,20 @@
 </head>
 <body>
     <div class="container">
-        <section class="slider-pp slider-pp--bottom">
-
+        <section class="slider-pp slider-pp--left">
+            <nav class="slider-pp__thumbs js-thumbs">
+                <div class="slider-pp__thumbs-wrapper">
+                    <div class="slider-pp__thumbs--item js-thumbs--item">
+                        <p>Narratives of failure</p>
+                    </div>
+                    <div class="slider-pp__thumbs--item js-thumbs--item">
+                        <p>Dialectic nationalism a study of structural symbolism</p>
+                    </div>
+                    <div class="slider-pp__thumbs--item js-thumbs--item">
+                        <p>Contexts of dialectic</p>
+                    </div>
+                </div>
+            </nav>
             <div class="slider-pp__flexslider js-flexslider flexslider">
                 <ul class="slides">
                     <li>
@@ -48,35 +60,21 @@
                     </li>
                 </ul>
             </div>
-
-            <nav class="slider-pp__thumbs js-thumbs">
-                <div class="slider-pp__thumbs-wrapper">
-                    <div class="slider-pp__thumbs--item js-thumbs--item">
-                        <p>Narratives of failure</p>
-                    </div>
-                    <div class="slider-pp__thumbs--item js-thumbs--item">
-                        <p>Dialectic nationalism a study of structural symbolism</p>
-                    </div>
-                    <div class="slider-pp__thumbs--item js-thumbs--item">
-                        <p>Contexts of dialectic</p>
-                    </div>
-                </div>
-            </nav>
         </section>
     </div>
 
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/flexslider/jquery.flexslider.js"></script>
-    <script src="../../js/slider/slider.js"></script>
 
     <script>
         $(function() {
             $('.js-flexslider').flexslider({
                 animation: "slide",
+                controlsContainer: ".js-thumbs",
                 controlNav: true,
                 slideshow: false,
                 startAt: 0,
-                manualControls: ".js-thumbs .js-thumbs--item",
+                manualControls: ".js-thumbs--item",
                 start: function(slider){
                     $(slider.slides.eq(0)).addClass('flex-animateIn');
                 },
