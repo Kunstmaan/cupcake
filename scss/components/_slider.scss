@@ -282,9 +282,10 @@
     .slider-pp, .slider-pp--top, .slider-pp--right, .slider-pp--bottom, .slider-pp--left {
         position: relative;
         .slider-pp__thumbs {
+            position: static;
             width: 100%;
             margin: 0;
-            padding: 0;
+            padding: 15px 0 0 0;
             z-index: 1;
             text-align: center;
             &:before {
@@ -337,13 +338,6 @@
         }
         .flex-active {
             background: $activeItemBackground;
-        }
-    }
-
-    .slider-pp--top, .slider-pp--left{
-        .slider-pp__thumbs {
-            position: absolute;
-            bottom: -100px;
         }
     }
 
