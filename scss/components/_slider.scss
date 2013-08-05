@@ -139,9 +139,9 @@
 .flex-direction-nav {
     *height: 0;
     *width: 100%;
-    display: $directionDisplay;
     margin: 0;
     padding: 0;
+    display: $directionDisplay;
     list-style: none;
     font-size: 0;
     line-height: 0;
@@ -257,11 +257,11 @@
 }
 
 .slider-pp--right .slider-pp__thumbs {
-        right: 0;
+    right: 0;
 }
 
 .slider-pp--left .slider-pp__thumbs {
-        left: 0;
+    left: 0;
 }
 
 .slider-pp--left .slider-pp__flexslider {
