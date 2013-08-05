@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Vanilla responsive navigation - v0.1
+   Vanilla responsive navigation - v0.3
 
    Initialize:
    cupcake.navigation.init();
@@ -10,46 +10,64 @@
    WP >=7.8
    ========================================================================== */
 
-var cupcake.navigation = (function(window, undefined) {
-    var init, delayfix, addActiveClass, openNextMenu;
+var cupcake = cupcake || {};
 
-    init = function(){
+cupcake.navigation = (function(window, undefined) {
+
+    var init, smallNavigationToggles, calcBigViewWidth, toggleNavigationState,
+        navigationHook = document.getElementsByClassName('js-navigation')[0],
+        bigViewWidth = 0,
+        availableSpace = 0;
+
+    init = function() {
+        smallNavigationToggles();
+        calcBigViewWidth();
+        toggleNavigationState();
+
+        window.onresize = toggleNavigationState;
+    };
+
+    smallNavigationToggles = function() {
         [].forEach.call( document.querySelectorAll('.js-navigation__toggle'), function(el) {
             el.addEventListener('mousedown', function(e) {
-                delayfix(e);
+                e.preventDefault();
+                e.stopPropagation();
             }, false);
             el.addEventListener('touchstart', function(e) {
-                delayfix(e);
+                e.preventDefault();
+                e.stopPropagation();
             }, false);
             el.addEventListener('mouseup', function() {
-                addActiveClass(this);
-                openNextMenu(this);
+                el.classList.toggle('navigation__toggle--active');
+                el.nextElementSibling.classList.toggle('navigation__level--open');
             }, false);
             el.addEventListener('touchend', function() {
-                addActiveClass(this);
-                openNextMenu(this);
+                el.classList.toggle('navigation__toggle--active');
+                el.nextElementSibling.classList.toggle('navigation__level--open');
             }, false);
         });
     };
 
-    // Fix 300ms delay by removing events
-    delayfix = function(e){
-        e.preventDefault();
-        e.stopPropagation();
+    calcBigViewWidth = function() {
+         [].forEach.call( document.querySelectorAll('.js-main-navigation-level > .navigation__item'), function(el) {
+            bigViewWidth += parseInt(el.offsetWidth, 10);
+         });
     };
 
-    // Toggle active class
-    addActiveClass = function(el){
-        el.classList.toggle('navigation__toggle--active');
-    };
+    toggleNavigationState = function() {
+        availableSpace = navigationHook.offsetWidth;
 
-    // Open next menu
-    openNextMenu = function(el){
-        var nextMenu = el.nextElementSibling;
-        nextMenu.classList.toggle('navigation--open');
+        if (bigViewWidth > availableSpace) {
+            navigationHook.classList.add('navigation--small');
+            navigationHook.classList.remove('navigation--big');
+        } else {
+            navigationHook.classList.add('navigation--big');
+            navigationHook.classList.remove('navigation--small');
+        }
     };
 
     return{
         init: init
     };
+
 })(window);
