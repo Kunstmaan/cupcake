@@ -158,11 +158,11 @@ Note: for semantic reasons it's advised to place the thumb navigation block acco
 
     //Fallbacks
     $captionPaddingFallback:        $captionPadding !default;
-    $captionWidthFallback:          $captionWidth - ($captionPaddingFallback * 2) !default;
+    $captionWidthFallback:          $captionWidth - ($captionPaddingFallback * 2) - 0.3% !default;
 
 /* Image Controls */
 
-    $imageWidth:                    (100% - $captionWidth) !default;                //defines the width of the images ackording to the width of the caption defined above. (When using the caption aside of the slides and not on top of them)
+    $imageWidth:                    (100% - $captionWidth) !default; //defines the width of the images ackording to the width of the caption defined above. (When using the caption aside of the slides and not on top of them)
     $imageFloat:                    left !default;
 
 /* Direction Controls */
@@ -215,7 +215,15 @@ Note: for semantic reasons it's advised to place the thumb navigation block acco
 
    //Fallbacks
     $itemPaddingFallback:           $itemPadding !default;
-    $itemWidthFallback:             $itemSize - ($itemPaddingFallback * 2) !default;
+    $itemSizeFallback:              $itemSize - ($itemPaddingFallback * 2) !default;
+
+    //IE 7 doesn't calculate the padding of elements which are stacked vertically logically.
+    //(Normaly padding is added on top and bottom of the element, hence the previous line of code
+    //which calculates the size of the item minus 2 times the padding value).
+    //This does not work in IE 7 for which you only have to subtract the padding value once.
+    //The following two lines of code are fixes for that problem. Review needed.
+    $itemIE7HeightFallback:         $itemSize - ($itemPaddingFallback) !default;
+    $itemIE7WidthFallback:          100% - ($itemPaddingFallback * 2) !default;
 
 /* Slider Animations
    ========================================================================== */
@@ -230,4 +238,5 @@ Note: for semantic reasons it's advised to place the thumb navigation block acco
          @extend %slider-pp__caption__animate-in;
       }
    }
+
 ```
