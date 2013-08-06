@@ -13,9 +13,7 @@ cupcake.backstretch = (function($, window, undefined) {
     var init;
 
     init = function() {
-        var imageUrl = $('.full-img-bg').css("background-image")
-                          .replace('url(','')
-                          .replace(')','');
+        var imageUrl = $('.full-img-bg').data("backstretch-img");
 
         $('.full-img-bg').backstretch(imageUrl);
     };
