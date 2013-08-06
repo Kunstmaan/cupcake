@@ -57,7 +57,7 @@
 
 /* Direction Controls */
 
-    $directionDisplay:              none !default;
+    $directionDisplay:              block !default; //overwrite manually, in the component scss file, when using multiple sliders, with multiple lay-outs on one page (the left and right thumbnail sliders don't use the direction nav by default)
     $directionColor:                tomato !default;
     $directionHoverColor:           lighten($directionColor, 10%) !default;
 
