@@ -9,13 +9,13 @@ Default, `background-size:cover` will be used. For browsers that don't support `
 ## HTML
 ### On the Body tag
 ```html
-    <body class="full-img-bg" style="background-image: url(imgUrl);">
+    <body class="full-img-bg" style="background-image: url(imgUrl);" data-backstretch-img="imgUrl">
         ...
     </body>
 ```
 ### On a block level element
 ```html
-    <div class="full-img-bg" style="background-image: url(imgUrl);">
+    <div class="full-img-bg" style="background-image: url(imgUrl);" data-backstretch-img="imgUrl">
         ...
     </div>
 ```
