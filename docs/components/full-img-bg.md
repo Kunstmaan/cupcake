@@ -25,7 +25,7 @@ Default, `background-size:cover` will be used. For browsers that don't support `
 #### Backstretch.js
 `https://github.com/srobbin/jquery-backstretch`
 
-### Custom init function
+#### Custom init function
 `js/full-img-bg/full-img-bg.js`
 
 ### Initiate
