@@ -4,15 +4,15 @@
 
 @include keyframes(animateIn) {
     0% {
-        @include transform(translateX(-220px));
+        @include transform($animateKeyframe0);
         opacity: 0;
     }
     50% {
-        @include transform(translateX(-220px));
+        @include transform($animateKeyframe50);
         opacity: 0;
     }
     100% {
-        @include transform(translateX(0px));
+        @include transform($animateKeyframe100);
         opacity: 1;
     }
 }
