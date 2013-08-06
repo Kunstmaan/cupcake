@@ -1,29 +1,46 @@
 # Cupcake Full Image Background
 
-The image is placed inline for content input of the image via the CMS.
-Default, `background-size:cover` will be used.
-For browsers that don't support `background-size:cover`, modernizr will use feature detection to get the fallback scripts.
+CSS3 Full Image background with fallback (backstretch.js) for older browsers.
+The image is placed inline for content-input of the image trough the CMS.
 
-### Fallback jquery plugin
-`https://github.com/srobbin/jquery-backstretch`
+Default, `background-size:cover` will be used. For browsers that don't support `background-size:cover`, modernizr will use feature detection to get the fallback scripts.
 
-### Fallback custom jquery script
-`js/full-img-bg/full-img-bg.js`
 
-### html structure
-#### Body
+## HTML
+### On the Body tag
 ```html
     <body class="full-img-bg" style="background-image: url(imgUrl);">
+        ...
     </body>
 ```
-#### Block level element
+### On a block level element
 ```html
     <div class="full-img-bg" style="background-image: url(imgUrl);">
+        ...
     </div>
 ```
 
-#### Initiate
-`Modernizr.load({
+## Fallback
+### Needed scripts
+#### Backstretch.js
+`https://github.com/srobbin/jquery-backstretch`
+
+### Custom init function
+`js/full-img-bg/full-img-bg.js`
+
+### Initiate
+```js
+Modernizr.load({
     test: Modernizr.backgroundsize,
-    nope: ['../../js/full-img-bg/jquery.backstretch.min.js', '../../js/full-img-bg/full-img-bg.js']
-});`
+    nope: ['../../vendor/jquery-backstretch/jquery.backstretch.min.js', '../../js/full-img-bg/full-img-bg.js'],
+    callback: function(url, result, key) {
+        if(key == 1) {
+            cupcake.backstretch.init();
+        }
+    }
+});
+```
+
+
+
+
