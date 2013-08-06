@@ -257,7 +257,7 @@
     }
     /* Direction Nav */
     .flex-direction-nav {
-        display: none;
+        display: none; //overwrite for the sake of example, change this back to the default $directionDisplay variable, for single usage
     }
 }
 
