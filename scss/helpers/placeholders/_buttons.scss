@@ -1,30 +1,18 @@
 %button__small--white {
-    margin-top: .5em;
-    padding: 0 .5em;
     height: 2em;
     width: auto;
+    margin-top: .6em;
+    padding: $buttonPadding;
     display: inline-block;
-
-    border-radius: 5px;
-    background: #F5F5F5;
-    background: -webkit-linear-gradient(top, #F5F5F5, #DDD);
-    background:    -moz-linear-gradient(top, #F5F5F5, #DDD);
-    background:     -ms-linear-gradient(top, #F5F5F5, #DDD);
-    background:      -o-linear-gradient(top, #F5F5F5, #DDD);
-    background:         linear-gradient(top, #F5F5F5, #DDD);
-
-    color: #049cdb;
+    border-radius: $buttonBorderRadius;
+    border: $buttonBorder;
+    background: $buttonBackground;
+    color: $buttonColor;
     text-align: center;
     text-decoration: none;
     font-size: 1em;
     line-height: 2em;
-
     &:hover {
-        background: #F5F5F5;
+        background: $buttonStateBackground;
     }
-    &:active {
-        border-bottom: 1px solid rgba(11, 42, 195, .2);
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, .4);
-    }
-
 }
