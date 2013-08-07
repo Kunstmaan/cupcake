@@ -1,4 +1,4 @@
-# Cupcake Full Image Background
+## Cupcake Full Image Background
 
 CSS3 Full Image background with fallback (backstretch.js) for older browsers.
 The image is placed inline for content-input of the image trough the CMS.

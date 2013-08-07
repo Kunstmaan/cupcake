@@ -1,24 +1,20 @@
-# Cupcake responsive slider v0.1
-
+## Cupcake responsive slider v0.1
 
 ### What
-
-#### An extension of Flexslider which:
-
+An extension of Flexslider which:
 * ads a fully customizable thumbnail navigation block on top, right, bottom or left of the slider
 * ads content animation options
 * is built with scss variables to easily configure the position, colors, etc of elements like caption and prev / next buttons
 
 ### Support
-
-#### Desktop
+##### Desktop
 * IE 7 - 10
 * Firefox
 * Chrome
 * Safari
 * Opera
 
-#### Mobile
+##### Mobile
 * Mobile Safari (ipad + iPhone)
 * Android Chrome
 * Android Firefox (no swipe support)

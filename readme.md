@@ -1,10 +1,14 @@
-# Cupcake v0.8.2
+## Cupcake _v1.0.0_
 
-## Frontend Framework
+Cupcake is a frontend framework with some usefull components and additions.
 
-# Includes
-- Responsive navigation
+### Includes
+- A responsive navigation (jQuery and vanilla version)
+- Full image background implementation with fallback
+- Cookie consent
+- Adjustments to flexslider
 
-# Dependencies
-- jQuery 1.x
-- FontAwesome
+### Installing using Bower
+```
+bower install cupcake
+```

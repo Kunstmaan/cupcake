@@ -1,4 +1,4 @@
-# Cupcake Cookie Consent
+## Cupcake Cookie Consent
 
 ### html structure
 ```html
