@@ -26,7 +26,6 @@ An extension of Flexslider which:
 
 
 ### HTML structure
-
 Note: for semantic reasons it's advised to place the thumb navigation block according to which lay-out you're using i.e. if you're using the top or left lay-out, place the navigation above the slider-pp__flexslider, when you're using the right or bottom set-up the nav block has to go below the slider-pp__flexslider.
 
 ```html
