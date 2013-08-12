@@ -12,10 +12,10 @@
 
     <meta name="description" content="Responsive navigation manual test">
 
-    <link rel="stylesheet" href="../../css/bootstrap.css" type='text/css' />
-    <link rel="stylesheet" href="../../css/base.css" type='text/css' />
+    <link rel="stylesheet" href="../css/bootstrap.css" type='text/css' />
+    <link rel="stylesheet" href="../css/base.css" type='text/css' />
 
-    <script src="../../vendor/modernizr/modernizr.custom.js"></script>
+    <script src="../vendor/modernizr/modernizr.custom.js"></script>
 </head>
 <body class="full-img-bg" style="background-image: url(http://placekitten.com/800/500);" data-backstretch-img="http://placekitten.com/800/500">
     <div class="container">
@@ -30,11 +30,11 @@
         </main>
     </div>
 
-    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
     <script>
         Modernizr.load({
           test: Modernizr.backgroundsize,
-          nope: ['../../vendor/jquery-backstretch/jquery.backstretch.min.js', '../../js/full-img-bg/full-img-bg.js'],
+          nope: ['../vendor/jquery-backstretch/jquery.backstretch.min.js', '../js/full-img-bg/full-img-bg.js'],
           callback: function(url, result, key) {
               if(key == 1) { // when second file in array is loaded, execute the init
                 cupcake.backstretch.init();

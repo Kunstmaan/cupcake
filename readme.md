@@ -5,8 +5,8 @@ Cupcake is a frontend framework with some usefull components and additions.
 ### Includes
 - A responsive navigation (jQuery and vanilla version)
 - Full image background implementation with fallback
-- Cookie consent
-- Adjustments to flexslider
+- Cookie consent bar
+- Adjustments to the flexslider plugin
 
 ### Installing using Bower
 ```
