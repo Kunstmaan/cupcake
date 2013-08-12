@@ -1,6 +1,6 @@
 {
   "name": "Cupcake",
-  "version": "0.8.2",
+  "version": "1.0.0",
   "main": "base.scss",
   "ignore": [
     "**/.*",
@@ -13,8 +13,8 @@
   },
   "devDependencies": {
     "sass-bootstrap": "~2.3.2",
-    "bourbon": "latest",
     "flexslider": "https://github.com/woothemes/FlexSlider/archive/release-2-2-0.zip",
+    "bourbon": "latest",
     "svgeezy": "latest"
   }
 }

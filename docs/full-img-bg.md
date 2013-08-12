@@ -1,34 +1,34 @@
-# Cupcake Full Image Background
+## Cupcake Full Image Background
 
-CSS3 Full Image background with fallback (backstretch.js) for older browsers.
+CSS3 Full Image background with a fallback ([jquery-backstretch](https://github.com/srobbin/jquery-backstretch, 'jquery-backstretch')) for older browsers.
 The image is placed inline for content-input of the image trough the CMS.
 
-Default, `background-size:cover` will be used. For browsers that don't support `background-size:cover`, modernizr will use feature detection to get the fallback scripts.
+Default, `background-size:cover` will be used. For browsers that don't support this feature, modernizr will deliver the fallback scripts.
 
 
-## HTML
-### On the Body tag
+### HTML
+#### On the Body tag
 ```html
     <body class="full-img-bg" style="background-image: url(imgUrl);" data-backstretch-img="imgUrl">
         ...
     </body>
 ```
-### On a block level element
+#### On a block level element
 ```html
     <div class="full-img-bg" style="background-image: url(imgUrl);" data-backstretch-img="imgUrl">
         ...
     </div>
 ```
 
-## Fallback
-### Needed scripts
-#### Backstretch.js
+### Fallback
+#### Needed scripts
+##### Backstretch.js
 `https://github.com/srobbin/jquery-backstretch`
 
-#### Custom init function
+##### Custom init function
 `js/full-img-bg/full-img-bg.js`
 
-### Initiate
+#### Initiate
 ```js
 Modernizr.load({
     test: Modernizr.backgroundsize,

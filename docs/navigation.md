@@ -1,4 +1,4 @@
-# Cupcake responsive navigation v0.3
+## Cupcake responsive navigation v0.3
 
 ### General
 - Responsive navigation that supports multi-level navigation.
