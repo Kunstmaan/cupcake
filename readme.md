@@ -1,4 +1,4 @@
-## Cupcake _v1.0.0_
+## Cupcake _v1.0.1_
 
 Cupcake is a frontend framework with some usefull and commonly used components and snippits.
 
