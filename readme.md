@@ -1,6 +1,6 @@
 ## Cupcake _v1.0.1_
 
-Cupcake is a frontend framework with some usefull and commonly used components and snippits.
+Cupcake is a front-end framework with some useful and commonly used components and snippets.
 
 
 ### Includes
