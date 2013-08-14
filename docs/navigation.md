@@ -137,3 +137,11 @@ $navigation-item-link-hover-color: #ccc!default;
 - Android 3.0 and up
 - iOS 5.0 and up
 - WP 7.8 and up
+
+
+### Pitfalls
+
+#### Css flexbox model
+When using flexbox for the navigation, starting from a small screen "navigation--small" won't push through.
+Solution: Remove "navigation--big" from the template.
+!Caution: This means there's no fallback for non-js users. Style as much as possible on the "navigation" class.
