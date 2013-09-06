@@ -1,6 +1,6 @@
-## Cupcake _v1.0.1_
+## Cupcake _v1.0.2_
 
-Cupcake is a front-end framework with some useful and commonly used components and snippets.
+Cupcake is a html, scss/css, js component library with some usefull and commonly used components and snippits.
 
 
 ### Includes
@@ -11,10 +11,12 @@ Cupcake is a front-end framework with some useful and commonly used components a
 - Fix aggressive required focus state (Bootstrap 2.3)
 - Place-image mixin
 
+
 ### Installing using Bower
 ```
 bower install cupcake
 ```
 
 ### Contribution
-Cupcake works with [git-flow](https://github.com/nvie/gitflow). For a contribution to cupcake, you need to follow the [following workflow](https://github.com/nvie/gitflow#initialization)
+Cupcake works with [git-flow](https://github.com/nvie/gitflow).
+For a contribution to cupcake, you need to follow the [following workflow](https://github.com/nvie/gitflow#initialization)
