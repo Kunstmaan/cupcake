@@ -13,14 +13,10 @@ var cupcake = cupcake || {};
 cupcake.scrollToTop = (function(window, undefined) {
 
     var init, animateScroll,
-        start = 0,
+        start, currentTime, change,
         to = 0,
-        change = 0,
         duration = 300,
-        currentTime = 0,
         increment = 20;
-
-    console.log(currentTime, start, change, duration);
 
     init = function() {
         [].forEach.call( document.querySelectorAll('.js-scroll-to-top'), function(el) {
@@ -34,13 +30,15 @@ cupcake.scrollToTop = (function(window, undefined) {
             }, false);
             el.addEventListener('mouseup', function() {
                 start = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-                change = to - start;
+                change = to - start,
+                currentTime = 0;
 
                 animateScroll();
             }, false);
             el.addEventListener('touchend', function() {
                 start = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-                change = to - start;
+                change = to - start,
+                currentTime = 0;
 
                 animateScroll();
             }, false);
@@ -49,8 +47,6 @@ cupcake.scrollToTop = (function(window, undefined) {
 
     animateScroll = function() {
         currentTime += increment;
-
-        console.log(currentTime, start, change, duration);
 
         var val = Math.easeInOutQuad(currentTime, start, change, duration);
         document.body.scrollTop = val;
