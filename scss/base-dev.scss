@@ -3,7 +3,7 @@
 /* ==========================================================================
    Cupcake
 
-   Base - use this for the import of cupcake in your project
+   Base-dev - use this for the development of cupcake
 
    Never add styles directly to this file - set up imports
    Style guide: https://github.com/necolas/idiomatic-css
@@ -13,6 +13,11 @@
 /* Config
    ========================================================================== */
 @import "config/config";
+
+
+/* Bourbon - if working in cupcake, uncomment
+   ========================================================================== */
+@import "../vendor/bourbon/app/assets/stylesheets/bourbon";
 
 
 /* Helpers
