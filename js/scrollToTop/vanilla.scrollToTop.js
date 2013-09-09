@@ -2,6 +2,7 @@
    Scroll to top
 
    DOESN'T WORK YET
+   (problem with start)
 
    Initialize:
    cupcake.scrollToTop.init();
@@ -12,14 +13,14 @@ var cupcake = cupcake || {};
 cupcake.scrollToTop = (function(window, undefined) {
 
     var init, animateScroll,
-        body = document.body,
-        start = 1000,
+        start = 0,
         to = 0,
-        duration = 5000,
-        change = to - start,
+        change = 0,
+        duration = 300,
         currentTime = 0,
-        increment = 20,
-        val;
+        increment = 20;
+
+    console.log(currentTime, start, change, duration);
 
     init = function() {
         [].forEach.call( document.querySelectorAll('.js-scroll-to-top'), function(el) {
@@ -32,9 +33,15 @@ cupcake.scrollToTop = (function(window, undefined) {
                 e.stopPropagation();
             }, false);
             el.addEventListener('mouseup', function() {
+                start = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+                change = to - start;
+
                 animateScroll();
             }, false);
             el.addEventListener('touchend', function() {
+                start = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+                change = to - start;
+
                 animateScroll();
             }, false);
         });
@@ -45,8 +52,8 @@ cupcake.scrollToTop = (function(window, undefined) {
 
         console.log(currentTime, start, change, duration);
 
-        val = Math.easeInOutQuad(currentTime, start, change, duration);
-        body.scrollTop = val;
+        var val = Math.easeInOutQuad(currentTime, start, change, duration);
+        document.body.scrollTop = val;
 
         if (currentTime < duration) {
             setTimeout(animateScroll, increment);
