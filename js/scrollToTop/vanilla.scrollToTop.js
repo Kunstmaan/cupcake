@@ -48,14 +48,16 @@ cupcake.scrollToTop = (function(window, undefined) {
         val = Math.easeInOutQuad(currentTime, start, change, duration);
         body.scrollTop = val;
 
-        if(currentTime < duration) {
+        if (currentTime < duration) {
             setTimeout(animateScroll, increment);
         }
     };
 
-    Math.easeInOutQuad = function (t, b, c, d) {
+    Math.easeInOutQuad = function(t, b, c, d) {
         t /= d/2;
-        if (t < 1) return c/2*t*t + b;
+        if (t < 1) {
+            return c/2*t*t + b;
+        }
         t--;
         return -c/2 * (t*(t-2) - 1) + b;
     };
