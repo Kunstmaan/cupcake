@@ -1,3 +1,5 @@
+@if $use-navigation == true{
+
 /* ==========================================================================
    Responsive navigation
 
@@ -164,3 +166,5 @@
         border-left: 1px solid $navigation-toggle-submenu-border-color;
     }
 }
+
+}//endif

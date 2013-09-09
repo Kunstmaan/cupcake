@@ -1,5 +1,8 @@
+@if $use-bootstrap-overrides == true{
+
 /* ==========================================================================
    Boostrap overrides
+
    ========================================================================== */
 
 /* Fix aggressive required focus state
@@ -13,3 +16,5 @@ select:focus:invalid {
         box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
     }
 }
+
+}//endif
