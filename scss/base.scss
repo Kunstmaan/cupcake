@@ -3,29 +3,29 @@
 /* ==========================================================================
    Cupcake
 
-
    Never add styles directly to this file - set up imports
    Style guide: https://github.com/necolas/idiomatic-css
    ========================================================================== */
-
 
 
 /* Config
    ========================================================================== */
 @import "config/config";
 
+
 /* Bourbon - if working in cupcake, uncomment
    ========================================================================== */
-//@import "../vendor/bourbon/app/assets/stylesheets/bourbon";
+@import "../vendor/bourbon/app/assets/stylesheets/bourbon";
+
 
 /* Helpers
    ========================================================================== */
 @import "helpers/helpers";
 
 
-/* Components - if working in cupcake, uncomment
+/* Components
    ========================================================================== */
-//@import "components/components";
+@import "components/components";
 
 
 /* Overrides
