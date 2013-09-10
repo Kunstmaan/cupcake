@@ -3,6 +3,15 @@
 
    Initialize:
    cupcake.scrollToTop.init();
+
+   Support:
+   Latest Chrome
+   Latest FireFox
+   Latest Safari
+   IE9 and up
+   Android 3.0 and up
+   iOS 5.0 and up
+   WP 7.8 and up
    ========================================================================== */
 
 var cupcake = cupcake || {};
