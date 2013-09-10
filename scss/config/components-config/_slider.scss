@@ -113,9 +113,3 @@ $animateContent :                true!default;
 $animateKeyframe0:               translateX(220px)!default;
 $animateKeyframe50:              translateX(220px)!default;
 $animateKeyframe100:             translateX(0)!default;
-
-@if $animateContent == true {
-  .flex-animateIn .slider-pp__caption {
-     @extend %slider-pp__caption__animate-in;
-  }
-}

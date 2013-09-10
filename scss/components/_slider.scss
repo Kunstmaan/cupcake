@@ -198,6 +198,12 @@
     opacity: 0;
 }
 
+@if $animateContent == true {
+  .flex-animateIn .slider-pp__caption {
+     @extend %slider-pp__caption__animate-in;
+  }
+}
+
 /* ==========================================================================
    Specific sliders
    ========================================================================== */
