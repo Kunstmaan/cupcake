@@ -17,6 +17,11 @@ Cupcake is a html, scss/css, js component library with some usefull and commonly
 bower install cupcake
 ```
 
+
 ### Contribution
 Cupcake works with [git-flow](https://github.com/nvie/gitflow).
 For a contribution to cupcake, you need to follow the [following workflow](https://github.com/nvie/gitflow#initialization)
+
+
+### License
+Cupcake is licensed under the [MIT license](http://opensource.org/licenses/MIT).
