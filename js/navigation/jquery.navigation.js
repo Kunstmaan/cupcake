@@ -1,5 +1,5 @@
 /* ==========================================================================
-   jQuery responsive navigation - v0.3
+   jQuery responsive navigation
 
    Initialize:
    cupcake.navigation.init();
@@ -16,6 +16,7 @@ cupcake.navigation = (function($, window, undefined) {
 
     var init, smallNavigationToggles, calcBigViewWidth, toggleNavigationState,
         $navigationHook = $('.js-navigation'),
+        $navigationAvailableSpaceHook = $('.js-navigation-space-hook'),
         bigViewWidth = 0,
         availableSpace = 0;
 
@@ -45,7 +46,7 @@ cupcake.navigation = (function($, window, undefined) {
     };
 
     toggleNavigationState = function() {
-        availableSpace = $navigationHook.width();
+        availableSpace = $navigationAvailableSpaceHook.width();
 
         if (bigViewWidth > availableSpace) {
             $navigationHook.addClass('navigation--small')
