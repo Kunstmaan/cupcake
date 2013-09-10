@@ -36,14 +36,14 @@ cupcake.scrollToTop = (function(window, undefined) {
             }, false);
             el.addEventListener('mouseup', function() {
                 start = document.body.scrollTop;
-                change = to - start,
+                change = to - start;
                 currentTime = 0;
 
                 animateScroll();
             }, false);
             el.addEventListener('touchend', function() {
                 start = document.body.scrollTop;
-                change = to - start,
+                change = to - start;
                 currentTime = 0;
 
                 animateScroll();
