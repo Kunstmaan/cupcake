@@ -1,3 +1,10 @@
+@if $use-slider == true{
+
+/* ==========================================================================
+   Adjustments to Flexslider
+
+   ========================================================================== */
+
 /* ==========================================================================
    General
    ========================================================================== */
@@ -31,9 +38,6 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    &:first-child {
-        margin-top: 4em;
-    }
 }
 
 .slider-pp .slides > li {
@@ -189,6 +193,12 @@
 /* Fix for the caption animation */
 .clone .slider-pp__caption {
     opacity: 0;
+}
+
+@if $animateContent == true {
+  .flex-animateIn .slider-pp__caption {
+     @extend %slider-pp__caption__animate-in;
+  }
 }
 
 /* ==========================================================================
@@ -360,3 +370,5 @@
 .no-js .slides > li:first-child {
     display: block;
 }
+
+}//endif

@@ -1,3 +1,5 @@
+@if $use-navigation == true{
+
 /* ==========================================================================
    Responsive navigation
 
@@ -65,7 +67,7 @@
         &:hover {
             background: $navigation-item-hover-background;
             .navigation__link {
-                color: $navigation-item-hover-color;
+                color: $navigation-item-link-hover-color;
             }
             > .navigation__level--sublevel {
                 display: block;
@@ -105,10 +107,6 @@
     .navigation__link {
         border-top: 1px solid $navigation-small-link-border-top-color;
         padding: 0 0 0 $navigation-item-link-padding;
-        &:hover {
-            background-color: $navigation-item-link-hover-background;
-            color: $navigation-item-link-hover-color;
-        }
     }
 
     .navigation__level--sublevel {
@@ -164,3 +162,5 @@
         border-left: 1px solid $navigation-toggle-submenu-border-color;
     }
 }
+
+}//endif

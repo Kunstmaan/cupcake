@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Fallbacks Slider
+   No inline-svg support
+
+   Trough feature-detection (by Modernizr)
+   ========================================================================== */
+
+@import "../../config/config";
+
+.no-inlinesvg {
+    .flex-direction-nav a {
+        background-image: $directionImageFallback;
+    }
+    .flex-next {
+        font-size: 0;
+        text-decoration: none;
+        text-indent: -9999px;
+        line-height: 0;
+    }
+}
