@@ -1,170 +1,230 @@
 @if $use-navigation == true{
 
-/* ==========================================================================
-   Responsive navigation
-   ========================================================================== */
+    /* ==========================================================================
+       Responsive navigation
+       ========================================================================== */
 
 
-/* General
-   ========================================================================== */
-.navigation__level {
-    position: relative;
-    float: left;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background: $navigation-background;
-    list-style: none;
-}
-.navigation__level--sublevel {
-    position: absolute;
-    left: 0;
-    z-index: $navigation-sublevel-z-index;
-    display: none;
-    width: $navigation-sublevel-width;
-    background: $navigation-sublevel-background;
+    /* General
+       ========================================================================== */
+
+    // Navigation levels
+    .navigation__level {
+        position: relative;
+        float: left;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        background: $navigation-background;
+    }
+    .navigation__level--sublevel {
+        position: absolute;
+        left: 0;
+        z-index: $navigation-sublevel-z-index;
+        display: none;
+        width: $navigation-sublevel-width;
+        background: $navigation-sublevel-background;
+        .navigation__item--active {
+            background: $navigation-sublevel-item-active-background;
+            .icon-chevron-right {
+                display: none;
+            }
+        }
+    }
+
+    // Navigation Item
+    .navigation__item {
+        display: block;
+        float: $navigation-item-float;
+        width: $navigation-item-width;
+        text-align: $navigation-item-text-align;
+    }
     .navigation__item--active {
-        background: $navigation-sublevel-item-active-background;
-        .icon-chevron-right {
+        background: $navigation-item-active-background;
+        > .navigation__link {
+            color: $navigation-item-color;
+        }
+    }
+    .navigation__item--sublevel {
+        float: $navigation-sublevel-item-float;
+        text-align: $navigation-sublevel-item-text-align;
+    }
+
+    // Navigation Link styling
+    .navigation__link {
+        display: block;
+        padding: 0 $navigation-item-link-padding;
+        height: $navigation-height;
+        line-height: $navigation-height;
+        color: $navigation-item-color;
+        text-decoration: none;
+        &, &:hover {
+            text-decoration: none;
+        }
+    }
+    .navigation__link--sublevel {
+        color: $navigation-sublevel-item-color;
+    }
+
+    // Navigation Toggles
+    .navigation__toggle {
+        display: none;
+        height: $navigation-height;
+        line-height: $navigation-height;
+        color: $navigation-toggle-color;
+        cursor: pointer;
+        .icon-remove, .icon-chevron-up {
+            display: none;
+        }
+        .icon-remove, .icon-reorder {
+            margin-left: .5em;
+        }
+    }
+    .navigation__toggle--active {
+        .icon-remove {
+            display: inline-block;
+        }
+        .icon-chevron-up {
+            display: inline;
+        }
+        .icon-reorder, .icon-chevron-down {
             display: none;
         }
     }
-}
-
-.navigation__item {
-    display: block;
-    float: $navigation-item-float;
-    width: $navigation-item-width;
-    text-align: $navigation-item-text-align;
-}
-.navigation__item--active {
-    background: $navigation-item-active-background;
-}
-.navigation__item--sublevel {
-    float: $navigation-sublevel-item-float;
-    text-align: $navigation-sublevel-item-text-align;
-}
-
-.navigation__link {
-    display: block;
-    padding: 0 $navigation-item-link-padding;
-    height: $navigation-height;
-    line-height: $navigation-height;
-    color: $navigation-item-color;
-    text-decoration: none;
-}
-.navigation__link--sublevel {
-    color: $navigation-sublevel-item-color;
-}
-
-.navigation__toggle {
-    display: none;
-    height: $navigation-height;
-    line-height: $navigation-height;
-    color: $navigation-toggle-color;
-    cursor: pointer;
-    .icon-remove, .icon-chevron-up {
-        display: none;
+    .navigation__toggle--top {
+        padding: 0 $navigation-item-link-padding;
+        background: $navigation-toggle-top-background;
+        text-align: $navigation-toggle-top-text-align;
     }
-    .icon-remove, .icon-reorder {
-        margin-left: .5em;
+    .navigation__toggle--sublevel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: $navigation-height;
+        text-align: center;
+        border-left: 1px solid $navigation-sublevel-toggle-border-color;
+        color: $navigation-sublevel-toggle-color;
     }
-}
-.navigation__toggle--active {
-    .icon-remove {
-        display: inline-block;
-    }
-    .icon-chevron-up {
-        display: inline;
-    }
-    .icon-reorder, .icon-chevron-down {
-        display: none;
-    }
-}
-.navigation__toggle--top {
-    padding: 0 $navigation-item-link-padding;
-    background: $navigation-toggle-top-background;
-    text-align: $navigation-toggle-top-text-align;
-}
-.navigation__toggle--submenu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: $navigation-height;
-    text-align: center;
-    border-left: 1px solid $navigation-toggle-submenu-border-color;
-}
 
 
-/* Big version
-   ========================================================================== */
-.navigation--big {
-    .navigation__item {
-        &:hover {
-//            background: $navigation-item-hover-background;
-//            .navigation__link {
-//                color: $navigation-item-link-hover-color;
-//            }
-            > .navigation__level--sublevel {
-                display: block;
+    /* Big version
+       ========================================================================== */
+    .navigation--big {
+        // Navigation item
+        .navigation__item {
+            &:hover {
+                background: $navigation-item-hover-background;
+                .navigation__link {
+                    color: $navigation-item-link-hover-color;
+                }
+                > .navigation__level--sublevel {
+                    display: block;
+                }
             }
         }
-    }
-//    .navigation__level--sublevel {
-//        .navigation__item {
-//            &:hover{
-//                background: $navigation-sublevel-item-hover-background;
-//                .navigation__link {
-//                    color: $navigation-sublevel-item-hover-color;
-//                }
-//            }
-//        }
-//    }
-}
-
-
-/* Small version
-   ========================================================================== */
-.navigation--small {
-    .navigation__toggle {
-        display: block;
-    }
-
-    .navigation__level {
-        display: none;
-        &.navigation__level--open {
-            display: block;
-        }
-    }
-
-    .navigation__item {
-        position: relative;
-        float: none;
-        overflow: hidden;
-        text-align: $navigation-item-small-text-align;
-    }
-
-    .navigation__link {
-        border-top: 1px solid $navigation-small-link-border-top-color;
-        padding: 0 0 0 $navigation-item-link-padding;
-    }
-
-    .navigation__level--sublevel {
-        position: static;
-        .navigation__item--active {
-            background: $navigation-sublevel-background;
-            .icon-chevron-right {
-                display: block;
-                float: right;
-                width: $navigation-height;
-                height: $navigation-height;
-                line-height: $navigation-height;
-                text-align: center;
+        .navigation__item--sublevel {
+            &:hover {
+                background: $navigation-sublevel-item-hover-background;
+                .navigation__link {
+                    color: $navigation-sublevel-item-hover-color;
+                }
             }
         }
     }
 
 
-}
+    @if $use-navigation-small == true{
+
+        /* Small version
+           ========================================================================== */
+        .navigation--small {
+            // Navigation levels
+            .navigation__level {
+                display: block;
+                overflow: hidden;
+                height: 0;
+                background: $navigation-small-background;
+            }
+            .navigation__level--open {
+                height: auto;
+            }
+            .navigation__level--sublevel {
+                position: static;
+                background: $navigation-small-sublevel-background;
+                .navigation__item--active {
+                    .icon-chevron-right {
+                        display: block;
+                        float: right;
+                        width: $navigation-height;
+                        height: $navigation-height;
+                        line-height: $navigation-height;
+                        text-align: center;
+                    }
+                }
+            }
+
+            // Navigation items
+            .navigation__item {
+                position: relative;
+                float: none;
+                overflow: hidden;
+                text-align: $navigation-item-small-text-align;
+            }
+
+            // Navigation link styling
+            .navigation__link {
+                border-top: 1px solid $navigation-small-link-border-top-color;
+                padding: 0 0 0 $navigation-item-link-padding;
+                color: $navigation-small-item-color;
+            }
+            .navigation__link--sublevel {
+                color: $navigation-small-sublevel-item-color;
+            }
+
+            // Navigation toggles
+            .navigation__toggle {
+                display: block;
+            }
+        }
+
+
+        @if $use-navigation-animated == true {
+
+            /* Animated version
+               ========================================================================== */
+            .navigation--animated {
+
+                @if $use-navigation-small == true {
+                    &.navigation--small {
+                        // Navigation levels
+                        .navigation__level, .navigation__level--sublevel {
+                            background: none;
+                            @include perspective(300px);
+                            @include perspective-origin(50% 50%);
+                        }
+                        .navigation__level--open {
+                            > .navigation__item {
+                                @include transform(translate3d(0,0,0) rotateX(0deg));
+                            }
+                        }
+
+                        // Navigation items
+                        .navigation__item {
+                            background: $navigation-background;
+                            @include transition (all $navigation-animation-duration ease);
+                            @include transform-origin(50% 50%);
+                            @include transform(translate3d(0,100px,-100px) rotateX(-90deg));
+                        }
+                        .navigation__item--sublevel {
+                            background: $navigation-sublevel-background;
+                        }
+                    }
+                }//endif
+
+            }
+        }//endif
+
+    }//endif
 
 }//endif
