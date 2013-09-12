@@ -2,8 +2,6 @@
 
 /* ==========================================================================
    Responsive navigation
-
-   v0.3
    ========================================================================== */
 
 
@@ -23,11 +21,8 @@
     left: 0;
     z-index: $navigation-sublevel-z-index;
     display: none;
-    width: 100%;
+    width: $navigation-sublevel-width;
     background: $navigation-sublevel-background;
-    .navigation__link {
-        color: $navigation-sublevel-item-color;
-    }
     .navigation__item--active {
         background: $navigation-sublevel-item-active-background;
         .icon-chevron-right {
@@ -38,12 +33,16 @@
 
 .navigation__item {
     display: block;
-    float: left;
+    float: $navigation-item-float;
     width: $navigation-item-width;
     text-align: $navigation-item-text-align;
 }
 .navigation__item--active {
     background: $navigation-item-active-background;
+}
+.navigation__item--sublevel {
+    float: $navigation-sublevel-item-float;
+    text-align: $navigation-sublevel-item-text-align;
 }
 
 .navigation__link {
@@ -54,9 +53,46 @@
     color: $navigation-item-color;
     text-decoration: none;
 }
+.navigation__link--sublevel {
+    color: $navigation-sublevel-item-color;
+}
 
-.navigation__toggle, .cupcake-submenu__toggle {
+.navigation__toggle {
     display: none;
+    height: $navigation-height;
+    line-height: $navigation-height;
+    color: $navigation-toggle-color;
+    cursor: pointer;
+    .icon-remove, .icon-chevron-up {
+        display: none;
+    }
+    .icon-remove, .icon-reorder {
+        margin-left: .5em;
+    }
+}
+.navigation__toggle--active {
+    .icon-remove {
+        display: inline-block;
+    }
+    .icon-chevron-up {
+        display: inline;
+    }
+    .icon-reorder, .icon-chevron-down {
+        display: none;
+    }
+}
+.navigation__toggle--top {
+    padding: 0 $navigation-item-link-padding;
+    background: $navigation-toggle-top-background;
+    text-align: $navigation-toggle-top-text-align;
+}
+.navigation__toggle--submenu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $navigation-height;
+    text-align: center;
+    border-left: 1px solid $navigation-toggle-submenu-border-color;
 }
 
 
@@ -65,31 +101,35 @@
 .navigation--big {
     .navigation__item {
         &:hover {
-            background: $navigation-item-hover-background;
-            .navigation__link {
-                color: $navigation-item-link-hover-color;
-            }
+//            background: $navigation-item-hover-background;
+//            .navigation__link {
+//                color: $navigation-item-link-hover-color;
+//            }
             > .navigation__level--sublevel {
                 display: block;
             }
         }
     }
-    .navigation__level--sublevel {
-        .navigation__item {
-            &:hover{
-                background: $navigation-sublevel-item-hover-background;
-                .navigation__link {
-                    color: $navigation-sublevel-item-hover-color;
-                }
-            }
-        }
-    }
+//    .navigation__level--sublevel {
+//        .navigation__item {
+//            &:hover{
+//                background: $navigation-sublevel-item-hover-background;
+//                .navigation__link {
+//                    color: $navigation-sublevel-item-hover-color;
+//                }
+//            }
+//        }
+//    }
 }
 
 
 /* Small version
    ========================================================================== */
 .navigation--small {
+    .navigation__toggle {
+        display: block;
+    }
+
     .navigation__level {
         display: none;
         &.navigation__level--open {
@@ -124,43 +164,7 @@
         }
     }
 
-    .navigation__toggle {
-        display: block;
-        height: $navigation-height;
-        line-height: $navigation-height;
-        color: $navigation-toggle-color;
-        cursor: pointer;
-        .icon-remove, .icon-chevron-up {
-            display: none;
-        }
-        .icon-remove, .icon-reorder {
-            margin-left: .5em;
-        }
-    }
-    .navigation__toggle--active {
-        .icon-remove {
-            display: inline-block;
-        }
-        .icon-chevron-up {
-            display: inline;
-        }
-        .icon-reorder, .icon-chevron-down {
-            display: none;
-        }
-    }
-    .navigation__toggle--top {
-        padding: 0 $navigation-item-link-padding;
-        background: $navigation-toggle-top-background;
-        text-align: $navigation-toggle-top-text-align;
-    }
-    .navigation__toggle--submenu {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: $navigation-height;
-        text-align: center;
-        border-left: 1px solid $navigation-toggle-submenu-border-color;
-    }
+
 }
 
 }//endif

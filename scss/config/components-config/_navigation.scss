@@ -5,11 +5,13 @@
    Never add styles directly to this file
    ========================================================================== */
 
+/* Scafolding
+   ========================================================================== */
 //General
 $navigation-height:                             3em!default;
-$navigation-responsive-breakpoint:              40em!default;
 
-//Menu item
+//Navigation item
+$navigation-item-float:                         left!default;
 $navigation-item-width:                         auto!default;
 $navigation-item-text-align:                    center!default;
 $navigation-item-small-text-align:              left!default;
@@ -17,19 +19,33 @@ $navigation-item-link-padding:                  1.5em!default;
 
 //Sublevel
 $navigation-sublevel-z-index:                   10!default;
+$navigation-sublevel-width:                     100%!default;
 
-//Menu toggle
+$navigation-sublevel-item-float:                left!default;
+$navigation-sublevel-item-text-align:           center!default;
+
+//Navigation toggle
 $navigation-toggle-top-text-align:              right!default;
 
-//Colors
-$navigation-background:                         #444!default;
-$navigation-sublevel-background:                #ccc!default;
 
+/* Colors
+   ========================================================================== */
+//General
+$navigation-background:                         #444!default;
+
+//Navigation item
 $navigation-item-color:                         #fff!default;
 $navigation-item-active-background:             #333!default;
 
+//Sublevel
+$navigation-sublevel-background:                #ccc!default;
 $navigation-sublevel-item-color:                #333!default;
 $navigation-sublevel-item-active-background:    #aaa!default;
+
+//Navigation toggle
+
+
+
 
 $navigation-toggle-color:                       #fff!default;
 $navigation-toggle-top-background:              #333!default;
