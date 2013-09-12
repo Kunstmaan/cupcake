@@ -18,10 +18,10 @@
     <script src="../vendor/modernizr/modernizr.custom.js"></script>
 </head>
 <body>
-    <div class="container-fluid js-navigation-space-hook">
-        <h3>Cupcake navigation - jQuery</h3>
+    <div class="container js-navigation-space-hook">
+        <h1>Cupcake navigation - jQuery</h1>
 
-        <nav role="navigation" class="js-navigation navigation navigation--big">
+        <nav role="navigation" class="js-navigation navigation navigation--big navigation--animated">
             <div class="js-navigation__toggle navigation__toggle navigation__toggle--top">
                 MENU
                 <i class="icon-reorder"></i>
@@ -37,19 +37,19 @@
                     <a href="#" class="navigation__link">
                         Navitem L1
                     </a>
-                    <div class="js-navigation__toggle navigation__toggle navigation__toggle--submenu">
+                    <div class="js-navigation__toggle navigation__toggle navigation__toggle--sublevel">
                         <i class="icon-chevron-down"></i>
                         <i class="icon-chevron-up"></i>
                     </div>
                     <ul class="navigation__level navigation__level--sublevel">
-                        <li class="navigation__item navigation__item--active">
-                            <a href="#" class="navigation__link">
+                        <li class="navigation__item navigation__item--sublevel navigation__item--active">
+                            <a href="#" class="navigation__link navigation__link--sublevel">
                                 Navitem L2
                                 <i class="icon-chevron-right"></i>
                             </a>
                         </li>
-                        <li class="navigation__item">
-                            <a href="#" class="navigation__link">
+                        <li class="navigation__item navigation__item--sublevel">
+                            <a href="#" class="navigation__link navigation__link--sublevel">
                                 Navitem L2
                             </a>
                         </li>
@@ -64,19 +64,18 @@
                     <a href="#" class="navigation__link">
                         Navitem L1
                     </a>
-                    <div class="js-navigation__toggle navigation__toggle navigation__toggle--submenu">
+                    <div class="js-navigation__toggle navigation__toggle navigation__toggle--sublevel">
                         <i class="icon-chevron-down"></i>
                         <i class="icon-chevron-up"></i>
                     </div>
                     <ul class="navigation__level navigation__level--sublevel">
-                        <li class="navigation__item navigation__item--active">
-                            <a href="#" class="navigation__link">
+                        <li class="navigation__item navigation__item--sublevel">
+                            <a href="#" class="navigation__link navigation__link--sublevel">
                                 Navitem L2
-                                <i class="icon-chevron-right"></i>
                             </a>
                         </li>
-                        <li class="navigation__item">
-                            <a href="#" class="navigation__link">
+                        <li class="navigation__item navigation__item--sublevel">
+                            <a href="#" class="navigation__link navigation__link--sublevel">
                                 Navitem L2
                             </a>
                         </li>
@@ -99,6 +98,20 @@
                 </li>
             </ul>
         </nav>
+        <article>
+            <header>
+                <h2>Testarticle</h2>
+            </header>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.
+            </p>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </article>
     </div>
 
     <script src="../vendor/jquery/jquery.min.js"></script>
