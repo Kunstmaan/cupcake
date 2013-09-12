@@ -43,7 +43,7 @@
     .navigation__item--active {
         background: $navigation-item-active-background;
         > .navigation__link {
-            color: $navigation-item-color;
+            color: $navigation-item-active-color;
         }
     }
     .navigation__item--sublevel {
@@ -116,7 +116,7 @@
             &:hover {
                 background: $navigation-item-hover-background;
                 .navigation__link {
-                    color: $navigation-item-link-hover-color;
+                    color: $navigation-item-hover-color;
                 }
                 > .navigation__level--sublevel {
                     display: block;
@@ -171,6 +171,12 @@
                 overflow: hidden;
                 text-align: $navigation-item-small-text-align;
             }
+            .navigation__item--active {
+                background: $navigation-small-item-active-background;
+                > .navigation__link {
+                    color: $navigation-small-item-active-color;
+                }
+            }
 
             // Navigation link styling
             .navigation__link {
@@ -211,13 +217,13 @@
 
                         // Navigation items
                         .navigation__item {
-                            background: $navigation-background;
+                            background: $navigation-small-background;
                             @include transition (all $navigation-animation-duration ease);
                             @include transform-origin(50% 50%);
                             @include transform(translate3d(0,100px,-100px) rotateX(-90deg));
                         }
                         .navigation__item--sublevel {
-                            background: $navigation-sublevel-background;
+                            background: $navigation-small-sublevel-background;
                         }
                     }
                 }//endif

@@ -93,6 +93,8 @@ Use the js-navigation class to switch between big and small and use the js-navig
 $use-navigation-small:                          true!default;
 $use-navigation-animated:                       true!default;
 
+
+
 /* Scafolding
    ========================================================================== */
 //General
@@ -129,14 +131,17 @@ $navigation-small-background:                   #444!default;
 
 //Navigation item
 $navigation-item-color:                         #fff!default;
-$navigation-item-active-background:             #333!default;
 
 $navigation-item-hover-background:              #ccc!default;
 $navigation-item-hover-color:                   #333!default;
 
-$navigation-item-link-hover-color:              #333!default;
+$navigation-item-active-background:             #333!default;
+$navigation-item-active-color:                  #fff!default;
 
 $navigation-small-item-color:                   #fff!default;
+
+$navigation-small-item-active-background:       #333!default;
+$navigation-small-item-active-color:            #fff!default;
 
 
 //Sublevel
