@@ -1,6 +1,6 @@
 {
   "name": "Cupcake",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "base.scss",
   "ignore": [
     "**/.*",
@@ -12,7 +12,7 @@
     "jquery-backstretch": "~2.0.4"
   },
   "devDependencies": {
-    "sass-bootstrap": "~2.3.2",
+    "sass-bootstrap": "~3.0.0",
     "flexslider": "https://github.com/woothemes/FlexSlider/archive/release-2-2-0.zip",
     "bourbon": "latest",
     "svgeezy": "latest"
