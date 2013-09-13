@@ -140,18 +140,20 @@
            ========================================================================== */
         .navigation--small {
             // Navigation levels
+            .navigation__level, .navigation__level--sublevel {
+                background: none;
+            }
             .navigation__level {
                 display: block;
                 overflow: hidden;
                 height: 0;
-                background: $navigation-small-background;
             }
             .navigation__level--open {
                 height: auto;
             }
             .navigation__level--sublevel {
                 position: static;
-                background: $navigation-small-sublevel-background;
+                width: 100%;
                 .navigation__item--active {
                     .icon-chevron-right {
                         display: block;
@@ -170,11 +172,22 @@
                 float: none;
                 overflow: hidden;
                 text-align: $navigation-item-small-text-align;
+                background: $navigation-small-background;
             }
             .navigation__item--active {
                 background: $navigation-small-item-active-background;
                 > .navigation__link {
                     color: $navigation-small-item-active-color;
+                }
+                .navigation__toggle--sublevel {
+                    color: $navigation-sublevel-toggle-active-color;
+                }
+            }
+            .navigation__item--sublevel {
+                background: $navigation-small-sublevel-background;
+                &.navigation__item--active {
+                    background: $navigation-small-sublevel-item-active-background;
+                    color: $navigation-small-sublevel-item-active-color;
                 }
             }
 
@@ -200,12 +213,46 @@
             /* Animated version
                ========================================================================== */
             .navigation--animated {
+                &.navigation--big {
+                    .navigation__level--sublevel {
+                        display: block;
+                        overflow: hidden;
+                        height: 0;
+                        background: none;
+                        @include perspective(300px);
+                        @include perspective-origin(50% 50%);
+                    }
 
+                    .navigation__item {
+                        @include transition (all $navigation-big-animation-duration ease);
+                        &:hover {
+                            > .navigation__level--sublevel {
+                                height: auto;
+                            }
+                            .navigation__item--sublevel {
+                                @include transform(translate3d(0,0,0) rotateX(0deg));
+                            }
+                        }
+                    }
+                    .navigation__item--sublevel {
+                        background: $navigation-sublevel-background;
+                        @include transform-origin(50% 50%);
+                        @include transform(translate3d(0,-8em,-8em) rotateX(-90deg));
+                        &.navigation__item--active {
+                            background: $navigation-item-active-background;
+                        }
+                        &:hover {
+                            background: $navigation-sublevel-item-hover-background;
+                        }
+                    }
+                    .navigation__link {
+                        @include transition (all $navigation-big-animation-duration ease);
+                    }
+                }
                 @if $use-navigation-small == true {
                     &.navigation--small {
                         // Navigation levels
                         .navigation__level, .navigation__level--sublevel {
-                            background: none;
                             @include perspective(300px);
                             @include perspective-origin(50% 50%);
                         }
@@ -217,13 +264,9 @@
 
                         // Navigation items
                         .navigation__item {
-                            background: $navigation-small-background;
-                            @include transition (all $navigation-animation-duration ease);
+                            @include transition (all $navigation-small-animation-duration ease);
                             @include transform-origin(50% 50%);
-                            @include transform(translate3d(0,100px,-100px) rotateX(-90deg));
-                        }
-                        .navigation__item--sublevel {
-                            background: $navigation-small-sublevel-background;
+                            @include transform(translate3d(0,8em,-8em) rotateX(-90deg));
                         }
                     }
                 }//endif
