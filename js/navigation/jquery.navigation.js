@@ -29,7 +29,10 @@ cupcake.navigation = (function($, window, undefined) {
     };
 
     smallNavigationToggles = function() {
-        $('.js-navigation__toggle').on('touchstart mousedown', function(e) {
+        $('.js-navigation__toggle').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }).on('touchstart mousedown', function(e) {
             e.preventDefault();
             e.stopPropagation();
         }).on('touchend mouseup', function() {
