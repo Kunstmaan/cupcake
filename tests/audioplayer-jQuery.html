@@ -28,7 +28,7 @@
             <h1>Cupcake Audioplayer - jQuery</h1>
         </header>
         <p>
-            <audio controls preload="auto">
+            <audio controls preload="auto" class="js-audio-player">
                 <source src="../js/audioplayer/testfiles/test.mp3" type="audio/mp3"/>
                 <source src="../js/audioplayer/testfiles/test.ogg" type="audio/ogg"/>
                 <source src="../js/audioplayer/testfiles/test.wav" type="audio/wav"/>
@@ -40,9 +40,7 @@
     <script src="../js/audioplayer/jquery.audioplayer.js"></script>
 
     <script>
-        $('audio').audioPlayer({
-            classPrefix: 'audioplayer'
-        });
+        $('.js-audio-player').audioPlayer();
     </script>
 </body>
 </html>

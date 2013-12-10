@@ -39,12 +39,12 @@
         return supported;
     };
 
-    $.fn.audioPlayer = function(params) {
-        params = $.extend({ classPrefix: 'audioplayer' }, params);
+    $.fn.audioPlayer = function() {
 
-        var cssClass = {},
+        var classPrefix = 'audioplayer',
+            cssClass = {},
             cssClassSub = {
-                hideDefault:     '__defaultplayer',
+                hideDefault:    '__defaultplayer',
                 playPause:      '__playpause',
                 playing:        '--playing',
                 time:           '__time',
@@ -57,12 +57,12 @@
                 volumeButton:   '__volume__button',
                 volumeAdjust:   '__volume__adjust',
                 noVolume:       '--novolume',
-                mute:           '__mute',
+                mute:           '--muted',
                 mini:           '--mini'
             };
 
         for(var subName in cssClassSub) {
-            cssClass[subName] = params.classPrefix + cssClassSub[subName];
+            cssClass[subName] = classPrefix + cssClassSub[subName];
         }
 
         this.each(function() {
@@ -90,13 +90,13 @@
             });
 
             if(isSupport) {
-                thePlayer = $('<div class="' + params.classPrefix + '">' + $('<div>').append($this.eq(0).clone()).html() + '<button type="button" class="' + cssClass.playPause + '"><i class="icon-play audioplayer__playpause__icon-play"></i><i class="icon-pause audioplayer__playpause__icon-pause"></i></button></div>');
+                thePlayer = $('<div class="' + classPrefix + '">' + $('<div>').append($this.eq(0).clone()).html() + '<button type="button" class="' + cssClass.playPause + '"><i class="icon-play audioplayer__playpause__icon-play"></i><i class="icon-pause audioplayer__playpause__icon-pause"></i></button></div>');
                 theAudio  = thePlayer.find('audio');
 
                 theAudio = theAudio.get(0);
 
                 thePlayer.find('audio').addClass(cssClass.hideDefault);
-                thePlayer.append( '<div class="' + cssClass.time + ' ' + cssClass.timeCurrent + '"></div><div class="' + cssClass.bar + '"><div class="' + cssClass.barLoaded + '"></div><div class="' + cssClass.barPlayed + '"></div></div><div class="' + cssClass.time + ' ' + cssClass.timeDuration + '"></div><div class="' + cssClass.volume + '"><button type="button" class="' + cssClass.volumeButton + '"><i class="icon-volume-up"></i></button><div class="' + cssClass.volumeAdjust + '"><div class="audioplayer__volume__adjust__control"><div class="audioplayer__volume__adjust__control__state"></div></div></div></div>' );
+                thePlayer.append( '<div class="' + cssClass.time + ' ' + cssClass.timeCurrent + '"></div><div class="' + cssClass.bar + '"><div class="' + cssClass.barLoaded + '"></div><div class="' + cssClass.barPlayed + '"></div></div><div class="' + cssClass.time + ' ' + cssClass.timeDuration + '"></div><div class="' + cssClass.volume + '"><button type="button" class="' + cssClass.volumeButton + '"><i class="icon-volume-up audioplayer__volume__button__icon-volume-up"></i><i class="icon-volume-off audioplayer__volume__button__icon-volume-off"></i></button><div class="' + cssClass.volumeAdjust + '"><div class="audioplayer__volume__adjust__control"><div class="audioplayer__volume__adjust__control__state"></div></div></div></div>' );
 
                 var theBar = thePlayer.find('.' + cssClass.bar),
                     barPlayed = thePlayer.find('.' + cssClass.barPlayed),
@@ -196,7 +196,7 @@
                     volumeAdjuster.unbind(eMove);
                 });
             } else {
-                thePlayer = $('<div class="' + params.classPrefix + '">' + '<embed src="' + audioFile + '" width="0" height="0" volume="100" autostart="' + isAutoPlay.toString() +'" loop="' + isLoop.toString() + '" />' + '<button type="button" class="' + cssClass.playPause + '"></button></div>');
+                thePlayer = $('<div class="' + classPrefix + '">' + '<embed src="' + audioFile + '" width="0" height="0" volume="100" autostart="' + isAutoPlay.toString() +'" loop="' + isLoop.toString() + '" />' + '<button type="button" class="' + cssClass.playPause + '"></button></div>');
                 theAudio  = thePlayer.find('embed');
 
                 theAudio = theAudio.get(0);

@@ -155,6 +155,20 @@
         border: none;
         outline: none;
     }
+    .audioplayer__volume__button__icon-volume-up {
+        display: block;
+    }
+    .audioplayer__volume__button__icon-volume-off {
+        display: none;
+    }
+    .audioplayer--muted {
+        .audioplayer__volume__button__icon-volume-up {
+            display: none;
+        }
+        .audioplayer__volume__button__icon-volume-off {
+            display: block;
+        }
+    }
     .audioplayer__volume__adjust {
         position: absolute;
         top: auto;
@@ -165,7 +179,6 @@
         cursor: default;
         background: $audioplayer-volume-adjust-background;
     }
-
     .audioplayer__volume__adjust__control {
         z-index: 1;
         position: relative;
