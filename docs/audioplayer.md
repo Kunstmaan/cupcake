@@ -5,7 +5,7 @@
 - Uses embed as fallback (includes check on type).
 - Based on BEM method.
 - Jquery only.
-- Based onhttp://tympanus.net/codrops/2012/12/04/responsive-touch-friendly-audio-player
+- Based on http://tympanus.net/codrops/2012/12/04/responsive-touch-friendly-audio-player
 
 
 ### Required includes
@@ -17,7 +17,7 @@
 
 
 ### Dependencies
-- Font-awesome (icons for toggles and active state of small version)
+- Font-awesome (icons)
 
 
 ### Initialize
@@ -26,7 +26,7 @@ cupcake.navigation.init();
 ```
 
 ### Basic html structure
-Don't forget to specify the type, as it uses this for the isSupported-check.
+Don't forget to specify the type, as it uses this for the support-check.
 ```html
 <audio controls preload="auto" class="js-audio-player">
     <source src="../js/audioplayer/testfiles/test.mp3" type="audio/mp3"/>
@@ -97,7 +97,6 @@ $audioplayer-volume-adjust-control-state-background:  #C7C400!default;
 
 ### Support
 
-#### Jquery version
 - Latest Chrome
 - Latest FireFox
 - Latest Safari
