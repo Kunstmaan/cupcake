@@ -62,7 +62,9 @@
             };
 
         for(var subName in cssClassSub) {
-            cssClass[subName] = classPrefix + cssClassSub[subName];
+            if(cssClassSub.hasOwnProperty(subName)) {
+                cssClass[subName] = classPrefix + cssClassSub[subName];
+            }
         }
 
         this.each(function() {
