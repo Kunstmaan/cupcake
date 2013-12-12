@@ -11,6 +11,7 @@ $use-full-img-bg:       true!default;
 $use-navigation:        true!default;
 $use-iconfont:          true!default;
 $use-slider:            true!default;
+$use-audioplayer:       true!default;
 
 // Specific component configs
 @import "components-config/cookie-consent";
@@ -18,3 +19,4 @@ $use-slider:            true!default;
 @import "components-config/navigation";
 @import "components-config/iconfont";
 @import "components-config/slider";
+@import "components-config/audioplayer";
