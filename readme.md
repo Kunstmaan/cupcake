@@ -9,6 +9,7 @@ Cupcake is a html, scss/css, js component library with some usefull and commonly
 - [Full background-image implementation with fallback](docs/full-img-bg.md)
 - [Cookie consent bar](docs/cookie-consent.md)
 - [Adjustments to the flexslider plugin](docs/slider.md)
+- [Responsive audioplayer](docs/audioplayer.md)
 - Fix aggressive required focus state (Bootstrap 2.3)
 - Place-image mixin
 
