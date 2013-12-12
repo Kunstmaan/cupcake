@@ -102,23 +102,35 @@
     /* Time
        ========================================================================== */
     .audioplayer__time {
-        position: absolute;
-        top: 120%;
+        float: left;
+        margin-top: ($audioplayer-height + 1.5);
         color: $audioplayer-time-mobile-color;
         font-size: $audioplayer-time-font-size;
         line-height: 100%;
         @media (min-width: $audioplayer-breakpoint-mobile-version) {
+            position: absolute;
             top: 50%;
             margin: -.5em 0 0;
             color: $audioplayer-time-color;
         }
     }
     .audioplayer__time--current {
-        left: 5em;
+        left: 0;
+        &:after {
+            content: '-';
+            margin: 0 .5em;
+        }
+        @media (min-width: $audioplayer-breakpoint-mobile-version) {
+            left: 5em;
+            &:after {
+                display: none;
+            }
+        }
     }
     .audioplayer__time--duration {
-        right: 1.5em;
+        left: 4em;
         @media (min-width: $audioplayer-breakpoint-mobile-version) {
+            left: auto;
             right: 5em;
         }
     }
