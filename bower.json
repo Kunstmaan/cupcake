@@ -1,19 +1,17 @@
 {
   "name": "Cupcake",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "main": "base.scss",
   "ignore": [
     "**/.*",
     "node_modules",
     "vendor"
   ],
-  "dependencies": {
-    "jquery": "<2.0.0"
-  },
   "devDependencies": {
     "sass-bootstrap": "~3.0.0",
     "flexslider": "https://github.com/woothemes/FlexSlider/archive/release-2-2-0.zip",
     "bourbon": "latest",
-    "svgeezy": "latest"
+    "svgeezy": "latest",
+    "jquery": ">=1.10.0"
   }
 }
