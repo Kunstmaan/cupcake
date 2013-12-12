@@ -12,10 +12,10 @@
    Latest Chrome
    Latest FireFox
    Latest Safari
-   IE 7 and up
+   IE 8 and up
    Android 2.0 and up
    iOS 4.0 and up
-   WP 7.5 and up
+   WP 8 and up
    ========================================================================== */
 
 ;(function($, window, document, undefined) {
