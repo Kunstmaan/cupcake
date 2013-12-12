@@ -28,8 +28,15 @@
         secondsToTime, canPlayType;
 
     secondsToTime = function(secs) {
-        var hours = Math.floor(secs / 3600), minutes = Math.floor(secs % 3600 / 60), seconds = Math.ceil(secs % 3600 % 60);
-        return (hours === 0 ? '' : hours > 0 && hours.toString().length < 2 ? '0'+hours+':' : hours+':') + (minutes.toString().length < 2 ? '0'+minutes : minutes) + ':' + (seconds.toString().length < 2 ? '0'+seconds : seconds);
+        if(secs != Infinity) {
+            var hours = Math.floor(secs / 3600),
+                minutes = Math.floor(secs % 3600 / 60),
+                seconds = Math.ceil(secs % 3600 % 60);
+
+            return (hours === 0 ? '' : hours > 0 && hours.toString().length < 2 ? '0'+hours+':' : hours+':') + (minutes.toString().length < 2 ? '0'+minutes : minutes) + ':' + (seconds.toString().length < 2 ? '0'+seconds : seconds);
+        } else {
+            return ('--:--');
+        }
     };
 
     canPlayType = function(type) {
@@ -40,7 +47,6 @@
     };
 
     $.fn.audioPlayer = function() {
-
         var classPrefix = 'audioplayer',
             cssClass = {},
             cssClassSub = {
@@ -140,10 +146,10 @@
                     thePlayer.addClass(cssClass.noVolume);
                 }
 
-                timeDuration.html('&hellip;');
+                timeDuration.html('loading');
                 timeCurrent.text(secondsToTime(0));
 
-                theAudio.addEventListener('loadeddata', function() {
+                theAudio.addEventListener('loadedmetadata', function() {
                     timeDuration.text( secondsToTime(theAudio.duration));
                     volumeAdjuster.find('div').height(theAudio.volume * 100 + '%');
                     volumeDefault = theAudio.volume;
