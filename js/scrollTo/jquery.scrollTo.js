@@ -31,7 +31,7 @@ cupcake.scrollTo = (function($, window, undefined) {
                 targetOffset = $this.data('offset'),
                 targetTop;
 
-            if (typeof targetOffset === "undefined" || isNaN(targetOffset)) {
+            if (typeof targetOffset === 'undefined' || isNaN(targetOffset)) {
                 targetOffset = 0;
             }
 
