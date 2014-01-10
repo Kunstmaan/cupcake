@@ -51,7 +51,9 @@ cupcake.navigation = (function(window, undefined) {
 
     calcBigViewWidth = function() {
         [].forEach.call( document.querySelectorAll('.js-main-navigation-level > .navigation__item'), function(el) {
-            bigViewWidth += parseInt(el.offsetWidth, 10);
+            if (el.style.display != 'none') {
+                bigViewWidth += parseInt(el.offsetWidth, 10);
+            }
         });
     };
 
