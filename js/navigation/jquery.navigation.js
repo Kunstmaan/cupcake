@@ -44,7 +44,9 @@ cupcake.navigation = (function($, window, undefined) {
 
     calcBigViewWidth = function() {
         $('.js-main-navigation-level > .navigation__item').each(function() {
-            bigViewWidth += parseInt($(this).width(), 10);
+            if ($(this).is(':visible')) {
+              bigViewWidth += parseInt($(this).width(), 10);
+            }
         });
     };
 
