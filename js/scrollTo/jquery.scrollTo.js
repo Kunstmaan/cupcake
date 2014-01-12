@@ -28,11 +28,12 @@ cupcake.scrollTo = (function($, window, undefined) {
 
             var $this = $(this),
                 target = $this.attr('href'),
-                targetOffset = $this.data('offset'),
+                targetOffset = 0,
+                dataOffset = $this.data('offset'),
                 targetTop;
 
-            if (typeof targetOffset === 'undefined' || isNaN(targetOffset)) {
-                targetOffset = 0;
+            if (typeof dataOffset !== 'undefined' && !isNaN(dataOffset)) {
+                targetOffset = dataOffset;
             }
 
             targetTop = $(target).offset().top - targetOffset;
