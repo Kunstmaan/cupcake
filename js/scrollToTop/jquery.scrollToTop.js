@@ -24,7 +24,6 @@ cupcake.scrollToTop = (function($, window, undefined) {
     init = function() {
         $hook.on('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
 
             $('html, body').animate({scrollTop: 0}, 300);
         });
