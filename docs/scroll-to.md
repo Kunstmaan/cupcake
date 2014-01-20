@@ -2,11 +2,11 @@
 
 ### General
 - Scroll to snippit
-- Jquery version
+- Jquery and Vanilla-js version
 
 
 ### Required includes
-- jquery.scrollTo.js (and jQuery)
+- jquery.scrollTo.js (and jQuery for jQuery version)
 
 
 ### Initialize
