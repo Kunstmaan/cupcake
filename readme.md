@@ -1,4 +1,4 @@
-## Cupcake _v1.3.2_
+## Cupcake _v1.4.0_
 
 Cupcake is a html, scss/css, js component library with some usefull and commonly used components and snippits.
 
@@ -7,6 +7,7 @@ Cupcake is a html, scss/css, js component library with some usefull and commonly
 - [A responsive navigation (jQuery and Vanilla-js version)](docs/navigation.md)
 - [A scroll-to-top snippit (jQuery and Vanilla-js version)](docs/scroll-to-top.md)
 - [A scroll-to snippit (jQuery version)](docs/scroll-to.md)
+- [Videolink - lazy-load youtube and vimeo embeds (jQuery version)](docs/videolink.md)
 - [Full background-image implementation with fallback](docs/full-img-bg.md)
 - [Cookie consent bar](docs/cookie-consent.md)
 - [Adjustments to the flexslider plugin](docs/slider.md)

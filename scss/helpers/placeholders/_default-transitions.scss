@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Default transitions
+
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */
+
+%transition-color {
+    @include transition(color $default-transition-duration);
+}
+
+%transition-opacity {
+    @include transition(opacity $default-transition-duration);
+}

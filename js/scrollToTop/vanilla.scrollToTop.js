@@ -26,22 +26,9 @@ cupcake.scrollToTop = (function(window, undefined) {
 
     init = function() {
         [].forEach.call( document.querySelectorAll('.js-scroll-to-top'), function(el) {
-            el.addEventListener('mousedown', function(e) {
+            el.addEventListener('click', function(e) {
                 e.preventDefault();
-                e.stopPropagation();
-            }, false);
-            el.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-            }, false);
-            el.addEventListener('mouseup', function() {
-                start = document.body.scrollTop;
-                change = to - start;
-                currentTime = 0;
 
-                animateScroll();
-            }, false);
-            el.addEventListener('touchend', function() {
                 start = document.body.scrollTop;
                 change = to - start;
                 currentTime = 0;
