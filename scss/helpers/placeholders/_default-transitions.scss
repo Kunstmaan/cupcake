@@ -1,9 +1,13 @@
 /* ==========================================================================
-   Mixins
+   Default transitions
 
-   Never add styles directly to this file - set up imports
    Style guide: https://github.com/necolas/idiomatic-css
    ========================================================================== */
 
-@import "place-image";
-@import "opacity-incl-ie8";
+%transition-color {
+    @include transition(color $default-transition-duration);
+}
+
+%transition-opacity {
+    @include transition(opacity $default-transition-duration);
+}
