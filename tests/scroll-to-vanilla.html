@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Cupcake Scroll-to - jQuery</title>
+    <title>Cupcake Scroll-to - Vanilla</title>
 
     <meta name="description" content="Responsive navigation manual test">
 
@@ -18,7 +18,7 @@
 <body>
     <main class="container">
         <header role="header">
-            <h3>Cupcake Scroll-to-top - jQuery v0.1</h3>
+            <h3>Cupcake Scroll-to-top - Vanilla v0.1</h3>
         </header>
         <article>
             <section>
@@ -98,10 +98,9 @@
         </article>
     </main>
 
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../js/scrollTo/jquery.scrollTo.js"></script>
+    <script src="../js/scrollTo/vanilla.scrollTo.js"></script>
     <script>
-        $(function() {
+        document.addEventListener("DOMContentLoaded", function(event) {
             cupcake.scrollTo.init();
         });
     </script>
