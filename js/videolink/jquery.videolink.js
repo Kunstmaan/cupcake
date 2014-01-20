@@ -23,14 +23,9 @@ var cupcake = cupcake || {};
 
 cupcake.videolink = (function($, window, undefined) {
 
-    var init,
-        videolinkInit;
+    var init;
 
     init = function() {
-        videolinkInit();
-    };
-
-    videolinkInit = function() {
         $('.js-videolink-play-link').on('click', function(e) {
             e.preventDefault();
 
