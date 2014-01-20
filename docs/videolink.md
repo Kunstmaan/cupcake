@@ -7,12 +7,15 @@
 
 ### Required includes
 - **Javascript**
- - jQuery
- - Modernizr
  - jQuery.videolink.js
 
 - **Styles**
  - videolink.scss
+
+### Dependencies
+- jQuery
+- Modernizr.csstransitions (check css-transitions)
+- FidVids (if you want make the video's fluid)
 
 
 ### Initialize
