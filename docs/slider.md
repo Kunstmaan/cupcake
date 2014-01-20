@@ -8,7 +8,7 @@ An extension of Flexslider which:
 
 ### Support
 ##### Desktop
-* IE 7 - 10
+* IE 8 - 10
 * Firefox
 * Chrome
 * Safari

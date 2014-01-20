@@ -9,9 +9,11 @@
   ],
   "devDependencies": {
     "sass-bootstrap": "~3.0.0",
-    "flexslider": "https://github.com/woothemes/FlexSlider/archive/release-2-2-0.zip",
     "bourbon": "latest",
     "svgeezy": "latest",
-    "jquery": ">=1.10.0"
+    "jquery": ">=1.10.0",
+    "modernizr": "latest",
+    "flexslider": "latest",
+    "fitvids": "latest"
   }
 }
