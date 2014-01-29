@@ -2,7 +2,11 @@
 
 ### What
 An extension of Flexslider which:
-* ads a fully customizable thumbnail navigation block on bottom of the slider
+* Implement the default FlexSlider theme in SCSS
+* Added data-attributes for animation, controlNav, slideshow & start position.
+
+##### To-Do
+* Support for media-queries
 
 ### Support
 ##### Desktop
@@ -24,7 +28,8 @@ An extension of Flexslider which:
 
 
 ### HTML structure
-Note: for semantic reasons it's advised to place the thumb navigation block according to which lay-out you're using i.e. if you're using the top or left lay-out, place the navigation above the slider-pp__flexslider, when you're using the right or bottom set-up the nav block has to go below the slider-pp__flexslider.
+Note: The navigation block position is deprecetad. 
+For now we follow this standard procedure for sliders. You can easily change some FlexSlider params by editing data-attributes.
 
 ```html
 <section class="slider-pp">
@@ -62,11 +67,10 @@ Note: for semantic reasons it's advised to place the thumb navigation block acco
 ### jQuery
 
 ```javascript
-<script>cupcake.slider.init();</script>
+cupcake.slider.init();
 ```
 
 ```javascript
-<script>
 var cupcake = cupcake || {};
 
 cupcake.slider = (function ($, window, undefined) {
@@ -112,7 +116,6 @@ cupcake.slider = (function ($, window, undefined) {
     };
 
 }(jQuery, window));
-</script>
 ```
 
 ### SCSS Variables
