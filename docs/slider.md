@@ -1,4 +1,4 @@
-## Cupcake responsive slider v0.1
+## Cupcake responsive slider v0.2
 
 ### What
 An extension of Flexslider which:
