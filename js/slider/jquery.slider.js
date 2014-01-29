@@ -23,8 +23,6 @@ cupcake.slider = (function ($, window, undefined) {
 
     init = function () {
 
-        console.log('init flexslider');
-
         $hook.each(function (index, value) {
 
             if ($(window).width() > 768) {
@@ -52,16 +50,6 @@ cupcake.slider = (function ($, window, undefined) {
             startAt: $el.data('startAt'),
             manualControls: $controls
         });
-    };
-
-    destroySlider = function ($el) {
-
-    };
-
-    initThumbs = function ($el) {
-
-
-
     };
 
     return {
