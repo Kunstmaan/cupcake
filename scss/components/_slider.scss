@@ -293,6 +293,18 @@ html[xmlns] .slides {
    Thumbs
    ========================================================================== */
 
+.slider--pp__thumbs {
+    @include clearfix();
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
+    }
+}
+
+.slider-pp__thumbs-wrapper {
+    @include clearfix();
+}
+
 .slider-pp__thumbs--item {
     background: rgba(black, .85);
     color: white;
