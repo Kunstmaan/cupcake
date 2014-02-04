@@ -41,6 +41,8 @@ cupcake.slider = (function ($, window, undefined) {
 
     initSlider = function ($el) {
 
+        var $controls = $el.parent().find('.js-thumbs--item');
+        
         initThumbs($el);
 
         $el.flexslider({
