@@ -25,6 +25,7 @@ An extension of Flexslider which:
 ### Dependencies
 * Flexslider 2.2.2
 * Bourbon
+* jQuery EqualHeights
 
 
 ### HTML structure
@@ -80,8 +81,6 @@ cupcake.slider = (function ($, window, undefined) {
 
     init = function () {
 
-        console.log('init flexslider');
-
         $hook.each(function (index, value) {
 
             if ($(window).width() > 768) {
@@ -90,17 +89,19 @@ cupcake.slider = (function ($, window, undefined) {
                 destroySlider($(this));
             }
         });
+
+        $(window).resize(function(event) {
+            $hook.each(function (index, value) {
+                initThumbs($el);
+            });
+        });
     };
 
     initSlider = function ($el) {
 
         var $controls = $el.parent().find('.js-thumbs--item');
-
-        if ($controls.length === 0) {
-            $controls = false;
-        } else {
-            $controls.css('width', 100 / $controls.length + '%');
-        }
+        
+        initThumbs($el);
 
         $el.flexslider({
             animation: $el.data('animation'),
@@ -109,6 +110,17 @@ cupcake.slider = (function ($, window, undefined) {
             startAt: $el.data('startAt'),
             manualControls: $controls
         });
+    };
+
+    initThumbs = function ($el) {
+        var $controls = $el.parent().find('.js-thumbs--item');
+
+        if ($controls.length === 0) {
+            $controls = false;
+        } else {
+            $controls.css('width', 100/$controls.length + '%');
+            $controls.equalHeights();
+        }
     };
 
     return {
