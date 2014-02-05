@@ -92,7 +92,7 @@ cupcake.slider = (function ($, window, undefined) {
 
         $(window).resize(function(event) {
             $hook.each(function (index, value) {
-                initThumbs($el);
+                initThumbs($hook);
             });
         });
     };
