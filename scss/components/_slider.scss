@@ -308,14 +308,14 @@ html[xmlns] .slides {
 }
 
 .slider-pp__thumbs--item {
-    background: rgba(black, .85);
-    color: white;
+    background: $slider-nav-background;
+    color: $slider-nav-color;
     float: left;
     cursor: pointer;
-    padding: 1.5em;
+    padding: $slider-nav-padding;
 
     &.flex-active {
-        background-color: rgba(black, 1);
+        background-color: rgba($slider-nav-background, 1);
     }
 }
 

@@ -10,5 +10,9 @@
 
 $slider-icon-font:              '../vendor/flexslider/fonts' !default;
 
-/* Theme
+/* Custom Navigation
    ========================================================================== */
+
+$slider-nav-background:             rgba(black, .85) !default;
+$slider-nav-color:                  white !default;
+$slider-nav-padding:                1.5em !default;
