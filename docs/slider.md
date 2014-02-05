@@ -5,9 +5,6 @@ An extension of Flexslider which:
 * Implement the default FlexSlider theme in SCSS
 * Added data-attributes for animation, controlNav, slideshow & start position.
 
-##### To-Do
-* Support for media-queries
-
 ### Support
 ##### Desktop
 * IE 8 - 10
