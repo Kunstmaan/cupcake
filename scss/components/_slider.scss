@@ -2,7 +2,6 @@
 
 /* ==========================================================================
    Adjustments to Flexslider
-
    ========================================================================== */
 
 /* ==========================================================================
@@ -10,21 +9,23 @@
    ========================================================================== */
 
 .slider-pp * {
-   -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-           box-sizing: border-box;
-   -webkit-font-smoothing: antialiased;
-           font-smoothing: antialiased;
-   -webkit-backface-visibility: hidden;
-}
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+     -webkit-font-smoothing: antialiased;
+     font-smoothing: antialiased;
+     -webkit-backface-visibility: hidden;
+ }
 
 /* ==========================================================================
-   General Slider
+   Browser Resets
    ========================================================================== */
 
-.flex-container, .slider-pp, .flex-container, .slider-pp__flexslider {
-    a:focus, a:active {
-        outline: none;
+.flex-container, .flexslider {
+    a {
+        &:active, &:hover {
+            outline: none;
+        }
     }
 }
 
@@ -34,331 +35,304 @@
     list-style: none;
 }
 
-.slider-pp {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+/* ==========================================================================
+   Icon Fonts
+   ========================================================================== */
+
+@font-face {
+    font-family: 'flexslider-icon';
+    src: url('#{$slider-icon-font}/flexslider-icon.eot');
+    src: url('#{$slider-icon-font}/flexslider-icon.eot?#iefix') format('embedded-opentype'),
+         url('#{$slider-icon-font}/flexslider-icon.woff') format('woff'),
+         url('#{$slider-icon-font}/flexslider-icon.ttf') format('truetype'),
+         url('#{$slider-icon-font}/flexslider-icon.svg#flexslider-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.slider-pp .slides > li {
-    display: none;
+/* ==========================================================================
+   FlexSlider Necessary Styles
+   ========================================================================== */
+
+.flex-pauseplay span {
+    text-transform: capitalize;
 }
 
-.slider-pp__flexslider {
-    margin: 0;
+.flexslider {
+    margin: 0; 
     padding: 0;
+
+    .slides {
+        > li {
+            display: none;
+            -webkit-backface-visibility: hidden;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        &:after {
+            content: "\0020";
+            display: block; 
+            clear: both; 
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+    }
+}
+
+html[xmlns] .slides {
+    display: block;
+}
+
+* html .slides {
+    height: 1%;
+}
+
+/* ==========================================================================
+   FlexSlider Default Theme
+   ========================================================================== */
+
+.flexslider {
+    background: white;
+    border: none;
+    border-radius: 0px;
+    margin: 0;
     position: relative;
     zoom: 1;
-    z-index: 1;
-    background: #fff;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+
     .slides {
-        position: relative;
-        li {
-            position: $slidePosition;
-            background: $slideBackgroundColor;
-        }
-        img {
-            width: $imageWidth;
-            float: $imageFloat;
-            display: block;
-        }
-    }
-
-    &:hover {
-        .flex-next{
-            right: $nextPositionRight;
-        }
-
-        .flex-prev{
-            left: $prevPositionLeft;
-        }
-    }
-}
-
-.slider-pp__caption {
-    width: $captionWidth;
-    height: $captionHeight;
-    padding: $captionPadding;
-    float: $captionFloat;
-    position: $captionPosition;
-    top: $captionPositionTop;
-    right: $captionPositionRight;
-    left: $captionPositionBottom;
-    bottom: $captionPositionLeft;
-    color: #fff;
-    background: $captionBackground;
-    h3 {
-        margin: 0 0 .5em 0;
-    }
-    p {
-        margin: 0;
-    }
-    .slider-pp__caption--button {
-        @extend %button__small--white;
+        zoom: 1;
     }
 }
 
 .flex-viewport {
-    max-height: $viewportHeight;
+    max-height: 3000px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+
     .loading & {
         max-height: 300px;
     }
 }
 
-.carousel li {
-    margin-right: 5px;
-}
+/* ==========================================================================
+   Direction Nav
+   ========================================================================== */
 
-/* Slider custom nav block */
-.slider-pp__thumbs {
-    padding: 0;
-    z-index: 1;
-}
+.flex-direction-nav a  { text-decoration:none; display: block; width: 40px; height: 40px; margin: -20px 0 0; position: absolute; top: 50%; z-index: 10; overflow: hidden; opacity: 0; cursor: pointer; color: rgba(0,0,0,0.8); text-shadow: 1px 1px 0 rgba(255,255,255,0.3); -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease; }
 
-.slider-pp__thumbs--item {
-    margin: 0;
-    padding: $itemPadding;
-    position: relative;
-    background: $idleItemBackground;
-    color: $idleItemText;
-    cursor: pointer;
-    @include transition (all .3s ease-in);
-    p {
-        margin: 0;
-    }
-    &:hover, &:focus {
-        background: $hoverItemBackground;
-        color: $hoverItemText;
-    }
-}
 
-.flex-active {
-    background: $activeItemBackground;
-    color: $activeItemText;
-    &:hover {
-        background: $activeItemBackground;
-        color: $activeItemText;
-    }
-}
-
-/* Direction Nav */
 .flex-direction-nav {
     *height: 0;
-    *width: 100%;
-    margin: 0;
-    padding: 0;
-    display: $directionDisplay;
-    list-style: none;
-    font-size: 0;
-    line-height: 0;
     a {
-        width: $directionImageWidth;
-        height: $directionImageHeight;
-        margin: $directionImageMargin;
-        position: $directionPostion;
-        display: block;
-        z-index: -9999;
-        background-image: $directionImage;
-        background-repeat: $directionImageRepeat;
-        background-color: $directionColor;
-        text-indent: -9999px;
-        opacity: 1;
-        @include transition (all .3s ease-in);
-        &:hover {
-            background-color: $directionHoverColor;
-        }
-    }
-    a.flex-next:before {
-        content: ' ';
-    }
-    .flex-next {
-        background-position: $nextBackgroundPosition;
-        top: $nextPositionTop;
-        right: $nextPositionRight;
-        bottom: $nextPositionBottom;
-        left: $nextPositionLeft;
+        text-decoration:none; 
+        display: block; 
+        width: 50px; height: 50px; 
+        margin: -20px 0 0; 
+        position: absolute; 
+        top: 50%; 
+        z-index: 10; 
+        //overflow: hidden; 
+        opacity: 0; 
+        cursor: pointer; 
+        color: rgba(0,0,0,0.8); 
+        text-shadow: 1px 1px 0 rgba(255,255,255,0.3); 
+        -webkit-transition: all .3s ease; 
+        -moz-transition: all .3s ease; 
+        transition: all .3s ease;
     }
     .flex-prev {
-        background-position: $prevBackgroundPosition;
-        top: $prevPositionTop;
-        right: $prevPositionRight;
-        bottom: $prevPositionBottom;
-        left: $prevPositionLeft;
+        left: 10px;
+    }
+    .flex-next {
+        right: 10px;
+        text-align: right;
     }
 }
 
-/* Fix for the caption animation */
-.clone .slider-pp__caption {
-    opacity: 0;
+.flexslider:hover {
+    .flex-prev {
+        opacity: 0.7;
+    }
+    .flex-next {
+        opacity: 0.7;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .flex-prev:hover {
+        opacity: 1;
+    }
 }
 
-@if $animateContent == true {
-  .flex-animateIn .slider-pp__caption {
-     @extend %slider-pp__caption__animate-in;
-  }
+.flex-direction-nav {
+    .flex-disabled {
+        opacity: 0 !important;
+        filter: alpha(opacity=0);
+        cursor: default;
+    }
+    a {
+        &:before {
+            font-family:"flexslider-icon";
+            font-size: 40px;
+            display: inline-block;
+            content:'\f001';
+        }
+        &.flex-next:before {
+            content:'\f002';
+        }
+    }
 }
 
 /* ==========================================================================
-   Specific sliders
+   Pause/Play
    ========================================================================== */
 
-.slider-pp--bottom, .slider-pp--top {
-    .slider-pp__thumbs {
+.flex-pauseplay a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    opacity: 0.8;
+    z-index: 10;
+    overflow: hidden;
+    cursor: pointer;
+    color: #000;
+    &:before {
+        font-family:"flexslider-icon";
+        font-size: 20px;
+        display: inline-block;
+        content:'\f004';
+    }
+    &:hover {
+        opacity: 1;
+    }
+    &.flex-play:before {
+        content:'\f003';
+    }
+}
+
+/* ==========================================================================
+   Control Nav
+   ========================================================================== */
+
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    li {
+        margin: 0 6px;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+    }
+}
+.flex-control-paging li a {
+    width: 11px;
+    height: 11px;
+    display: block;
+    background: #666;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    text-indent: -9999px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    &:hover {
+        background: #333;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    &.flex-active {
+        background: #000;
+        background: rgba(0, 0, 0, 0.9);
+        cursor: default;
+    }
+}
+
+/* ==========================================================================
+   Control Thumbs
+   ========================================================================== */
+
+.flex-control-thumbs {
+    margin: 5px 0 0;
+    position: static;
+    overflow: hidden;
+    li {
+        width: 25%;
+        float: left;
+        margin: 0;
+    }
+    img {
         width: 100%;
-        position: relative;
-        display: table;
-    }
-
-    .slider-pp__thumbs-wrapper {
-        display: table-row;
-    }
-
-    .slider-pp__thumbs--item {
-        width: $itemSize;
-        height: 100%;
-        position: relative;
-        display: table-cell;
-        vertical-align: middle;
-        border-left: $idleItemDevider;
-        &:first-child {
-            border: none;
+        display: block;
+        opacity: .7;
+        cursor: pointer;
+        &:hover {
+            opacity: 1;
         }
     }
+    .flex-active {
+        opacity: 1;
+        cursor: default;
+    }
 }
 
-.slider-pp--right, .slider-pp--left {
-    height: 100%;
-    position: relative;
-    .slider-pp__flexslider {
-        width: $asideSlideWidth;
-    }
-    /* Slider custom nav block */
-    .slider-pp__thumbs {
-        width: $asideThumbWidth;
-        height: 100%;
-        position: absolute;
-        top: 0;
+/* ==========================================================================
+   Thumbs
+   ========================================================================== */
+
+.slider--pp__thumbs {
+    @include clearfix();
+    display: none;
+    @media (min-width: 768px) {
         display: block;
     }
-    .slider-pp__thumbs-wrapper {
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-    .slider-pp__thumbs--item {
-        width: 100%;
-        height: $itemSize;
-        display: block;
-        border-top: $idleItemDevider;
-        &:first-child {
-            border: none;
-        }
-    }
-    /* Direction Nav */
-    .flex-direction-nav {
-        display: none; //overwrite for the sake of example, change this back to the default $directionDisplay variable, for single usage
+}
+
+.slider-pp__thumbs-wrapper {
+    @include clearfix();
+}
+
+.slider-pp__thumbs--item {
+    background: $slider-nav-background;
+    color: $slider-nav-color;
+    float: left;
+    cursor: pointer;
+    padding: $slider-nav-padding;
+
+    &.flex-active {
+        background-color: rgba($slider-nav-background, 1);
     }
 }
 
-.slider-pp--right .slider-pp__thumbs {
-    right: 0;
-}
-
-.slider-pp--left .slider-pp__thumbs {
-    left: 0;
-}
-
-.slider-pp--left .slider-pp__flexslider {
-    margin-left: $asideLeftMarginLeft;
-}
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media (max-width: 67em) {
+@media screen and (max-width: 768px) {
     .flex-direction-nav {
-        display: none;
-    }
-}
-
-@media (max-width: 48em) {
-    .slider-pp, .slider-pp--top, .slider-pp--right, .slider-pp--bottom, .slider-pp--left {
-        position: relative;
-        margin: 0 0 40px 0;
-
-        .slider-pp__thumbs {
-            position: absolute;
-            top: auto;
-            bottom: -30px;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            z-index: 1;
-            text-align: center;
-            &:before {
-                content: '';
-                display: none;
-            }
+        .flex-prev {
+            opacity: 1;
+            left: 10px;
         }
-        .slider-pp__thumbs--item {
-            p {
-                display: none;
-            }
-            height: 15px;
-            width: 15px;
-            padding: 0;
-            margin-right: .5em;
-            float: none;
-            display: inline-block;
-            border-radius: 50%;
-            background: #fff;
-            border: 1px solid $activeItemBackground;
-            &:first-child {
-                border: 1px solid $activeItemBackground;
-            }
-            &:before {
-                box-shadow: none;
-            }
-        }
-        .slider-pp__flexslider {
-            width: 100%;
-        }
-        .slider-pp__flexslider .slides img{
-            width: 100%;
-        }
-        .slider-pp__caption {
-            width: 100%;
-            height: 100%;
-            position: static;
-            padding: .5em !important;
-            h3 {
-                margin: 0 0 .5em 0;
-                font-size: 1em;
-                line-height: 100%;
-            }
-            p {
-                margin: 0;
-            }
-        }
-        .flex-viewport {
-            max-height: 100%;
-        }
-        .flex-active {
-            background: $activeItemBackground;
-        }
-    }
-
-    .slider-pp--left, .slider-pp--right {
-        .slider-pp__flexslider {
-            margin: 0;
-        }
-
-        .slider-pp__thumbs, .slider-pp__thumbs-wrapper {
-            height: auto;
+        .flex-next {
+            opacity: 1;
+            right: 10px;
         }
     }
 }
@@ -367,8 +341,13 @@
    No JavaScript Fallback
    ========================================================================== */
 
-.no-js .slides > li:first-child {
-    display: block;
+.no-js {
+    .slides {
+        > li:first-child {
+            display: block;
+        }
+    }
 }
 
-}//endif
+
+} // endif
