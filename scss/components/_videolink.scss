@@ -1,0 +1,45 @@
+@if $use-videolink == true{
+
+    /* ==========================================================================
+       Videolinks
+       ========================================================================== */
+
+    /* General
+       ========================================================================== */
+    .videolink {
+        z-index: 0;
+        position: relative;
+    }
+
+    .videolink__video-link {
+        z-index: 2;
+        position: relative;
+        display: block;
+        @extend %transition-opacity;
+    }
+    .videolink__video-link--hide {
+        @include opacity-incl-ie8(0);
+    }
+    .videolink__video-link--hidden {
+        z-index: -1;
+        visibility: hidden;
+    }
+
+    .videolink__video-link__image {
+        z-index: 0;
+        position: relative;
+        width: 100%;
+        max-width: none;
+    }
+
+    .videolink__video-container {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $videolink-background;
+    }
+
+}//endif

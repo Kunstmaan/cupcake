@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Vanilla responsive navigation - v0.3
+   Vanilla responsive navigation
 
    Initialize:
    cupcake.navigation.init();
@@ -16,6 +16,7 @@ cupcake.navigation = (function(window, undefined) {
 
     var init, smallNavigationToggles, calcBigViewWidth, toggleNavigationState,
         navigationHook = document.getElementsByClassName('js-navigation')[0],
+        navigationAvailableSpaceHook = document.getElementsByClassName('js-navigation-space-hook')[0],
         bigViewWidth = 0,
         availableSpace = 0;
 
@@ -49,13 +50,15 @@ cupcake.navigation = (function(window, undefined) {
     };
 
     calcBigViewWidth = function() {
-         [].forEach.call( document.querySelectorAll('.js-main-navigation-level > .navigation__item'), function(el) {
-            bigViewWidth += parseInt(el.offsetWidth, 10);
-         });
+        [].forEach.call( document.querySelectorAll('.js-main-navigation-level > .navigation__item'), function(el) {
+            if (el.style.display != 'none') {
+                bigViewWidth += parseInt(el.offsetWidth, 10);
+            }
+        });
     };
 
     toggleNavigationState = function() {
-        availableSpace = navigationHook.offsetWidth;
+        availableSpace = navigationAvailableSpaceHook.offsetWidth;
 
         if (bigViewWidth > availableSpace) {
             navigationHook.classList.add('navigation--small');

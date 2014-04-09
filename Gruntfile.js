@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    './css/base.css': './scss/base.scss',
+                    './css/base-dev.css': './scss/base-dev.scss',
                     './css/bootstrap.css': './vendor/sass-bootstrap/lib/bootstrap.scss'
                 }
             }

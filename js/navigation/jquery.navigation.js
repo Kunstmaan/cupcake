@@ -1,5 +1,5 @@
 /* ==========================================================================
-   jQuery responsive navigation - v0.3
+   jQuery responsive navigation
 
    Initialize:
    cupcake.navigation.init();
@@ -16,6 +16,7 @@ cupcake.navigation = (function($, window, undefined) {
 
     var init, smallNavigationToggles, calcBigViewWidth, toggleNavigationState,
         $navigationHook = $('.js-navigation'),
+        $navigationAvailableSpaceHook = $('.js-navigation-space-hook'),
         bigViewWidth = 0,
         availableSpace = 0;
 
@@ -28,7 +29,10 @@ cupcake.navigation = (function($, window, undefined) {
     };
 
     smallNavigationToggles = function() {
-        $('.js-navigation__toggle').on('touchstart mousedown', function(e) {
+        $('.js-navigation__toggle').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }).on('touchstart mousedown', function(e) {
             e.preventDefault();
             e.stopPropagation();
         }).on('touchend mouseup', function() {
@@ -40,12 +44,14 @@ cupcake.navigation = (function($, window, undefined) {
 
     calcBigViewWidth = function() {
         $('.js-main-navigation-level > .navigation__item').each(function() {
-            bigViewWidth += parseInt($(this).width(), 10);
+            if ($(this).css('display') != 'none') {
+              bigViewWidth += parseInt($(this).width(), 10);
+            }
         });
     };
 
     toggleNavigationState = function() {
-        availableSpace = $navigationHook.width();
+        availableSpace = $navigationAvailableSpaceHook.width();
 
         if (bigViewWidth > availableSpace) {
             $navigationHook.addClass('navigation--small')

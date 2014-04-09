@@ -4,8 +4,6 @@
    Never add styles directly to this file - set up imports
    ========================================================================== */
 
-@import "iconfont";
-@import "navigation";
-@import "cookie-consent";
-@import "full-img-bg";
-@import "slider";
+@import "general";
+@import "components";
+@import "overrides";

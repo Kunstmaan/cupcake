@@ -1,12 +1,8 @@
 /* ==========================================================================
-   Icons
+   General Cupcake config
 
    This file is exclusively intended for setting up variables.
    Never add styles directly to this file
    ========================================================================== */
 
-//Import cupcake icons scss?
-$cupcake-include-icons: true!default;
-
-//Url for fonts
-$cupcake-iconfont-url: "../fonts/iconfont/font-files"!default;
+$default-transition-duration:       .2s;

@@ -1,20 +1,20 @@
 {
   "name": "Cupcake",
-  "version": "1.0.1",
+  "version": "1.5.0",
   "main": "base.scss",
   "ignore": [
     "**/.*",
     "node_modules",
     "vendor"
   ],
-  "dependencies": {
-    "jquery": "<2.0.0",
-    "jquery-backstretch": "~2.0.4"
-  },
   "devDependencies": {
-    "sass-bootstrap": "~2.3.2",
-    "flexslider": "https://github.com/woothemes/FlexSlider/archive/release-2-2-0.zip",
+    "sass-bootstrap": "~3.0.0",
     "bourbon": "latest",
-    "svgeezy": "latest"
+    "svgeezy": "latest",
+    "jquery": ">=1.10.0",
+    "modernizr": "latest",
+    "flexslider": "latest",
+    "fitvids": "latest",
+    "jquery.equalheights": "~1.5.2"
   }
 }

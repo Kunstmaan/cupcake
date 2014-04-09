@@ -1,4 +1,5 @@
-@if $cupcake-include-icons == true{
+@if $use-iconfont == true{
+
     /* ==========================================================================
        Icon font
 
@@ -8,42 +9,56 @@
     /* General
        ========================================================================== */
     @font-face {
-        font-family: 'iconfont';
-        src:url('#{$cupcake-iconfont-url}/iconfont.eot');
-        src:url('#{$cupcake-iconfont-url}/iconfont.eot?#iefix') format('embedded-opentype'),
-            url('#{$cupcake-iconfont-url}/iconfont.woff') format('woff'),
-            url('#{$cupcake-iconfont-url}/iconfont.ttf') format('truetype'),
-            url('#{$cupcake-iconfont-url}/iconfont.svg#iconfont') format('svg');
+        font-family: 'cupcake';
+        src:url('#{$cupcake-iconfont-url}/cupcake.eot');
+        src:url('#{$cupcake-iconfont-url}/cupcake.eot?#iefix') format('embedded-opentype'),
+            url('#{$cupcake-iconfont-url}/cupcake.ttf') format('truetype'),
+            url('#{$cupcake-iconfont-url}/cupcake.woff') format('woff'),
+            url('#{$cupcake-iconfont-url}/cupcake.svg#cupcake') format('svg');
         font-weight: normal;
         font-style: normal;
     }
-    .icon-reorder, .icon-remove, .icon-chevron-right, .icon-chevron-down, .icon-chevron-up {
-        font-family: 'iconfont';
+
+    [class^="icon-"], [class*=" icon-"] {
+        font-family: 'cupcake';
         speak: none;
         font-style: normal;
         font-weight: normal;
         font-variant: normal;
         text-transform: none;
         line-height: 1;
+
+        /* Better Font Rendering =========== */
         -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
-
-    /* Icons
-       ========================================================================== */
-    .icon-reorder:before {
-        content: "\2630";
-    }
-    .icon-remove:before {
-        content: "\78";
-    }
     .icon-chevron-right:before {
-        content: "\25ba";
+        content: "\e600";
+    }
+    .icon-reorder:before {
+        content: "\e601";
     }
     .icon-chevron-down:before {
-        content: "\25bc";
+        content: "\e602";
     }
     .icon-chevron-up:before {
-        content: "\25b2";
+        content: "\e603";
     }
-}
+    .icon-remove:before {
+        content: "\e604";
+    }
+    .icon-play:before {
+        content: "\e605";
+    }
+    .icon-pause:before {
+        content: "\e606";
+    }
+    .icon-volume-up:before {
+        content: "\e607";
+    }
+    .icon-volume-off:before {
+        content: "\e608";
+    }
+
+}//endif

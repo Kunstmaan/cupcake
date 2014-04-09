@@ -1,18 +1,6 @@
-%button__small--white {
-    height: 2em;
-    width: auto;
-    margin-top: .6em;
-    padding: $buttonPadding;
-    display: inline-block;
-    border-radius: $buttonBorderRadius;
-    border: $buttonBorder;
-    background: $buttonBackground;
-    color: $buttonColor;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1em;
-    line-height: 2em;
-    &:hover {
-        background: $buttonStateBackground;
-    }
-}
+/* ==========================================================================
+   Buttons
+
+   Never add styles directly to this file - set up imports
+   Style guide: https://github.com/necolas/idiomatic-css
+   ========================================================================== */

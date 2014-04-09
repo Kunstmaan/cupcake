@@ -1,0 +1,8 @@
+/* ==========================================================================
+   Opacity mixin with IE8 support
+   ========================================================================== */
+
+@mixin opacity-incl-ie8($alpha) {
+    opacity: $alpha;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$alpha*100})";
+}
