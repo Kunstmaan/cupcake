@@ -23,9 +23,6 @@ module.exports = function(grunt) {
                 },
                 files: {
                     './css/base-dev.css': './scss/base-dev.scss',
-                    './css/legacy-slider-no-boxsizing.css': './scss/legacy/slider/legacy-slider-no-boxsizing.scss',
-                    './css/legacy-slider-no-inline-svg.css': './scss/legacy/slider/legacy-slider-no-inline-svg.scss',
-                    './css/legacy-slider-no-table-cell.css': './scss/legacy/slider/legacy-slider-no-table-cell.scss',
                     './css/bootstrap.css': './vendor/sass-bootstrap/lib/bootstrap.scss'
                 }
             }
