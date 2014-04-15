@@ -10,6 +10,7 @@
     top: $cookie-bar-position-top;
     left: $cookie-bar-position-left;
     right: $cookie-bar-position-right;
+    display: none;
     background-color: $cookie-bar-color;
     text-align: $cookie-bar-text-align;
     width: $cookie-bar-width;
@@ -25,9 +26,8 @@
     }
 }
 
-//Hide
-.cookie-bar__hide {
-    display: none;
+.cookie-bar--visible {
+    display: block;
 }
 
 }//endif
