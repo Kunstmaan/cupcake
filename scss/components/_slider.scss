@@ -350,6 +350,10 @@ html[xmlns] .slides {
             right: 10px;
         }
     }
+    //destroy function
+    .flexslider .slides > li {
+        display: block;
+    }
 }
 
 /* ==========================================================================
