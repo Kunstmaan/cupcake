@@ -1,4 +1,4 @@
-## Cupcake _v1.6.1_
+## Cupcake _v1.6.2_
 
 Cupcake is a html, scss/css, js component library with some usefull and commonly used components and snippits.
 
@@ -40,3 +40,6 @@ Example for adding a feature:
 
 ### License
 Cupcake is licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-3160735-7/Kunstmaan/cupcake)](https://github.com/igrigorik/ga-beacon)
