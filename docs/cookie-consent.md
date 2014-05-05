@@ -1,9 +1,29 @@
 ## Cupcake Cookie Consent
 
+### General
+
+### Required includes
+- **Javascript**
+ - jquery.cookie-consent.js or vanilla.cookie-consent.js
+
+- **Styles**
+ - cookie-consent.scss
+
+### Dependencies
+- jQuery (only for jquery.cookie-consent.js)
+
+### Initialize
+```javascript
+cupcake.cookieconsent.init();
+```
+
 ###  Basic html structure
 ```html
-    <div class="cookie-bar">
-        <p>Bolero gebruikt cookies om uw surfervaring op deze website gemakkelijker te maken. Indien u meer informatie wenst kunt u <a href="#" class="cookie-bar__policy">hier ons cookiebeleid lezen</a>. <a href="#" class="btn btn-warning cookie-bar__btn">Doorgaan</a></p>
+    <div id="cookie-bar" class="cookie-bar">
+        <p>
+            Deze site gebruikt cookies om uw surfervaring op deze website gemakkelijker te maken. Indien u meer informatie wenst kunt u <a href="#">hier ons cookiebeleid lezen</a>.
+            <button type="button" id="cookie-bar__consent-btn" class="btn btn-warning cookie-bar__btn">Doorgaan</button>
+        </p>
     </div>
 ```
 
@@ -28,3 +48,23 @@ $cookie-bar-policy-link-text-decoration: underline !default;
 //Button
 $cookie-bar-button-margin: 0 0 0 5px !default;
 ```
+
+### Support
+
+#### Jquery version
+- Latest Chrome
+- Latest FireFox
+- Latest Safari
+- IE 8 and up
+- Android 2.0 and up
+- iOS 4.0 and up
+- WP 7.5 and up
+
+#### Vanilla version
+- Latest Chrome
+- Latest FireFox
+- Latest Safari
+- IE 9 and up
+- Android 3.0 and up
+- iOS 5.0 and up
+- WP 7.8 and up

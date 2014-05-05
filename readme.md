@@ -1,4 +1,4 @@
-## Cupcake _v1.5.0_
+## Cupcake _v1.6.2_
 
 Cupcake is a html, scss/css, js component library with some usefull and commonly used components and snippits.
 
@@ -7,9 +7,9 @@ Cupcake is a html, scss/css, js component library with some usefull and commonly
 - [A responsive navigation (jQuery and Vanilla-js version)](docs/navigation.md)
 - [A scroll-to-top snippit (jQuery and Vanilla-js version)](docs/scroll-to-top.md)
 - [A scroll-to snippit (jQuery and Vanilla-js version)](docs/scroll-to.md)
+- [A Cookie consent bar (jQuery and Vanilla-js version)](docs/cookie-consent.md)
 - [Videolink - lazy-load youtube and vimeo embeds (jQuery version)](docs/videolink.md)
 - [Full background-image implementation with fallback](docs/full-img-bg.md)
-- [Cookie consent bar](docs/cookie-consent.md)
 - [Adjustments to the flexslider plugin](docs/slider.md)
 - [Responsive audioplayer](docs/audioplayer.md)
 - Fix aggressive required focus state (Bootstrap 2.3)
@@ -40,3 +40,6 @@ Example for adding a feature:
 
 ### License
 Cupcake is licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-3160735-7/Kunstmaan/cupcake)](https://github.com/igrigorik/ga-beacon)
