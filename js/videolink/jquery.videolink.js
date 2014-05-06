@@ -38,9 +38,9 @@ cupcake.videolink = (function($, window, undefined) {
 
             // Construct template
             if(provider === 'youtube') {
-                template = '<iframe src="http://www.youtube.com/embed/' + id + '?autoplay=1&amp;rel=0&amp;showinfo=0&amp;modestbranding&amp;wmode=transparent" width="560" height="315" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                template = '<iframe src="//www.youtube.com/embed/' + id + '?autoplay=1&amp;rel=0&amp;showinfo=0&amp;modestbranding&amp;wmode=transparent" width="560" height="315" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
             } else if (provider === 'vimeo') {
-                template = '<iframe src="http://player.vimeo.com/video/' + id + '?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autoplay=1" width="500" height="290" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                template = '<iframe src="//player.vimeo.com/video/' + id + '?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autoplay=1" width="500" height="290" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
             } else {
                 template = '<p>Sorry, this provider is not supported yet.</p>';
             }
