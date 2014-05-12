@@ -36,8 +36,8 @@ Use the js-navigation class to switch between big and small and use the js-navig
         <!-- Mobile navigation toggle -->
         <div class="js-navigation__toggle navigation__toggle navigation__toggle--top">
             MENU
-            <i class="icon-reorder"></i>
-            <i class="icon-remove"></i>
+            <i class="icon-reorder navigation__toggle__open-icon"></i>
+            <i class="icon-remove navigation__toggle__close-icon"></i>
         </div>
 
         <!-- Navigation-level -->
@@ -62,9 +62,9 @@ Use the js-navigation class to switch between big and small and use the js-navig
                 <a href="#" class="navigation__link">
                     Navitem L1
                 </a>
-                <div class="js-navigation__toggle navigation__toggle navigation__toggle--submenu">
-                    <i class="icon-chevron-down"></i>
-                    <i class="icon-chevron-up"></i>
+                <div class="js-navigation__toggle navigation__toggle navigation__toggle--sublevel">
+                    <i class="icon-chevron-down navigation__toggle__sublevel-open-icon"></i>
+                    <i class="icon-chevron-up navigation__toggle__sublevel-close-icon"></i>
                 </div>
                 <ul class="navigation__level navigation__level--sublevel">
                     <li class="navigation__item navigation__item--sublevel">
