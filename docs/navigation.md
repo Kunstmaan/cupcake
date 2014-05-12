@@ -36,8 +36,8 @@ Use the js-navigation class to switch between big and small and use the js-navig
         <!-- Mobile navigation toggle -->
         <div class="js-navigation__toggle navigation__toggle navigation__toggle--top">
             MENU
-            <i class="icon-reorder"></i>
-            <i class="icon-remove"></i>
+            <i class="icon-reorder navigation__toggle__open-icon"></i>
+            <i class="icon-remove navigation__toggle__close-icon"></i>
         </div>
 
         <!-- Navigation-level -->
@@ -62,9 +62,9 @@ Use the js-navigation class to switch between big and small and use the js-navig
                 <a href="#" class="navigation__link">
                     Navitem L1
                 </a>
-                <div class="js-navigation__toggle navigation__toggle navigation__toggle--submenu">
-                    <i class="icon-chevron-down"></i>
-                    <i class="icon-chevron-up"></i>
+                <div class="js-navigation__toggle navigation__toggle navigation__toggle--sublevel">
+                    <i class="icon-chevron-down navigation__toggle__sublevel-open-icon"></i>
+                    <i class="icon-chevron-up navigation__toggle__sublevel-close-icon"></i>
                 </div>
                 <ul class="navigation__level navigation__level--sublevel">
                     <li class="navigation__item navigation__item--sublevel">
@@ -99,8 +99,6 @@ Use the js-navigation class to switch between big and small and use the js-navig
 /* General
    ========================================================================== */
 $use-navigation-small:                              true!default;
-$use-navigation-animated:                           true!default;
-
 
 
 /* Scafolding
@@ -180,12 +178,6 @@ $navigation-sublevel-toggle-active-color:           #fff!default;
 $navigation-small-link-border-top-color:            #fff!default;
 
 
-
-/* Animation
-   ========================================================================== */
-$navigation-big-animation-duration:                 .4s!default;
-$navigation-animation-duration:                     .6s!default;
-
 ```
 
 
@@ -200,3 +192,11 @@ $navigation-animation-duration:                     .6s!default;
 - Android 3.0 and up
 - iOS 5.0 and up
 - WP 7.8 and up
+
+
+### Pitfalls
+
+#### Css flexbox model
+When using flexbox for the navigation, starting from a small screen "navigation--small" won't push through.
+Solution: Remove "navigation--big" from the template.
+!Caution: This means there's no fallback for non-js users. Style as much as possible on the "navigation" class.

@@ -1,6 +1,6 @@
 {
   "name": "Cupcake",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "main": "base.scss",
   "ignore": [
     "**/.*",
@@ -9,7 +9,7 @@
   ],
   "devDependencies": {
     "sass-bootstrap": "~3.0.0",
-    "bourbon": "latest",
+    "bourbon": "~3.0",
     "svgeezy": "latest",
     "jquery": ">=1.10.0",
     "modernizr": "latest",
