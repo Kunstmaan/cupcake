@@ -27,7 +27,7 @@
         background: $navigation-sublevel-background;
         .navigation__item--active {
             background: $navigation-sublevel-item-active-background;
-            .icon-chevron-right {
+            .navigation__item--active__icon {
                 display: none;
             }
         }
@@ -74,21 +74,21 @@
         line-height: $navigation-height;
         color: $navigation-toggle-color;
         cursor: pointer;
-        .icon-remove, .icon-chevron-up {
+        .navigation__toggle__close-icon, .navigation__toggle__sublevel-close-icon {
             display: none;
         }
-        .icon-remove, .icon-reorder {
+        .navigation__toggle__close-icon, .navigation__toggle__open-icon {
             margin-left: .5em;
         }
     }
     .navigation__toggle--active {
-        .icon-remove {
+        .navigation__toggle__close-icon {
             display: inline-block;
         }
-        .icon-chevron-up {
+        .navigation__toggle__sublevel-close-icon {
             display: inline;
         }
-        .icon-reorder, .icon-chevron-down {
+        .navigation__toggle__open-icon, .navigation__toggle__sublevel-open-icon {
             display: none;
         }
     }
@@ -155,7 +155,7 @@
                 position: static;
                 width: 100%;
                 .navigation__item--active {
-                    .icon-chevron-right {
+                    .navigation__item--active__icon {
                         display: block;
                         float: right;
                         width: $navigation-height;
