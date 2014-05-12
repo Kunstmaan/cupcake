@@ -27,7 +27,7 @@
         background: $navigation-sublevel-background;
         .navigation__item--active {
             background: $navigation-sublevel-item-active-background;
-            .icon-chevron-right {
+            .navigation__item--active__icon {
                 display: none;
             }
         }
@@ -74,21 +74,21 @@
         line-height: $navigation-height;
         color: $navigation-toggle-color;
         cursor: pointer;
-        .icon-remove, .icon-chevron-up {
+        .navigation__toggle__close-icon, .navigation__toggle__sublevel-close-icon {
             display: none;
         }
-        .icon-remove, .icon-reorder {
+        .navigation__toggle__close-icon, .navigation__toggle__open-icon {
             margin-left: .5em;
         }
     }
     .navigation__toggle--active {
-        .icon-remove {
+        .navigation__toggle__close-icon {
             display: inline-block;
         }
-        .icon-chevron-up {
+        .navigation__toggle__sublevel-close-icon {
             display: inline;
         }
-        .icon-reorder, .icon-chevron-down {
+        .navigation__toggle__open-icon, .navigation__toggle__sublevel-open-icon {
             display: none;
         }
     }
@@ -155,7 +155,7 @@
                 position: static;
                 width: 100%;
                 .navigation__item--active {
-                    .icon-chevron-right {
+                    .navigation__item--active__icon {
                         display: block;
                         float: right;
                         width: $navigation-height;
@@ -206,78 +206,6 @@
                 display: block;
             }
         }
-
-
-
-        @if $use-navigation-big-animated == true {
-
-            /* Animate big version
-               ========================================================================== */
-            .navigation--animated {
-                &.navigation--big {
-                    .navigation__level--sublevel {
-                        display: block;
-                        overflow: hidden;
-                        height: 0;
-                        background: none;
-                        @include perspective(300px);
-                        @include perspective-origin(50% 50%);
-                    }
-
-                    .navigation__item {
-                        @include transition (all $navigation-big-animation-duration ease);
-                        &:hover {
-                            > .navigation__level--sublevel {
-                                height: auto;
-                            }
-                            .navigation__item--sublevel {
-                                @include transform(translate3d(0,0,0) rotateX(0deg));
-                            }
-                        }
-                    }
-                    .navigation__item--sublevel {
-                        background: $navigation-sublevel-background;
-                        @include transform-origin(50% 50%);
-                        @include transform(translate3d(0,-8em,-8em) rotateX(-90deg));
-                        &.navigation__item--active {
-                            background: $navigation-item-active-background;
-                        }
-                        &:hover {
-                            background: $navigation-sublevel-item-hover-background;
-                        }
-                    }
-                    .navigation__link {
-                        @include transition (all $navigation-big-animation-duration ease);
-                    }
-                }
-            }
-        }//endif
-
-        @if $use-navigation-small-animated == true {
-            /* Animate small version
-               ========================================================================== */
-            .navigation--animated {
-                &.navigation--small {
-                    // Navigation levels
-                    .navigation__level, .navigation__level--sublevel {
-                        @include perspective(300px);
-                        @include perspective-origin(50% 50%);
-                    }
-                    .navigation__level--open {
-                        > .navigation__item {
-                            @include transform(translate3d(0,0,0) rotateX(0deg));
-                        }
-                    }
-
-                    // Navigation items
-                    .navigation__item {
-                        @include transition (all $navigation-small-animation-duration ease);
-                        @include transform-origin(50% 50%);
-                        @include transform(translate3d(0,8em,-8em) rotateX(-90deg));
-                    }
-                }
-            }
-        }//endif
 
     }//endif
 
