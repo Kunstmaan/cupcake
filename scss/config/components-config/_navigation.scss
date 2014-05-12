@@ -8,10 +8,7 @@
 
 /* General
    ========================================================================== */
-$use-navigation-big-animated:                       false!default;
 $use-navigation-small:                              true!default;
-$use-navigation-small-animated:                     true!default;
-
 
 
 /* Scafolding
@@ -89,10 +86,3 @@ $navigation-sublevel-toggle-active-color:           #fff!default;
 
 //Navigation small
 $navigation-small-link-border-top-color:            #fff!default;
-
-
-
-/* Animation
-   ========================================================================== */
-$navigation-big-animation-duration:                 .4s!default;
-$navigation-small-animation-duration:                     .6s!default;

@@ -99,8 +99,6 @@ Use the js-navigation class to switch between big and small and use the js-navig
 /* General
    ========================================================================== */
 $use-navigation-small:                              true!default;
-$use-navigation-animated:                           true!default;
-
 
 
 /* Scafolding
@@ -179,12 +177,6 @@ $navigation-sublevel-toggle-active-color:           #fff!default;
 //Navigation small
 $navigation-small-link-border-top-color:            #fff!default;
 
-
-
-/* Animation
-   ========================================================================== */
-$navigation-big-animation-duration:                 .4s!default;
-$navigation-animation-duration:                     .6s!default;
 
 ```
 
