@@ -1,4 +1,4 @@
-## Cupcake _v1.6.2_
+## Cupcake _v1.7.0_
 
 Cupcake is a html, scss/css, js component library with some usefull and commonly used components and snippits.
 
